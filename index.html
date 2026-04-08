@@ -295,19 +295,22 @@
           font-size: 16px;
           font-weight: 800;
           color: var(--green-dark);
-          margin-bottom: 12px;
+          margin-bottom: 15px;
           text-transform: capitalize;
           font-family: 'Poppins', sans-serif;
           letter-spacing: 0.5px;
+          padding-bottom: 15px;
+          border-bottom: 2px solid var(--green-light);
         }
 
         .value-item:hover .value-title {
           color: var(--white);
+          border-bottom-color: rgba(255, 255, 255, 0.3);
         }
 
         .value-text {
           font-size: 13px;
-          color: var(--text-muted);
+          color: var(--dark-gray);
           font-weight: 300;
           line-height: 1.6;
           font-family: 'Poppins', sans-serif;
@@ -371,73 +374,88 @@
         .mission-image-container {
           position: relative;
           width: 100%;
+          height: 600px;
+          border-radius: 8px;
+          overflow: hidden;
         }
 
         .mission-image-container img {
           width: 100%;
-          height: 600px;
+          height: 100%;
           object-fit: cover;
           border-radius: 8px;
-          box-shadow: 0 30px 80px rgba(26, 92, 58, 0.2);
+          box-shadow: 0 30px 80px rgba(23, 97, 49, 0.2);
         }
 
         .mission-stats {
           position: absolute;
-          bottom: 30px;
-          left: 30px;
-          right: 30px;
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
+          bottom: 40px;
+          right: 40px;
+          display: flex;
+          flex-direction: column;
           gap: 20px;
+          z-index: 10;
+          animation: slideInRight 1s ease 0.6s both;
         }
 
         .mission-stat {
-          background: rgba(0, 0, 0, 0.85);
-          backdrop-filter: blur(15px);
-          padding: 35px 30px;
-          border-radius: 4px;
-          color: var(--white);
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(20px);
+          padding: 25px 35px;
+          border-radius: 12px;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          box-shadow: 0 20px 60px rgba(23, 97, 49, 0.2);
           display: flex;
-          flex-direction: column;
-          gap: 12px;
-          border: 2px solid rgba(255, 255, 255, 0.15);
+          align-items: center;
+          gap: 20px;
           transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
           cursor: pointer;
+          min-width: 280px;
         }
 
         .mission-stat:hover {
-          background: rgba(0, 0, 0, 0.95);
-          border-color: var(--green-light);
-          transform: translateY(-8px);
-          box-shadow: 0 20px 50px rgba(102, 187, 106, 0.3);
+          background: rgba(255, 255, 255, 0.98);
+          box-shadow: 0 30px 80px rgba(23, 97, 49, 0.3);
+          transform: translateX(-10px);
         }
 
         .stat-icon {
-          display: none;
+          width: 70px;
+          height: 70px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-light) 100%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          font-weight: 800;
+          color: var(--white);
+          font-size: 28px;
+          font-family: 'Poppins', sans-serif;
         }
 
         .stat-info {
           display: flex;
           flex-direction: column;
-          gap: 0;
+          gap: 4px;
         }
 
         .stat-num {
-          font-size: 36px;
+          font-size: 28px;
           font-weight: 800;
-          color: var(--green-light);
+          color: var(--green-dark);
           line-height: 1;
-          letter-spacing: -1px;
+          font-family: 'Poppins', sans-serif;
         }
 
         .stat-text {
-          font-size: 13px;
-          color: rgba(255, 255, 255, 0.85);
-          line-height: 1.5;
-          margin-top: 8px;
-          font-weight: 400;
+          font-size: 12px;
+          color: var(--text-muted);
+          line-height: 1.4;
+          font-weight: 500;
           text-transform: uppercase;
           letter-spacing: 0.8px;
+          font-family: 'Poppins', sans-serif;
         }
 
         /* DEUX SERVICES */
@@ -973,21 +991,22 @@
       <p>Forte de <strong>30 années d'expérience dans les métiers de la construction et de la rénovation</strong>, bauV maîtrise chaque aspect d'un projet, du diagnostic initial à la livraison finale.</p>
       <p><strong>Spécialisées en construction et gestion de travaux</strong>, nos équipes garantissent une supervision rigoureuse : respect des délais, maîtrise des coûts, qualité impeccable et conformité aux normes les plus exigeantes.</p>
       <p>Fort de notre réseau de partenaires fiables et de notre expertise technique, nous pilotez chaque détail du chantier pour une exécution sans faille et conforme aux standards architecturaux les plus élevés.</p>
-      <button class="btn btn-primary" style="margin-top: 30px;">Parlons de votre projet</button>
     </div>
     <div class="mission-image-container">
       <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=700&fit=crop" alt="Construction">
       <div class="mission-stats">
         <div class="mission-stat">
+          <div class="stat-icon">30+</div>
           <div class="stat-info">
-            <div class="stat-num">30+</div>
-            <div class="stat-text">Ans d'expertise<br>en construction</div>
+            <div class="stat-num">Années</div>
+            <div class="stat-text">d'expertise</div>
           </div>
         </div>
         <div class="mission-stat">
+          <div class="stat-icon">20%</div>
           <div class="stat-info">
-            <div class="stat-num">20%</div>
-            <div class="stat-text">Économies réalisées<br>pour nos clients</div>
+            <div class="stat-num">Économies</div>
+            <div class="stat-text">pour les clients</div>
           </div>
         </div>
       </div>
