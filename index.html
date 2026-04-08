@@ -337,10 +337,35 @@
 
         .mission-text h2 {
           font-size: 56px;
-          font-weight: 300;
+          font-weight: 800;
           margin-bottom: 40px;
           color: var(--dark-gray);
           line-height: 1.3;
+          font-family: 'Poppins', sans-serif;
+        }
+
+        .mission-text h2 .accent {
+          color: var(--green-dark);
+        }
+
+        .mission-label {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          margin-bottom: 30px;
+          font-size: 13px;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          color: var(--green-dark);
+          font-weight: 700;
+          font-family: 'Poppins', sans-serif;
+        }
+
+        .mission-label::before {
+          content: '';
+          width: 30px;
+          height: 2px;
+          background: var(--green-dark);
         }
 
         .mission-text h2 .accent {
@@ -984,7 +1009,8 @@
 <section class="mission">
   <div class="mission-content">
     <div class="mission-text">
-      <h2>Notre <span class="accent">mission</span></h2>
+      <div class="mission-label">Notre mission</div>
+      <h2>VOS PROJETS, <span class="accent">NOTRE EXPERTISE</span></h2>
       <p>Forte de <strong>30 années d'expérience dans les métiers de la construction et de la rénovation</strong>, bauV maîtrise chaque aspect d'un projet, du diagnostic initial à la livraison finale.</p>
       <p><strong>Spécialisées en construction et gestion de travaux</strong>, nos équipes garantissent une supervision rigoureuse : respect des délais, maîtrise des coûts, qualité impeccable et conformité aux normes les plus exigeantes.</p>
       <p>Fort de notre réseau de partenaires fiables et de notre expertise technique, nous pilotez chaque détail du chantier pour une exécution sans faille et conforme aux standards architecturaux les plus élevés.</p>
