@@ -74,6 +74,7 @@
           padding: 0 100px;
           z-index: 1000;
           box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+          position: relative;
         }
 
         .logo {
@@ -200,6 +201,24 @@
           text-align: left;
           transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
           text-transform: uppercase;
+        }
+
+        .hero-tagline {
+          font-size: 18px;
+          color: var(--text-muted);
+          margin-bottom: 25px;
+          line-height: 1.6;
+          font-weight: 400;
+          font-family: 'Poppins', sans-serif;
+          animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .tagline-highlight {
+          background: linear-gradient(120deg, var(--green-dark) 0%, var(--green-light) 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          font-weight: 800;
         }
 
         .hero p {
@@ -480,8 +499,81 @@
           font-family: 'Poppins', sans-serif;
         }
 
-        /* DEUX SERVICES */
-        .two-services {
+        /* SERVICES GRID SECTION */
+        .services-grid-section {
+          padding: 150px 100px;
+          background: var(--white);
+        }
+
+        .services-grid-title {
+          text-align: center;
+          margin-bottom: 80px;
+        }
+
+        .services-grid-title h2 {
+          font-size: 56px;
+          font-weight: 800;
+          margin-bottom: 20px;
+          color: var(--dark-gray);
+          font-family: 'Poppins', sans-serif;
+        }
+
+        .services-grid-title p {
+          font-size: 18px;
+          color: var(--text-muted);
+          max-width: 700px;
+          margin: 0 auto;
+        }
+
+        .services-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 30px;
+          max-width: 1400px;
+          margin: 0 auto;
+        }
+
+        .service-card-image {
+          position: relative;
+          width: 100%;
+          height: 400px;
+          border-radius: 8px;
+          overflow: hidden;
+          cursor: pointer;
+          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card-image img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .service-card-image:hover img {
+          transform: scale(1.15);
+        }
+
+        .service-card-label {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+          padding: 40px 30px 30px;
+          color: var(--white);
+          font-size: 22px;
+          font-weight: 800;
+          font-family: 'Poppins', sans-serif;
+          letter-spacing: -0.5px;
+          z-index: 2;
+        }
+
+        @media (max-width: 768px) {
+          .services-grid-section { padding: 100px 40px; }
+          .services-grid { grid-template-columns: 1fr; }
+          .service-card-image { height: 300px; }
+        }
           padding: 150px 100px;
           background: linear-gradient(135deg, #f9f9f9 0%, var(--light-gray) 100%);
         }
@@ -1033,6 +1125,50 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="services-grid-section">
+  <div class="services-grid-title">
+    <h2>Nos <span class="accent">services</span></h2>
+    <p>Une gamme complète de solutions pour tous vos besoins en rénovation et construction</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card-image">
+      <img src="https://images.unsplash.com/photo-1504917595217-3404ee9c6601?w=600&h=400&fit=crop" alt="Maçonnerie">
+      <div class="service-card-label">Maçonnerie</div>
+    </div>
+
+    <div class="service-card-image">
+      <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=400&fit=crop" alt="Démolition">
+      <div class="service-card-label">Démolition</div>
+    </div>
+
+    <div class="service-card-image">
+      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop" alt="Façade">
+      <div class="service-card-label">Façade</div>
+    </div>
+
+    <div class="service-card-image">
+      <img src="https://images.unsplash.com/photo-1581092333021-2e8b1e24e45d?w=600&h=400&fit=crop" alt="Chapes">
+      <div class="service-card-label">Chapes</div>
+    </div>
+
+    <div class="service-card-image">
+      <img src="https://images.unsplash.com/photo-1589939705066-5c39e7effa41?w=600&h=400&fit=crop" alt="Plâtrerie Peinture">
+      <div class="service-card-label">Plâtrerie Peinture</div>
+    </div>
+
+    <div class="service-card-image">
+      <img src="https://images.unsplash.com/photo-1599005614506-d92c8ef5a4f2?w=600&h=400&fit=crop" alt="Revêtements de sols">
+      <div class="service-card-label">Revêtements de sols</div>
+    </div>
+
+    <div class="service-card-image">
+      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop" alt="Services complémentaires">
+      <div class="service-card-label">Services complémentaires</div>
     </div>
   </div>
 </section>
