@@ -625,7 +625,7 @@
         /* APPROACH SECTION */
         .approach-section {
           padding: 150px 100px;
-          background: linear-gradient(135deg, #f9f9f9 0%, var(--light-gray) 100%);
+          background: var(--white);
         }
 
         .approach-container {
@@ -636,7 +636,7 @@
         .approach-section h2 {
           font-size: 56px;
           font-weight: 800;
-          margin-bottom: 80px;
+          margin-bottom: 40px;
           color: var(--dark-gray);
           font-family: 'Poppins', sans-serif;
           text-align: center;
@@ -646,76 +646,164 @@
           color: var(--green-dark);
         }
 
-        .approach-content {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 100px;
-          align-items: flex-start;
+        .approach-intro {
+          text-align: center;
+          max-width: 900px;
+          margin: 0 auto 80px;
         }
 
-        .approach-text {
-          display: flex;
-          flex-direction: column;
-          gap: 25px;
-        }
-
-        .approach-text p {
+        .approach-intro p {
           font-size: 17px;
           color: var(--text-muted);
           line-height: 1.8;
           font-weight: 300;
-          font-family: 'Poppins', sans-serif;
         }
 
-        .approach-text p strong {
-          color: var(--green-dark);
-          font-weight: 700;
-        }
-
-        .approach-values {
+        .approach-tabs {
           display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 40px;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 20px;
+          margin-bottom: 80px;
         }
 
-        .approach-value {
-          background: var(--white);
-          padding: 40px;
+        .approach-tab {
+          background: var(--light-gray);
+          padding: 40px 30px;
           border-radius: 8px;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+          cursor: pointer;
           transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+          border: 2px solid transparent;
+          text-align: center;
         }
 
-        .approach-value:hover {
-          transform: translateY(-10px);
-          box-shadow: 0 20px 60px rgba(23, 97, 49, 0.15);
+        .approach-tab:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
         }
 
-        .value-icon {
-          font-size: 32px;
-          margin-bottom: 15px;
-          display: block;
+        .approach-tab.active {
+          background: var(--dark-gray);
+          color: var(--white);
+          border-color: var(--green-dark);
         }
 
-        .approach-value h3 {
-          font-size: 18px;
+        .tab-number {
+          font-size: 14px;
           font-weight: 800;
           color: var(--green-dark);
           margin-bottom: 12px;
+          letter-spacing: 1px;
           font-family: 'Poppins', sans-serif;
         }
 
-        .approach-value p {
-          font-size: 14px;
+        .approach-tab.active .tab-number {
+          color: var(--green-light);
+        }
+
+        .approach-tab h3 {
+          font-size: 18px;
+          font-weight: 800;
+          margin-bottom: 8px;
+          color: var(--dark-gray);
+          font-family: 'Poppins', sans-serif;
+        }
+
+        .approach-tab.active h3 {
+          color: var(--white);
+        }
+
+        .approach-tab p {
+          font-size: 13px;
           color: var(--text-muted);
-          line-height: 1.6;
           font-weight: 300;
+        }
+
+        .approach-tab.active p {
+          color: var(--green-light);
+        }
+
+        .approach-content {
+          background: var(--light-gray);
+          padding: 60px;
+          border-radius: 8px;
+        }
+
+        .approach-detail {
+          display: none;
+        }
+
+        .approach-detail.active {
+          display: block;
+          animation: fadeIn 0.4s ease;
+        }
+
+        .detail-line {
+          width: 40px;
+          height: 3px;
+          background: var(--green-dark);
+          margin-bottom: 25px;
+          border-radius: 2px;
+        }
+
+        .approach-detail h3 {
+          font-size: 32px;
+          font-weight: 800;
+          margin-bottom: 20px;
+          color: var(--dark-gray);
+          font-family: 'Poppins', sans-serif;
+        }
+
+        .approach-detail > p {
+          font-size: 16px;
+          color: var(--text-muted);
+          line-height: 1.8;
+          margin-bottom: 30px;
+          font-weight: 300;
+        }
+
+        .detail-list {
+          list-style: none;
+          padding: 0;
+        }
+
+        .detail-list li {
+          font-size: 15px;
+          color: var(--dark-gray);
+          margin-bottom: 12px;
+          padding-left: 30px;
+          position: relative;
+          font-weight: 300;
+        }
+
+        .detail-list li::before {
+          content: '•';
+          position: absolute;
+          left: 0;
+          color: var(--green-dark);
+          font-weight: 800;
+          font-size: 18px;
+        }
+
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @media (max-width: 1024px) {
+          .approach-tabs { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
           .approach-section { padding: 100px 40px; }
-          .approach-content { grid-template-columns: 1fr; gap: 60px; }
-          .approach-values { grid-template-columns: 1fr; }
+          .approach-tabs { grid-template-columns: 1fr; }
+          .approach-content { padding: 40px; }
+          .approach-detail h3 { font-size: 24px; }
         }
 
         /* CAROUSEL PORTFOLIO */
@@ -1215,41 +1303,76 @@
   <div class="approach-container">
     <h2>Notre <span class="accent">approche</span></h2>
     
+    <div class="approach-intro">
+      <p>Chez bauV, nous croyons que chaque projet est unique. C'est pourquoi nous avons développé une approche centrée sur la responsabilité partagée et la collaboration fluide entre tous les acteurs.</p>
+    </div>
+
+    <div class="approach-tabs">
+      <div class="approach-tab" data-tab="pilotage">
+        <div class="tab-number">01</div>
+        <h3>Pilotage intégral</h3>
+        <p>Gestion complète</p>
+      </div>
+      <div class="approach-tab" data-tab="professionnel">
+        <div class="tab-number">02</div>
+        <h3>Professionnalisme</h3>
+        <p>30+ ans d'expérience</p>
+      </div>
+      <div class="approach-tab" data-tab="budget">
+        <div class="tab-number">03</div>
+        <h3>Optimisation budgétaire</h3>
+        <p>Maîtrise des coûts</p>
+      </div>
+      <div class="approach-tab" data-tab="transparence">
+        <div class="tab-number">04</div>
+        <h3>Transparence totale</h3>
+        <p>Communication claire</p>
+      </div>
+    </div>
+
     <div class="approach-content">
-      <div class="approach-text">
-        <p>Chez bauV, nous croyons que chaque projet est unique. C'est pourquoi nous avons développé une approche centrée sur la responsabilité partagée et la collaboration fluide entre tous les acteurs.</p>
-        
-        <p>Notre force réside dans notre capacité à piloter des projets complexes avec une vision globale. De la conception à la livraison, nous assurons une coordination sans faille, une maîtrise totale des délais et des budgets, tout en maintenant les plus hauts standards de qualité.</p>
-        
-        <p><strong>Nous transformons les défis en opportunités pour livrer des projets réussis, durables et économiquement optimisés.</strong></p>
-        
-        <p>Notre équipe, forte de plus de 30 ans d'expérience, accompagne clients, architectes et partenaires dans une démarche structurée et humaine. Transparence, rigueur et écoute sont nos principes fondamentaux.</p>
+      <div class="approach-detail" id="pilotage">
+        <div class="detail-line"></div>
+        <h3>Pilotage intégral</h3>
+        <p>Nous gérons l'intégralité de vos projets avec une coordination sans faille entre tous les corps de métiers. Du concept à la livraison, chaque phase est pilotée avec rigueur et professionnalisme.</p>
+        <ul class="detail-list">
+          <li>Coordination technique complète</li>
+          <li>Suivi quotidien du chantier</li>
+          <li>Gestion administrative intégrale</li>
+        </ul>
       </div>
 
-      <div class="approach-values">
-        <div class="approach-value">
-          <div class="value-icon">🎯</div>
-          <h3>Pilotage intégral</h3>
-          <p>Nous gérons l'intégralité de vos projets avec une coordination sans faille entre tous les corps de métiers.</p>
-        </div>
+      <div class="approach-detail" id="professionnel">
+        <div class="detail-line"></div>
+        <h3>Professionnalisme</h3>
+        <p>Fort de plus de 30 ans d'expérience, notre équipe maîtrise tous les corps de métiers du bâtiment. Rigueur, ponctualité et excellence sont nos standards non-négociables sur chaque chantier.</p>
+        <ul class="detail-list">
+          <li>Expertise multidisciplinaire</li>
+          <li>Respect des délais</li>
+          <li>Assurance qualité rigoureuse</li>
+        </ul>
+      </div>
 
-        <div class="approach-value">
-          <div class="value-icon">💼</div>
-          <h3>Professionnalisme</h3>
-          <p>30+ ans d'expérience au service de vos projets. Rigueur, ponctualité et excellence sont nos standards.</p>
-        </div>
+      <div class="approach-detail" id="budget">
+        <div class="detail-line"></div>
+        <h3>Optimisation budgétaire</h3>
+        <p>Nous assurons une maîtrise complète des coûts et des délais sans jamais compromettre la qualité de réalisation. Notre approche globale permet d'optimiser les ressources et de générer des économies substantielles.</p>
+        <ul class="detail-list">
+          <li>Gestion budgétaire optimisée</li>
+          <li>Contrôle des dépenses</li>
+          <li>Économies de coûts garanties</li>
+        </ul>
+      </div>
 
-        <div class="approach-value">
-          <div class="value-icon">💰</div>
-          <h3>Optimisation budgétaire</h3>
-          <p>Maîtrise complète des coûts et des délais sans compromettre la qualité de réalisation.</p>
-        </div>
-
-        <div class="approach-value">
-          <div class="value-icon">🤝</div>
-          <h3>Transparence totale</h3>
-          <p>Communication claire et régulière avec tous les acteurs du projet pour une confiance mutuelle.</p>
-        </div>
+      <div class="approach-detail" id="transparence">
+        <div class="detail-line"></div>
+        <h3>Transparence totale</h3>
+        <p>La communication claire et régulière est au cœur de nos relations avec clients, architectes et partenaires. Nous assurons une transparence complète pour une confiance mutuelle et durable.</p>
+        <ul class="detail-list">
+          <li>Reporting détaillé et régulier</li>
+          <li>Communication fluide</li>
+          <li>Transparence budgétaire</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -1458,6 +1581,22 @@ function changeWord() {
     }, 300);
   }
 }
+
+// Approach tabs interaction
+document.querySelectorAll('.approach-tab').forEach((tab, index) => {
+  if (index === 0) {
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.tab).classList.add('active');
+  }
+  
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.approach-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.approach-detail').forEach(d => d.classList.remove('active'));
+    
+    this.classList.add('active');
+    document.getElementById(this.dataset.tab).classList.add('active');
+  });
+});
 
 // Services expand effect
 document.querySelectorAll('.service-card-image').forEach(card => {
