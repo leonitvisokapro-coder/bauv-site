@@ -503,7 +503,8 @@
         .services-grid-section {
           padding: 0;
           background: var(--white);
-          min-height: 500px;
+          min-height: 600px;
+          overflow: hidden;
         }
 
         .services-grid-title {
@@ -512,48 +513,39 @@
           display: none;
         }
 
-        .services-grid-title h2 {
-          font-size: 56px;
-          font-weight: 800;
-          margin-bottom: 20px;
-          color: var(--dark-gray);
-          font-family: 'Poppins', sans-serif;
-        }
-
-        .services-grid-title p {
-          font-size: 18px;
-          color: var(--text-muted);
-          max-width: 700px;
-          margin: 0 auto;
-        }
-
         .services-grid {
           display: grid;
           grid-template-columns: repeat(7, 1fr);
           gap: 0;
           width: 100%;
-          height: 500px;
+          height: 600px;
+          position: relative;
         }
 
         .service-card-image {
           position: relative;
           width: 100%;
           height: 100%;
-          border-radius: 0;
           overflow: hidden;
           cursor: pointer;
-          box-shadow: none;
+          flex: 1;
+          transition: flex 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .service-card-image.expanded {
+          flex: 3;
+          z-index: 10;
         }
 
         .service-card-image img {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+          transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .service-card-image:hover img {
-          transform: scale(1.1);
+          transform: scale(1.05);
         }
 
         .service-card-label {
@@ -570,10 +562,11 @@
           letter-spacing: -0.5px;
           z-index: 2;
           text-align: center;
+          white-space: nowrap;
         }
 
         @media (max-width: 1200px) {
-          .services-grid { grid-template-columns: repeat(4, 1fr); }
+          .services-grid { grid-template-columns: repeat(4, 1fr); height: 500px; }
         }
 
         @media (max-width: 768px) {
@@ -1418,6 +1411,16 @@ function changeWord() {
     }, 300);
   }
 }
+
+// Services expand effect
+document.querySelectorAll('.service-card-image').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    document.querySelectorAll('.service-card-image').forEach(c => {
+      c.classList.remove('expanded');
+    });
+    this.classList.add('expanded');
+  });
+});
 
 // Auto-scroll carousel every 1 second
 setInterval(() => {
