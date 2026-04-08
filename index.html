@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bauV - Les spécialistes qui simplifient vos rénovations</title>
+    <title>bauV - Rénovation et Construction</title>
     <style>
         :root {
           --green-dark: #1a5c3a;
           --green-light: #66bb6a;
           --white: #ffffff;
           --light-gray: #f8f8f8;
-          --dark-gray: #333333;
+          --dark-gray: #2a2a2a;
           --text-muted: #666666;
         }
 
@@ -27,6 +27,33 @@
           background: var(--white);
           color: var(--dark-gray);
           line-height: 1.6;
+          overflow-x: hidden;
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(60px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideIn {
+          from { opacity: 0; transform: translateX(-100px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+          from { opacity: 0; transform: translateX(100px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-15px); }
+        }
+
+        @keyframes pulse {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.7; }
         }
 
         /* HEADER */
@@ -36,69 +63,54 @@
           left: 0;
           right: 0;
           height: 75px;
-          background: var(--white);
-          border-bottom: 1px solid #e8e8e8;
+          background: rgba(255, 255, 255, 0.98);
+          backdrop-filter: blur(20px);
+          border-bottom: 1px solid rgba(26, 92, 58, 0.1);
           display: flex;
           align-items: center;
           justify-content: space-between;
-          padding: 0 60px;
+          padding: 0 100px;
           z-index: 1000;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
 
-        .logo-container {
-          display: flex;
-          align-items: center;
-          height: 50px;
+        .logo {
+          font-size: 28px;
+          font-weight: 800;
+          letter-spacing: 2px;
+          animation: slideIn 0.8s ease;
         }
 
-        .logo-text {
-          font-size: 24px;
-          font-weight: 700;
-          letter-spacing: -0.5px;
-          color: var(--dark-gray);
-        }
-
-        .logo-text .green {
-          color: var(--green-light);
-        }
-
-        .header-content {
-          display: flex;
-          align-items: center;
-          gap: 60px;
-        }
-
-        .header-info {
-          display: flex;
-          gap: 40px;
-          font-size: 13px;
-          color: var(--text-muted);
-        }
+        .logo .green { color: var(--green-dark); }
 
         nav {
           display: flex;
-          gap: 35px;
+          gap: 70px;
+          animation: slideInRight 0.8s ease;
         }
 
         nav a {
           font-size: 13px;
-          text-decoration: none;
           color: var(--text-muted);
+          text-decoration: none;
           cursor: pointer;
-          transition: color 0.3s;
+          transition: all 0.3s;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          font-weight: 600;
           position: relative;
-          padding-bottom: 3px;
+          padding-bottom: 8px;
         }
 
         nav a::after {
           content: '';
           position: absolute;
-          bottom: -2px;
+          bottom: 0;
           left: 0;
           width: 0;
-          height: 1px;
+          height: 2.5px;
           background: var(--green-dark);
-          transition: width 0.3s ease;
+          transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         nav a:hover::after { width: 100%; }
@@ -107,434 +119,688 @@
         /* HERO */
         .hero {
           margin-top: 75px;
-          padding: 120px 60px;
-          background: linear-gradient(to bottom, var(--light-gray), var(--white));
-          text-align: center;
+          padding: 80px 100px;
+          background: linear-gradient(135deg, #fafafa 0%, var(--light-gray) 100%);
+          min-height: 120vh;
           display: flex;
           align-items: center;
-          justify-content: center;
-          min-height: calc(100vh - 75px);
+          position: relative;
+          overflow: hidden;
         }
 
-        .hero-content {
-          max-width: 800px;
-          animation: fadeIn 0.8s ease-out 0.2s both;
-        }
-
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-
-        .hero h1 {
-          font-size: 60px;
-          font-weight: 300;
-          letter-spacing: -1px;
-          margin-bottom: 20px;
-          color: var(--dark-gray);
-          line-height: 1.2;
-        }
-
-        .hero h1 .highlight {
-          color: var(--green-light);
-        }
-
-        .tagline {
-          font-size: 22px;
-          color: var(--green-dark);
-          margin-bottom: 30px;
-          font-weight: 400;
-          letter-spacing: 0.3px;
-        }
-
-        .hero p {
-          font-size: 16px;
-          color: var(--text-muted);
-          margin-bottom: 50px;
-          line-height: 1.7;
-          font-weight: 300;
-        }
-
-        .btn {
-          display: inline-block;
-          padding: 15px 45px;
-          background: var(--green-dark);
-          color: var(--white);
-          text-decoration: none;
-          font-size: 13px;
-          letter-spacing: 0.8px;
-          cursor: pointer;
-          border: none;
-          transition: all 0.3s ease;
-          font-weight: 500;
-        }
-
-        .btn:hover {
-          background: var(--green-light);
-          transform: translateY(-2px);
-        }
-
-        /* SECTIONS */
-        section {
-          padding: 100px 60px;
-          background: var(--white);
-          border-top: 1px solid #e8e8e8;
-        }
-
-        .section-title {
-          font-size: 44px;
-          font-weight: 300;
-          text-align: center;
-          margin-bottom: 20px;
-          color: var(--dark-gray);
-          letter-spacing: -0.5px;
-        }
-
-        .section-title .highlight {
-          color: var(--green-light);
-        }
-
-        .section-subtitle {
-          font-size: 16px;
-          color: var(--text-muted);
-          text-align: center;
-          margin-bottom: 70px;
-          font-weight: 300;
-        }
-
-        /* SERVICES */
-        .services-grid {
+        .hero-wrapper {
           display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 50px;
-          max-width: 1100px;
+          grid-template-columns: 1fr 1fr;
+          gap: 80px;
+          align-items: flex-start;
+          width: 100%;
+          max-width: 1500px;
           margin: 0 auto;
         }
 
-        .service-card {
-          padding: 50px 40px;
-          border: 1px solid #e8e8e8;
-          background: var(--light-gray);
-          transition: all 0.3s ease;
-          cursor: pointer;
+        .hero::before {
+          content: '';
+          position: absolute;
+          width: 700px;
+          height: 700px;
+          background: radial-gradient(circle, rgba(102, 187, 106, 0.12) 0%, transparent 70%);
+          border-radius: 50%;
+          top: 50%;
+          right: 5%;
+          transform: translate(0, -50%);
+          animation: float 8s ease-in-out infinite;
         }
 
-        .service-card:hover {
-          border-color: var(--green-light);
-          box-shadow: 0 8px 24px rgba(102, 187, 106, 0.1);
+        .hero-content {
+          max-width: 950px;
+          position: relative;
+          z-index: 1;
+        }
+
+        .hero-image {
+          width: 100%;
+          height: 700px;
+          background: linear-gradient(135deg, rgba(102, 187, 106, 0.15) 0%, rgba(26, 92, 58, 0.15) 100%);
+          border-radius: 12px;
+          overflow: hidden;
+          box-shadow: 0 30px 80px rgba(26, 92, 58, 0.2);
+          animation: slideInRight 1s ease 0.4s both;
+        }
+
+        .hero-image img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.6s ease;
+        }
+
+        .hero-image:hover img {
+          transform: scale(1.05);
+        }
+
+        .hero h1 {
+          font-size: 76px;
+          font-weight: 300;
+          letter-spacing: -1px;
+          margin-bottom: 30px;
+          line-height: 1.2;
+          color: var(--dark-gray);
+          animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero h1 .accent {
+          color: var(--green-dark);
+          font-weight: 700;
+          display: inline-block;
+          min-width: 450px;
+          animation: changeWord 9s infinite;
+        }
+
+        @keyframes changeWord {
+          0%, 10% { content: 'simplifiées'; opacity: 1; }
+          30%, 40% { opacity: 0; }
+          40%, 50% { content: 'réussies'; opacity: 1; }
+          70%, 80% { opacity: 0; }
+          80%, 90% { content: 'durables'; opacity: 1; }
+          100% { opacity: 1; }
+        }
+
+        .hero p {
+          font-size: 21px;
+          color: var(--text-muted);
+          margin-bottom: 60px;
+          line-height: 1.8;
+          max-width: 850px;
+          font-weight: 300;
+          animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .cta-buttons {
+          display: flex;
+          gap: 30px;
+          animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .btn {
+          padding: 16px 50px;
+          border: none;
+          cursor: pointer;
+          font-size: 13px;
+          letter-spacing: 1.5px;
+          font-weight: 700;
+          text-transform: uppercase;
+          transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+          position: relative;
+          overflow: hidden;
+          border-radius: 4px;
+        }
+
+        .btn-primary {
+          background: linear-gradient(135deg, var(--green-dark) 0%, #0f4c2a 100%);
+          color: var(--white);
+          box-shadow: 0 15px 40px rgba(26, 92, 58, 0.3);
+        }
+
+        .btn-primary:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 25px 60px rgba(26, 92, 58, 0.4);
+        }
+
+        .btn-secondary {
+          background: transparent;
+          color: var(--green-dark);
+          border: 2px solid var(--green-dark);
+        }
+
+        .btn-secondary:hover {
+          background: var(--green-dark);
+          color: var(--white);
           transform: translateY(-4px);
         }
 
-        .service-card h3 {
-          font-size: 22px;
+        .hero-values {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 50px;
+          margin-top: 120px;
+          padding-top: 100px;
+          border-top: 1px solid rgba(26, 92, 58, 0.1);
+          animation: fadeInUp 1s ease 0.8s both;
+        }
+
+        .value-item {
+          text-align: center;
+        }
+
+        .value-label {
+          font-size: 12px;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          color: var(--green-dark);
+          font-weight: 700;
+          margin-bottom: 12px;
+        }
+
+        .value-text {
+          font-size: 16px;
+          color: var(--dark-gray);
           font-weight: 400;
+        }
+
+        /* MISSION */
+        .mission {
+          padding: 150px 100px;
+          background: var(--white);
+        }
+
+        .mission-content {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 100px;
+          align-items: center;
+          max-width: 1400px;
+          margin: 0 auto;
+        }
+
+        .mission-text h2 {
+          font-size: 56px;
+          font-weight: 300;
+          margin-bottom: 40px;
+          color: var(--dark-gray);
+          line-height: 1.3;
+        }
+
+        .mission-text h2 .accent {
+          color: var(--green-dark);
+          font-weight: 700;
+        }
+
+        .mission-text p {
+          font-size: 17px;
+          color: var(--text-muted);
+          margin-bottom: 25px;
+          line-height: 1.9;
+          font-weight: 300;
+        }
+
+        .mission-image {
+          width: 100%;
+          height: 500px;
+          background: linear-gradient(135deg, rgba(102, 187, 106, 0.1) 0%, rgba(26, 92, 58, 0.1) 100%);
+          border-radius: 8px;
+          overflow: hidden;
+          animation: slideInRight 1s ease;
+        }
+
+        .mission-image img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .mission-image-container {
+          position: relative;
+          width: 100%;
+        }
+
+        .mission-image-container img {
+          width: 100%;
+          height: 600px;
+          object-fit: cover;
+          border-radius: 8px;
+          box-shadow: 0 30px 80px rgba(26, 92, 58, 0.2);
+        }
+
+        .mission-stats {
+          position: absolute;
+          bottom: 30px;
+          left: 30px;
+          right: 30px;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+        }
+
+        .mission-stat {
+          background: rgba(0, 0, 0, 0.85);
+          backdrop-filter: blur(15px);
+          padding: 35px 30px;
+          border-radius: 4px;
+          color: var(--white);
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          border: 2px solid rgba(255, 255, 255, 0.15);
+          transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+          cursor: pointer;
+        }
+
+        .mission-stat:hover {
+          background: rgba(0, 0, 0, 0.95);
+          border-color: var(--green-light);
+          transform: translateY(-8px);
+          box-shadow: 0 20px 50px rgba(102, 187, 106, 0.3);
+        }
+
+        .stat-icon {
+          display: none;
+        }
+
+        .stat-info {
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+        }
+
+        .stat-num {
+          font-size: 36px;
+          font-weight: 800;
+          color: var(--green-light);
+          line-height: 1;
+          letter-spacing: -1px;
+        }
+
+        .stat-text {
+          font-size: 13px;
+          color: rgba(255, 255, 255, 0.85);
+          line-height: 1.5;
+          margin-top: 8px;
+          font-weight: 400;
+          text-transform: uppercase;
+          letter-spacing: 0.8px;
+        }
+
+        /* DEUX SERVICES */
+        .two-services {
+          padding: 150px 100px;
+          background: linear-gradient(135deg, #f9f9f9 0%, var(--light-gray) 100%);
+        }
+
+        .two-services-title {
+          text-align: center;
+          margin-bottom: 100px;
+        }
+
+        .two-services-title h2 {
+          font-size: 56px;
+          font-weight: 300;
+          margin-bottom: 25px;
+          color: var(--dark-gray);
+        }
+
+        .two-services-title p {
+          font-size: 18px;
+          color: var(--text-muted);
+          max-width: 700px;
+          margin: 0 auto;
+        }
+
+        .services-duo {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 60px;
+          max-width: 1400px;
+          margin: 0 auto;
+        }
+
+        .service-block {
+          background: var(--white);
+          padding: 70px;
+          border-radius: 8px;
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+          transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+          position: relative;
+          overflow: hidden;
+        }
+
+        .service-block::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(102, 187, 106, 0.1), transparent);
+          transition: left 0.6s ease;
+          z-index: 0;
+        }
+
+        .service-block:hover::before {
+          left: 100%;
+        }
+
+        .service-block:hover {
+          transform: translateY(-20px);
+          box-shadow: 0 40px 100px rgba(26, 92, 58, 0.25);
+          border: 1px solid var(--green-light);
+        }
+
+        .service-block > * {
+          position: relative;
+          z-index: 1;
+        }
+
+        .service-block h3 {
+          font-size: 32px;
+          font-weight: 400;
+          margin-bottom: 30px;
+          color: var(--green-dark);
+        }
+
+        .service-block p {
+          font-size: 16px;
+          color: var(--text-muted);
+          line-height: 1.9;
+          margin-bottom: 30px;
+          font-weight: 300;
+        }
+
+        .service-list {
+          list-style: none;
+          margin-bottom: 40px;
+        }
+
+        .service-list li {
+          font-size: 15px;
+          color: var(--dark-gray);
+          margin-bottom: 15px;
+          padding-left: 30px;
+          position: relative;
+          font-weight: 300;
+        }
+
+        .service-list li::before {
+          content: '✓';
+          position: absolute;
+          left: 0;
+          color: var(--green-light);
+          font-weight: 700;
+          font-size: 18px;
+        }
+
+        /* CAROUSEL PORTFOLIO */
+        .carousel-section {
+          padding: 150px 100px;
+          background: var(--white);
+        }
+
+        .carousel-title {
+          text-align: center;
+          margin-bottom: 80px;
+        }
+
+        .carousel-title h2 {
+          font-size: 56px;
+          font-weight: 300;
+          margin-bottom: 20px;
+          color: var(--dark-gray);
+        }
+
+        .carousel-title p {
+          font-size: 18px;
+          color: var(--text-muted);
+        }
+
+        .carousel-container {
+          position: relative;
+          max-width: 1400px;
+          margin: 0 auto;
+          overflow: hidden;
+        }
+
+        .carousel-wrapper {
+          display: flex;
+          transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .carousel-item {
+          min-width: 100%;
+          padding: 0 40px;
+        }
+
+        .carousel-card {
+          background: linear-gradient(135deg, rgba(102, 187, 106, 0.05) 0%, rgba(26, 92, 58, 0.05) 100%);
+          border: 1px solid rgba(26, 92, 58, 0.1);
+          border-radius: 8px;
+          overflow: hidden;
+          transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+          cursor: pointer;
+        }
+
+        .carousel-card:hover {
+          border-color: var(--green-light);
+          box-shadow: 0 30px 80px rgba(26, 92, 58, 0.25);
+          transform: translateY(-12px);
+        }
+
+        .carousel-image {
+          width: 100%;
+          height: 400px;
+          background: #e8e8e8;
+          overflow: hidden;
+        }
+
+        .carousel-image img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.5s;
+        }
+
+        .carousel-card:hover .carousel-image img {
+          transform: scale(1.05);
+        }
+
+        .carousel-text {
+          padding: 50px 40px;
+        }
+
+        .carousel-text h3 {
+          font-size: 24px;
+          font-weight: 600;
           margin-bottom: 15px;
           color: var(--green-dark);
         }
 
-        .service-card p {
-          font-size: 14px;
-          color: var(--text-muted);
-          line-height: 1.8;
-          font-weight: 300;
-        }
-
-        /* ABOUT */
-        .about-section {
-          background: var(--light-gray);
-        }
-
-        .about-content {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 80px;
-          align-items: center;
-          max-width: 1200px;
-          margin: 0 auto;
-        }
-
-        .about-text h3 {
-          font-size: 38px;
-          font-weight: 300;
-          margin-bottom: 25px;
-          line-height: 1.3;
-          color: var(--dark-gray);
-        }
-
-        .about-text h3 .highlight {
-          color: var(--green-light);
-        }
-
-        .about-text p {
+        .carousel-text p {
           font-size: 15px;
           color: var(--text-muted);
           line-height: 1.8;
-          margin-bottom: 20px;
           font-weight: 300;
         }
 
-        .logo-image {
-          height: 300px;
+        .carousel-controls {
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+          margin-top: 80px;
+        }
+
+        .carousel-btn {
+          width: 50px;
+          height: 50px;
+          border: 2px solid var(--green-dark);
           background: var(--white);
-          border: 1px solid #e8e8e8;
+          color: var(--green-dark);
+          cursor: pointer;
+          border-radius: 50%;
+          font-size: 20px;
+          transition: all 0.3s;
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 14px;
-          color: var(--text-muted);
-          border-radius: 4px;
+        }
+
+        .carousel-btn:hover {
+          background: var(--green-dark);
+          color: var(--white);
+          transform: scale(1.1);
+        }
+
+        /* STATS */
+        .stats-section {
+          padding: 120px 100px;
+          background: linear-gradient(135deg, var(--green-dark) 0%, #0f4c2a 100%);
+          color: var(--white);
         }
 
         .stats-grid {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 40px;
-          margin-top: 50px;
-          padding-top: 50px;
-          border-top: 1px solid #e8e8e8;
-        }
-
-        .stat {
+          grid-template-columns: repeat(4, 1fr);
+          gap: 80px;
+          max-width: 1400px;
+          margin: 0 auto;
           text-align: center;
         }
 
+        .stat-box {
+          animation: fadeInUp 1s ease;
+        }
+
         .stat-number {
-          font-size: 42px;
-          font-weight: 300;
-          color: var(--green-light);
-          margin-bottom: 8px;
+          font-size: 64px;
+          font-weight: 800;
+          margin-bottom: 15px;
+          animation: float 3s ease-in-out infinite;
         }
 
         .stat-label {
-          font-size: 12px;
-          color: var(--text-muted);
-          letter-spacing: 0.5px;
-          font-weight: 400;
+          font-size: 14px;
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+          font-weight: 300;
+          opacity: 0.95;
         }
 
-        /* PROJECTS */
-        .projects-section {
+        /* TESTIMONIALS */
+        .testimonials {
+          padding: 150px 100px;
           background: var(--white);
         }
 
-        .projects-grid {
+        .testimonials-title {
+          text-align: center;
+          margin-bottom: 80px;
+        }
+
+        .testimonials-title h2 {
+          font-size: 56px;
+          font-weight: 300;
+          margin-bottom: 20px;
+          color: var(--dark-gray);
+        }
+
+        .testimonials-grid {
           display: grid;
-          grid-template-columns: repeat(2, 1fr);
+          grid-template-columns: repeat(3, 1fr);
           gap: 50px;
-          max-width: 1100px;
+          max-width: 1400px;
           margin: 0 auto;
         }
 
-        .project-card {
-          padding: 45px;
-          background: var(--light-gray);
-          border: 1px solid #e8e8e8;
-          transition: all 0.3s ease;
+        .testimonial-card {
+          background: linear-gradient(135deg, #f9f9f9 0%, var(--light-gray) 100%);
+          padding: 50px;
+          border-radius: 8px;
+          border-left: 4px solid var(--green-dark);
+          transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
           cursor: pointer;
         }
 
-        .project-card:hover {
-          border-color: var(--green-light);
-          box-shadow: 0 8px 24px rgba(102, 187, 106, 0.1);
-          transform: translateY(-4px);
+        .testimonial-card:hover {
+          transform: translateY(-12px);
+          box-shadow: 0 30px 80px rgba(26, 92, 58, 0.2);
+          border-left-color: var(--green-light);
+          border-left-width: 6px;
         }
 
-        .project-card h4 {
-          font-size: 20px;
-          font-weight: 400;
-          margin-bottom: 12px;
+        .testimonial-text {
+          font-size: 16px;
+          color: var(--text-muted);
+          margin-bottom: 25px;
+          line-height: 1.8;
+          font-style: italic;
+          font-weight: 300;
+        }
+
+        .testimonial-author {
+          font-size: 14px;
+          font-weight: 600;
           color: var(--green-dark);
         }
 
-        .project-card p {
-          font-size: 14px;
+        .testimonial-role {
+          font-size: 12px;
           color: var(--text-muted);
-          line-height: 1.7;
+          margin-top: 5px;
           font-weight: 300;
         }
 
-        /* PORTFOLIO */
-        .portfolio-section {
-          background: var(--light-gray);
+        /* CONTACT CTA */
+        .contact-cta {
+          padding: 120px 100px;
+          background: linear-gradient(135deg, #f9f9f9 0%, var(--light-gray) 100%);
+          text-align: center;
         }
 
-        .portfolio-grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 25px;
-          max-width: 1300px;
-          margin: 0 auto;
-        }
-
-        .portfolio-item {
-          position: relative;
-          overflow: hidden;
-          aspect-ratio: 4/3;
-          background: #e8e8e8;
-          cursor: pointer;
-          transition: all 0.3s ease;
-        }
-
-        .portfolio-item img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          transition: transform 0.4s ease;
-        }
-
-        .portfolio-item:hover img {
-          transform: scale(1.08);
-        }
-
-        .portfolio-overlay {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          background: linear-gradient(to top, rgba(26, 92, 58, 0.9), transparent);
-          padding: 30px 20px;
-          color: var(--white);
-          font-size: 16px;
-          font-weight: 400;
-          transform: translateY(20px);
-          transition: transform 0.3s ease;
-        }
-
-        .portfolio-item:hover .portfolio-overlay {
-          transform: translateY(0);
-        }
-
-        /* CONTACT */
-        .contact-section {
-          background: var(--green-dark);
-          color: var(--white);
-          padding: 100px 60px;
-        }
-
-        .contact-section .section-title {
-          color: var(--white);
-        }
-
-        .contact-section .section-subtitle {
-          color: rgba(255, 255, 255, 0.8);
-        }
-
-        .contact-info {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 50px;
-          max-width: 1000px;
-          margin: 60px auto;
-        }
-
-        .info-box h4 {
-          font-size: 13px;
-          font-weight: 500;
-          margin-bottom: 10px;
-          letter-spacing: 0.8px;
-        }
-
-        .info-box p {
-          font-size: 14px;
-          color: rgba(255, 255, 255, 0.9);
+        .contact-cta h2 {
+          font-size: 56px;
           font-weight: 300;
-        }
-
-        .form-box {
-          background: var(--white);
+          margin-bottom: 30px;
           color: var(--dark-gray);
-          padding: 60px;
-          max-width: 600px;
-          margin: 50px auto 0;
-          border-radius: 4px;
         }
 
-        form {
-          display: flex;
-          flex-direction: column;
-          gap: 18px;
-        }
-
-        input, textarea, select {
-          padding: 14px 18px;
-          border: 1px solid #e0e0e0;
-          background: var(--light-gray);
-          font-family: inherit;
-          font-size: 13px;
-          color: var(--dark-gray);
-          transition: all 0.3s ease;
-        }
-
-        input::placeholder, textarea::placeholder {
-          color: #999;
-        }
-
-        input:focus, textarea:focus, select:focus {
-          outline: none;
-          border-color: var(--green-light);
-          background: var(--white);
-          box-shadow: 0 0 0 2px rgba(102, 187, 106, 0.1);
-        }
-
-        textarea {
-          resize: vertical;
-          min-height: 120px;
-        }
-
-        .submit-btn {
-          padding: 14px;
-          background: var(--green-dark);
-          color: var(--white);
-          border: none;
-          font-size: 13px;
-          letter-spacing: 0.8px;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          font-weight: 500;
-          margin-top: 8px;
-        }
-
-        .submit-btn:hover {
-          background: var(--green-light);
-          transform: translateY(-2px);
+        .contact-cta p {
+          font-size: 18px;
+          color: var(--text-muted);
+          margin-bottom: 60px;
+          max-width: 800px;
+          margin-left: auto;
+          margin-right: auto;
         }
 
         /* FOOTER */
         footer {
-          background: #f0f0f0;
-          color: var(--text-muted);
-          padding: 60px;
-          border-top: 1px solid #e8e8e8;
+          background: var(--dark-gray);
+          color: #999;
+          padding: 100px;
         }
 
-        .footer-content {
+        .footer-grid {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 50px;
-          max-width: 1200px;
-          margin: 0 auto 40px;
-          text-align: left;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 80px;
+          max-width: 1400px;
+          margin: 0 auto 60px;
         }
 
-        .footer-section h5 {
-          color: var(--green-dark);
-          margin-bottom: 15px;
-          font-size: 12px;
-          font-weight: 600;
-          letter-spacing: 0.8px;
+        .footer-col h4 {
+          color: var(--white);
+          font-size: 14px;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          margin-bottom: 25px;
         }
 
-        .footer-section p {
+        .footer-col p,
+        .footer-col a {
           font-size: 13px;
-          line-height: 1.8;
-          font-weight: 300;
+          color: #999;
+          text-decoration: none;
+          line-height: 2;
+          transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+          color: var(--green-light);
         }
 
         .footer-logo {
-          font-size: 20px;
-          font-weight: 700;
-          color: var(--dark-gray);
-          margin-bottom: 12px;
+          font-size: 26px;
+          font-weight: 800;
+          color: var(--white);
+          margin-bottom: 20px;
         }
 
         .footer-logo .green {
@@ -543,253 +809,397 @@
 
         .footer-bottom {
           text-align: center;
-          padding-top: 25px;
-          border-top: 1px solid #e8e8e8;
+          padding-top: 50px;
+          border-top: 1px solid #444;
           font-size: 12px;
-          color: #999;
+          color: #666;
+        }
+
+        /* SCROLLING TEXT SECTION */
+        .scrolling-text-section {
+          padding: 150px 100px;
+          background: linear-gradient(135deg, var(--green-dark) 0%, #0f4c2a 100%);
+          color: var(--white);
+          overflow: hidden;
+          position: relative;
+          min-height: 600px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .scrolling-container {
+          position: relative;
+          width: 100%;
+          height: 400px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .scrolling-text {
+          font-size: 72px;
+          font-weight: 300;
+          letter-spacing: -1px;
+          line-height: 1.3;
+          text-align: center;
+          max-width: 1200px;
+          animation: scroll-vertical 12s infinite ease-in-out;
+        }
+
+        @keyframes scroll-vertical {
+          0% { transform: translateY(0); opacity: 1; }
+          20% { transform: translateY(-100px); opacity: 1; }
+          25% { transform: translateY(-100px); opacity: 0; }
+          30% { transform: translateY(100px); opacity: 0; }
+          35% { transform: translateY(0); opacity: 1; }
+          55% { transform: translateY(-100px); opacity: 1; }
+          60% { transform: translateY(-100px); opacity: 0; }
+          65% { transform: translateY(100px); opacity: 0; }
+          70% { transform: translateY(0); opacity: 1; }
+          100% { transform: translateY(0); opacity: 1; }
+        }
+
+        .scrolling-word {
+          font-weight: 700;
+          color: var(--green-light);
         }
 
         @media (max-width: 768px) {
-          header { padding: 0 30px; height: 70px; }
-          .header-info { display: none; }
-          nav { gap: 15px; }
-          
-          .hero { padding: 80px 30px; }
-          .hero h1 { font-size: 36px; }
-          .tagline { font-size: 18px; }
-          
-          section { padding: 70px 30px; }
-          .section-title { font-size: 32px; }
-          
-          .services-grid { grid-template-columns: 1fr; }
-          .about-content { grid-template-columns: 1fr; gap: 40px; }
-          .stats-grid { grid-template-columns: 1fr; }
-          .projects-grid { grid-template-columns: 1fr; }
-          .portfolio-grid { grid-template-columns: 1fr; }
-          .contact-info { grid-template-columns: 1fr; }
-          .footer-content { grid-template-columns: 1fr; }
+          header { padding: 0 40px; }
+          .hero { padding: 80px 40px; }
+          .hero h1 { font-size: 42px; }
+          .hero-values { grid-template-columns: repeat(2, 1fr); }
+          .mission { padding: 100px 40px; }
+          .mission-content { grid-template-columns: 1fr; gap: 60px; }
+          .two-services { padding: 100px 40px; }
+          .services-duo { grid-template-columns: 1fr; }
+          .carousel-section { padding: 100px 40px; }
+          .carousel-item { padding: 0; }
+          .stats-section { padding: 100px 40px; }
+          .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+          .testimonials { padding: 100px 40px; }
+          .testimonials-grid { grid-template-columns: 1fr; }
+          .footer-grid { grid-template-columns: repeat(2, 1fr); }
+          .scrolling-text-section { padding: 100px 40px; }
+          .scrolling-text { font-size: 42px; }
         }
     </style>
 </head>
 <body>
 
 <header>
-  <div class="logo-container">
-    <img src="images/logo.png" alt="bauV" style="height: 70px; object-fit: contain;">
-  </div>
-  <div class="header-content">
-    <div class="header-info">
-      <span>+33 (0)X XX XX XX XX</span>
-      <span>contact@bauv.fr</span>
-    </div>
-    <nav>
-      <a data-scroll="services">Services</a>
-      <a data-scroll="about">À propos</a>
-      <a data-scroll="projects">Projets</a>
-      <a data-scroll="portfolio">Réalisations</a>
-      <a data-scroll="contact">Contact</a>
-    </nav>
-  </div>
+  <div class="logo">bau<span class="green">V</span></div>
+  <nav>
+    <a onclick="document.querySelector('.mission').scrollIntoView({behavior:'smooth'})">Mission</a>
+    <a onclick="document.querySelector('.two-services').scrollIntoView({behavior:'smooth'})">Services</a>
+    <a onclick="document.querySelector('.carousel-section').scrollIntoView({behavior:'smooth'})">Réalisations</a>
+    <a onclick="document.querySelector('.contact-cta').scrollIntoView({behavior:'smooth'})">Contact</a>
+  </nav>
 </header>
 
 <section class="hero">
-  <div class="hero-content">
-    <h1>Vos rénovations <span class="highlight">simplifiées</span></h1>
-    <div class="tagline">Les spécialistes qui simplifient vos rénovations</div>
-    <p>Que ce soit un projet d'intérieur, d'extérieur ou une rénovation complète, nous transformons vos espaces en réalité.</p>
-    <a class="btn" data-scroll="contact">Commencer</a>
-  </div>
-</section>
+  <div class="hero-wrapper">
+    <div class="hero-content">
+      <h1>Vos rénovations <span class="accent" id="changingWord">simplifiées</span></h1>
+      <p>bauV assure la gestion complète de vos projets de rénovation et construction. Expertise, rigueur et transparence sont nos valeurs fondamentales.</p>
+      <div class="cta-buttons">
+        <button class="btn btn-primary">Demander un devis</button>
+        <button class="btn btn-secondary">En savoir plus</button>
+      </div>
 
-<section id="services">
-  <h2 class="section-title">Nos <span class="highlight">services</span></h2>
-  <p class="section-subtitle">Des solutions complètes adaptées à chaque projet</p>
-  <div class="services-grid">
-    <div class="service-card">
-      <h3>Rénovation intérieure</h3>
-      <p>Cuisine, salle de bain, peinture, revêtements. Nous transformons vos espaces de vie en créant des environnements modernes et fonctionnels.</p>
-    </div>
-    <div class="service-card">
-      <h3>Rénovation extérieure</h3>
-      <p>Façade, toiture, terrasse, jardins. Nous valorisons votre propriété en modernisant ses espaces extérieurs.</p>
-    </div>
-    <div class="service-card">
-      <h3>Conseil et design</h3>
-      <p>Études gratuites et conseils personnalisés. Nous vous accompagnons pour que votre projet corresponde à vos envies et votre budget.</p>
-    </div>
-    <div class="service-card">
-      <h3>Gestion de projet</h3>
-      <p>Planification, coordination et supervision. Nous gérons tous les détails pour que votre rénovation se déroule sans stress.</p>
-    </div>
-  </div>
-</section>
-
-<section id="about" class="about-section">
-  <div class="about-content">
-    <div class="about-text">
-      <h3>Qui sommes-<span class="highlight">nous</span> ?</h3>
-      <p>bauV est née de la passion pour l'excellence en rénovation. Notre équipe combine expérience, expertise technique et sensibilité au design.</p>
-      <p>Nous croyons que chaque projet est unique. Notre mission : simplifier le processus de rénovation pour que vous profitiez pleinement du résultat.</p>
-      <div class="stats-grid">
-        <div class="stat">
-          <div class="stat-number">200+</div>
-          <div class="stat-label">Projets réalisés</div>
+      <div class="hero-values">
+        <div class="value-item">
+          <div class="value-label">Qualité</div>
+          <div class="value-text">Perfectionnisme en tous points</div>
         </div>
-        <div class="stat">
-          <div class="stat-number">99%</div>
-          <div class="stat-label">Clients satisfaits</div>
+        <div class="value-item">
+          <div class="value-label">Rigueur</div>
+          <div class="value-text">Suivi quotidien des travaux</div>
         </div>
-        <div class="stat">
-          <div class="stat-number">15+</div>
-          <div class="stat-label">Années d'expérience</div>
+        <div class="value-item">
+          <div class="value-label">Transparence</div>
+          <div class="value-text">Communication claire et régulière</div>
+        </div>
+        <div class="value-item">
+          <div class="value-label">Expertise</div>
+          <div class="value-text">30+ ans d'expérience</div>
         </div>
       </div>
     </div>
-    <img src="images/logo.png" alt="Logo bauV" style="width: 100%; height: 300px; object-fit: contain; border: 1px solid #e8e8e8; border-radius: 4px;">
-  </div>
-</section>
 
-<section id="projects" class="projects-section">
-  <h2 class="section-title">Nos domaines <span class="highlight">d'expertise</span></h2>
-  <p class="section-subtitle">Les types de projets sur lesquels nous intervenons</p>
-  <div class="projects-grid">
-    <div class="project-card">
-      <h4>Intérieur résidentiel</h4>
-      <p>Cuisines modernes, salles de bain luxe, chambres transformées. Nous créons des intérieurs qui vous ressemblent.</p>
-    </div>
-    <div class="project-card">
-      <h4>Extérieur résidentiel</h4>
-      <p>Façades, toitures, terrasses, jardins. Nous valorisons votre maison en transformant ses espaces extérieurs.</p>
-    </div>
-    <div class="project-card">
-      <h4>Rénovation complète</h4>
-      <p>Intérieur et extérieur conjugués. Nous gérons tous les corps de métiers pour une transformation harmonieuse.</p>
-    </div>
-    <div class="project-card">
-      <h4>Rénovation d'urgence</h4>
-      <p>Sinistres, dégâts des eaux, fissures. Nous intervenons rapidement pour restaurer votre propriété.</p>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=700&h=600&fit=crop" alt="Rénovation cuisine">
     </div>
   </div>
 </section>
 
-<section id="portfolio" class="portfolio-section">
-  <h2 class="section-title">Nos <span class="highlight">réalisations</span></h2>
-  <p class="section-subtitle">Retrouvez nos derniers projets</p>
-  <div class="portfolio-grid">
-    <div class="portfolio-item">
-      <img src="images/portfolio/1-cuisine.jpg" alt="Cuisine">
-      <div class="portfolio-overlay">Cuisine moderne</div>
+<section class="mission">
+  <div class="mission-content">
+    <div class="mission-text">
+      <h2>Notre <span class="accent">mission</span></h2>
+      <p>Forte de <strong>30 années d'expérience dans les métiers de la construction et de la rénovation</strong>, bauV maîtrise chaque aspect d'un projet, du diagnostic initial à la livraison finale.</p>
+      <p><strong>Spécialisées en construction et gestion de travaux</strong>, nos équipes garantissent une supervision rigoureuse : respect des délais, maîtrise des coûts, qualité impeccable et conformité aux normes les plus exigeantes.</p>
+      <p>Fort de notre réseau de partenaires fiables et de notre expertise technique, nous pilotez chaque détail du chantier pour une exécution sans faille et conforme aux standards architecturaux les plus élevés.</p>
+      <button class="btn btn-primary" style="margin-top: 30px;">Découvrir notre approche</button>
     </div>
-    <div class="portfolio-item">
-      <img src="images/portfolio/2-salle-bain.jpg" alt="Salle de bain">
-      <div class="portfolio-overlay">Salle de bain</div>
-    </div>
-    <div class="portfolio-item">
-      <img src="images/portfolio/3-facade.jpg" alt="Façade">
-      <div class="portfolio-overlay">Façade rénovée</div>
-    </div>
-    <div class="portfolio-item">
-      <img src="images/portfolio/4-terrasse.jpg" alt="Terrasse">
-      <div class="portfolio-overlay">Terrasse</div>
-    </div>
-    <div class="portfolio-item">
-      <img src="images/portfolio/5-peinture.jpg" alt="Peinture">
-      <div class="portfolio-overlay">Peinture intérieure</div>
-    </div>
-    <div class="portfolio-item">
-      <img src="images/portfolio/6-jardin.jpg" alt="Jardin">
-      <div class="portfolio-overlay">Jardin aménagé</div>
+    <div class="mission-image-container">
+      <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=700&fit=crop" alt="Construction">
+      <div class="mission-stats">
+        <div class="mission-stat">
+          <div class="stat-info">
+            <div class="stat-num">30+</div>
+            <div class="stat-text">Ans d'expertise<br>en construction</div>
+          </div>
+        </div>
+        <div class="mission-stat">
+          <div class="stat-info">
+            <div class="stat-num">20%</div>
+            <div class="stat-text">Économies réalisées<br>pour nos clients</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="contact" class="contact-section">
-  <h2 class="section-title">Devis gratuit</h2>
-  <p class="section-subtitle">Décrivez votre projet et recevez un devis personnalisé</p>
-  
-  <div class="contact-info">
-    <div class="info-box">
-      <h4>TÉLÉPHONE</h4>
-      <p>+33 (0)X XX XX XX XX</p>
+<section class="two-services">
+  <div class="two-services-title">
+    <h2>Deux approches, <span class="accent">une expertise</span></h2>
+    <p>Nous proposons deux modèles pour s'adapter à vos besoins et contraintes</p>
+  </div>
+
+  <div class="services-duo">
+    <div class="service-block">
+      <h3>Direction des travaux</h3>
+      <p>Notre cœur de métier : une direction de travaux exigeante et structurée permettant aux architectes et maîtres d'ouvrage de s'appuyer sur un expert de terrain.</p>
+      <ul class="service-list">
+        <li>Suivi quotidien du chantier</li>
+        <li>Coordination de tous les intervenants</li>
+        <li>Maîtrise des délais et des coûts</li>
+        <li>Contrôle qualité rigoureux</li>
+        <li>Reporting détaillé et régulier</li>
+      </ul>
+      <button class="btn btn-primary">Découvrir</button>
     </div>
-    <div class="info-box">
-      <h4>EMAIL</h4>
-      <p>contact@bauv.fr</p>
-    </div>
-    <div class="info-box">
-      <h4>LOCALISATION</h4>
-      <p>Rumilly, Rhône-Alpes</p>
+
+    <div class="service-block">
+      <h3>Entreprise générale</h3>
+      <p>Un interlocuteur unique pour toute la gestion de votre projet. Nous assumons les responsabilités administratives, financières et techniques complètes.</p>
+      <ul class="service-list">
+        <li>Gestion administrative complète</li>
+        <li>Sélection des entreprises</li>
+        <li>Coordination technique intégrale</li>
+        <li>Gestion du budget et des devis</li>
+        <li>Assurance qualité et respect des délais</li>
+      </ul>
+      <button class="btn btn-primary">Découvrir</button>
     </div>
   </div>
-  
-  <div class="form-box">
-    <form id="contact-form">
-      <input type="text" id="name" placeholder="Votre nom" required>
-      <input type="email" id="email" placeholder="Votre email" required>
-      <input type="tel" id="phone" placeholder="Téléphone (optionnel)">
-      <select id="service" required>
-        <option value="">Sélectionnez le type de projet</option>
-        <option value="Intérieur">Rénovation intérieure</option>
-        <option value="Extérieur">Rénovation extérieure</option>
-        <option value="Les deux">Les deux</option>
-        <option value="Urgence">Rénovation d'urgence</option>
-      </select>
-      <textarea id="message" placeholder="Décrivez votre projet..." required></textarea>
-      <button type="submit" class="submit-btn">Envoyer</button>
-    </form>
+</section>
+
+<section class="scrolling-text-section">
+  <div class="scrolling-container">
+    <div class="scrolling-text">
+      <div>Vos rénovations</div>
+      <div style="margin-top: 40px;"><span class="scrolling-word">simplifiées</span></div>
+      <div style="margin-top: 40px;"><span class="scrolling-word">réussies</span></div>
+      <div style="margin-top: 40px;"><span class="scrolling-word">durables</span></div>
+    </div>
   </div>
+</section>
+
+<section class="carousel-section">
+  <div class="carousel-title">
+    <h2>Nos <span class="accent">réalisations</span></h2>
+    <p>Découvrez une sélection de nos projets les plus remarquables</p>
+  </div>
+
+  <div class="carousel-container">
+    <div class="carousel-wrapper" id="carouselWrapper">
+      <div class="carousel-item">
+        <div class="carousel-card">
+          <div class="carousel-image">
+            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop" alt="Cuisine">
+          </div>
+          <div class="carousel-text">
+            <h3>Cuisine Rénovée - Prilly</h3>
+            <p>Transformation complète d'une cuisine avec matériaux premium. Coordination fluide avec tous les artisans pour un résultat impeccable.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="carousel-card">
+          <div class="carousel-image">
+            <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&h=400&fit=crop" alt="Salle de bain">
+          </div>
+          <div class="carousel-text">
+            <h3>Salle de Bain Luxe - Lausanne</h3>
+            <p>Aménagement d'une salle de bain haut de gamme avec équipements modernes. Respect strict des délais et du budget.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="carousel-card">
+          <div class="carousel-image">
+            <img src="https://images.unsplash.com/photo-1536376072261-38c75010e6c9?w=600&h=400&fit=crop" alt="Façade">
+          </div>
+          <div class="carousel-text">
+            <h3>Rénovation Façade - Vernier</h3>
+            <p>Modernisation complète de la façade avec respect de l'architecture. Gestion des autorisations administratives incluse.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="carousel-card">
+          <div class="carousel-image">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop" alt="Terrasse">
+          </div>
+          <div class="carousel-text">
+            <h3>Terrasse Aménagée - Chavannes</h3>
+            <p>Création d'une terrasse extérieure harmonieuse avec espaces verts et mobilier intégré. Coordination paysagiste incluse.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-controls">
+      <button class="carousel-btn" onclick="prevSlide()">‹</button>
+      <button class="carousel-btn" onclick="nextSlide()">›</button>
+    </div>
+  </div>
+</section>
+
+<section class="stats-section">
+  <div class="stats-grid">
+    <div class="stat-box">
+      <div class="stat-number">30+</div>
+      <div class="stat-label">Ans d'expertise</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number">20%</div>
+      <div class="stat-label">Économies réalisées pour les clients</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number">10000+</div>
+      <div class="stat-label">m² gérés</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number">99%</div>
+      <div class="stat-label">Clients satisfaits</div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="testimonials-title">
+    <h2>Ce que nos clients <span class="accent">en disent</span></h2>
+  </div>
+
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="testimonial-text">"bauV a géré notre projet avec professionnalisme et rigueur. Une vraie relation de partenariat tout au long du chantier."</div>
+      <div class="testimonial-author">Sophie Renard</div>
+      <div class="testimonial-role">Propriétaire - Prilly</div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-text">"L'équipe est réactive et sait résoudre les problématiques rapidement. Excellente communication et suivi quotidien."</div>
+      <div class="testimonial-author">Marc Dubois</div>
+      <div class="testimonial-role">Architecte - Lausanne</div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-text">"Des spécialistes qui comprennent vraiment le métier. Qualité, délais et coûts maîtrisés - exactement ce qu'on attendait."</div>
+      <div class="testimonial-author">Jean-Claude Moreau</div>
+      <div class="testimonial-role">Maître d'ouvrage - Vernier</div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-cta">
+  <h2>Vous avez un projet ?</h2>
+  <p>Contactez-nous pour discuter de vos besoins. Nous vous proposerons la meilleure approche pour concrétiser vos ambitions.</p>
+  <button class="btn btn-primary">Demander un devis gratuit</button>
 </section>
 
 <footer>
-  <div class="footer-content">
-    <div class="footer-section">
-      <img src="images/logo.png" alt="bauV" style="height: 40px; object-fit: contain; margin-bottom: 12px;">
-      <p>Les spécialistes qui simplifient vos rénovations. Intérieur, extérieur ou les deux : nous transformons vos espaces en réalité.</p>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <div class="footer-logo">bau<span class="green">V</span></div>
+      <p>Rénovation et construction professionnelle. Votre partenaire de confiance pour tous vos projets.</p>
     </div>
-    <div class="footer-section">
-      <h5>NAVIGATION</h5>
-      <p style="margin-bottom: 8px;"><a href="#services" style="color: inherit; text-decoration: none;">Services</a></p>
-      <p style="margin-bottom: 8px;"><a href="#about" style="color: inherit; text-decoration: none;">À propos</a></p>
-      <p style="margin-bottom: 8px;"><a href="#portfolio" style="color: inherit; text-decoration: none;">Réalisations</a></p>
-      <p><a href="#contact" style="color: inherit; text-decoration: none;">Contact</a></p>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="#">Direction des travaux</a>
+      <a href="#">Entreprise générale</a>
+      <a href="#">Gestion de projets</a>
+      <a href="#">Consultation</a>
     </div>
-    <div class="footer-section">
-      <h5>CONTACT</h5>
-      <p style="margin-bottom: 8px;">+33 (0)X XX XX XX XX</p>
-      <p style="margin-bottom: 8px;">contact@bauv.fr</p>
+    <div class="footer-col">
+      <h4>Entreprise</h4>
+      <a href="#">À propos</a>
+      <a href="#">Notre équipe</a>
+      <a href="#">Réalisations</a>
+      <a href="#">Blog</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>+33 (0)X XX XX XX XX</p>
+      <p>contact@bauv.fr</p>
       <p>Rumilly, Rhône-Alpes</p>
     </div>
   </div>
+
   <div class="footer-bottom">
-    <p>&copy; 2024 bauV - Les spécialistes de la rénovation</p>
+    <p>&copy; 2024 bauV - Tous droits réservés | Rénovation & Construction Professionnelle</p>
   </div>
 </footer>
 
 <script>
-document.querySelectorAll('[data-scroll]').forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    const sectionId = link.getAttribute('data-scroll');
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+let currentSlide = 0;
+
+function showSlide(n) {
+  const wrapper = document.getElementById('carouselWrapper');
+  const items = document.querySelectorAll('.carousel-item');
+  if (n >= items.length) currentSlide = 0;
+  if (n < 0) currentSlide = items.length - 1;
+  wrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+}
+
+function nextSlide() {
+  currentSlide++;
+  showSlide(currentSlide);
+}
+
+function prevSlide() {
+  currentSlide--;
+  showSlide(currentSlide);
+}
+
+// Changer les mots dans le hero
+const words = ['simplifiées', 'réussies', 'durables'];
+let wordIndex = 0;
+
+function changeWord() {
+  const element = document.getElementById('changingWord');
+  if (element) {
+    element.textContent = words[wordIndex];
+    wordIndex = (wordIndex + 1) % words.length;
+  }
+}
+
+setInterval(changeWord, 3000); // Change tous les 3 secondes
+
+document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
+  btn.addEventListener('click', function() {
+    if (this.textContent.includes('devis') || this.textContent.includes('contact')) {
+      document.querySelector('.contact-cta').scrollIntoView({behavior: 'smooth'});
     }
   });
-});
-
-document.getElementById('contact-form').addEventListener('submit', (e) => {
-  e.preventDefault();
-  
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const phone = document.getElementById('phone').value;
-  const service = document.getElementById('service').value;
-  const message = document.getElementById('message').value;
-  
-  const mailtoLink = `mailto:contact@bauv.fr?subject=Demande de devis bauV&body=Nom: ${name}%0AEmail: ${email}%0ATéléphone: ${phone}%0AType de projet: ${service}%0A%0ADétails du projet:%0A${message}`;
-  
-  window.location.href = mailtoLink;
-  document.getElementById('contact-form').reset();
 });
 </script>
 
