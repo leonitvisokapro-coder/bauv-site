@@ -2408,32 +2408,50 @@
           }
 
           .service-card-image {
+            display: flex;
+            flex-direction: column;
             flex: 0 0 80%;
-            height: 240px;
+            height: auto;
+            background: var(--white);
+            overflow: hidden;
             border-radius: 12px;
-            margin-bottom: 0;
             
             scroll-snap-align: center;
             position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+          }
+
+          .service-card-image img {
+            height: 180px;
+            object-fit: cover;
+            width: 100%;
           }
 
           .service-card-image.expanded {
             flex: 0 0 80%;
           }
 
-          /* Toujours afficher le contenu (pas au hover) */
+          /* Overlay = texte blanc en bas */
           .service-overlay {
+            position: relative;
+            background: var(--white);
+            color: var(--dark-gray);
             opacity: 1;
-            background: rgba(0, 0, 0, 0.55);
             padding: 20px;
+            text-align: left;
           }
 
           .service-overlay h3 {
+            color: var(--dark-gray);
             font-size: 18px;
+            margin-bottom: 8px;
+            font-weight: 800;
           }
 
           .service-overlay p {
+            color: var(--text-muted);
             font-size: 14px;
+            line-height: 1.5;
           }
 
           /* On supprime le label du bas */
