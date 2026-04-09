@@ -1,0 +1,8 @@
+# Robots.txt for bauV website
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemaps
+Sitemap: https://bauv-site.vercel.app/sitemap.xml
