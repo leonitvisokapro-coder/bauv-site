@@ -1358,43 +1358,98 @@
         footer {
           background: #1a1a1a;
           color: #999;
-          padding: 80px 100px;
         }
 
-        .footer-content {
+        .footer-wrapper {
           max-width: 1400px;
           margin: 0 auto;
         }
 
-        .footer-top {
+        /* TOP SECTION WITH CONTACT INFO */
+        .footer-top-section {
           display: grid;
-          grid-template-columns: 2fr 1fr 1fr 1.5fr;
+          grid-template-columns: repeat(3, 1fr);
           gap: 60px;
-          margin-bottom: 60px;
+          padding: 80px 100px;
+          background: #252525;
+          border-bottom: 1px solid #333;
         }
 
-        .footer-brand {
+        .footer-info-item {
+          text-align: center;
+        }
+
+        .info-icon {
+          font-size: 32px;
+          margin-bottom: 15px;
+          display: block;
+        }
+
+        .footer-info-item h3 {
+          color: var(--white);
+          font-size: 16px;
+          font-weight: 700;
+          margin-bottom: 10px;
+          font-family: 'Poppins', sans-serif;
+        }
+
+        .footer-info-item a,
+        .footer-info-item p {
+          color: #999;
+          font-size: 15px;
+          text-decoration: none;
+          line-height: 1.6;
+          transition: color 0.3s;
+        }
+
+        .footer-info-item a:hover {
+          color: var(--green-light);
+        }
+
+        /* SEPARATOR */
+        .footer-separator {
+          height: 1px;
+          background: #333;
+        }
+
+        /* MAIN FOOTER CONTENT */
+        .footer-main {
+          display: grid;
+          grid-template-columns: 1.5fr 1fr 1.5fr;
+          gap: 80px;
+          padding: 80px 100px;
+          align-items: flex-start;
+        }
+
+        .footer-left {
           display: flex;
           flex-direction: column;
         }
 
         .footer-logo {
           margin-bottom: 25px;
+          height: 70px;
           display: flex;
           align-items: center;
         }
 
-        .footer-logo img {
-          height: 60px;
+        .logo-img {
+          height: 100%;
           width: auto;
           object-fit: contain;
         }
 
-        .footer-slogan {
-          font-size: 14px;
+        .footer-description {
           color: var(--green-light);
+          font-size: 14px;
+          line-height: 1.8;
           font-weight: 500;
-          line-height: 1.6;
+        }
+
+        .footer-middle {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 60px;
         }
 
         .footer-col h4 {
@@ -1410,17 +1465,18 @@
         .footer-col ul {
           list-style: none;
           padding: 0;
+          margin: 0;
         }
 
         .footer-col ul li {
-          margin-bottom: 12px;
+          margin-bottom: 14px;
         }
 
         .footer-col a {
-          font-size: 14px;
           color: #999;
+          font-size: 14px;
           text-decoration: none;
-          transition: color 0.3s ease;
+          transition: color 0.3s;
           cursor: pointer;
         }
 
@@ -1428,64 +1484,78 @@
           color: var(--green-light);
         }
 
-        .footer-contact {
+        .footer-right {
           display: flex;
           flex-direction: column;
         }
 
-        .contact-info {
-          display: flex;
-          flex-direction: column;
-          gap: 20px;
-        }
-
-        .info-item {
-          display: flex;
-          flex-direction: column;
-        }
-
-        .info-label {
-          font-size: 12px;
-          color: var(--green-light);
-          font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          margin-bottom: 6px;
+        .footer-right h3 {
+          color: var(--white);
+          font-size: 18px;
+          font-weight: 800;
+          margin-bottom: 15px;
           font-family: 'Poppins', sans-serif;
         }
 
-        .contact-info a {
-          font-size: 14px;
+        .footer-right p {
           color: #999;
-        }
-
-        .contact-info a:hover {
-          color: var(--green-light);
-        }
-
-        .contact-info p {
           font-size: 14px;
-          color: #999;
-          line-height: 1.6;
-          margin: 0;
+          line-height: 1.8;
+          margin-bottom: 30px;
         }
 
+        .footer-cta-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 12px;
+          padding: 14px 28px;
+          background: transparent;
+          border: 2px solid var(--green-dark);
+          color: var(--green-dark);
+          text-decoration: none;
+          border-radius: 30px;
+          font-weight: 700;
+          font-size: 14px;
+          transition: all 0.3s ease;
+          cursor: pointer;
+          font-family: 'Poppins', sans-serif;
+          width: fit-content;
+        }
+
+        .footer-cta-btn:hover {
+          background: var(--green-dark);
+          color: var(--white);
+        }
+
+        .arrow {
+          font-size: 16px;
+          transition: transform 0.3s;
+        }
+
+        .footer-cta-btn:hover .arrow {
+          transform: translateX(4px);
+        }
+
+        /* BOTTOM SECTION */
         .footer-bottom {
           text-align: center;
-          padding-top: 40px;
-          border-top: 1px solid #444;
+          padding: 40px 100px;
+          border-top: 1px solid #333;
           font-size: 12px;
           color: #666;
         }
 
         @media (max-width: 1024px) {
-          .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
-          footer { padding: 60px 40px; }
+          .footer-top-section { grid-template-columns: 1fr; gap: 40px; padding: 60px 40px; }
+          .footer-main { grid-template-columns: 1fr; gap: 60px; padding: 60px 40px; }
+          .footer-middle { grid-template-columns: 1fr; }
+          .footer-bottom { padding: 30px 40px; }
         }
 
         @media (max-width: 768px) {
-          .footer-top { grid-template-columns: 1fr; }
-          footer { padding: 60px 40px; }
+          .footer-top-section { padding: 50px 30px; }
+          .footer-main { padding: 50px 30px; }
+          .footer-bottom { padding: 30px; }
         }
 
         /* SCROLLING TEXT SECTION */
@@ -1927,52 +1997,71 @@
 </section>
 
 <footer>
-  <div class="footer-content">
-    <div class="footer-top">
-      <div class="footer-col footer-brand">
-        <div class="footer-logo">
-          <img src="images/logo.png" alt="bauV Logo">
-        </div>
-        <p class="footer-slogan">Les spécialistes qui transforment chaque espace en atout.</p>
+  <div class="footer-wrapper">
+    <!-- TOP SECTION WITH CONTACT INFO -->
+    <div class="footer-top-section">
+      <div class="footer-info-item">
+        <div class="info-icon">📞</div>
+        <h3>Appelez-nous</h3>
+        <a href="tel:+41782685442">+41 78 268 54 42</a>
       </div>
 
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="#" onclick="document.querySelector('.services-grid-section').scrollIntoView({behavior:'smooth'})">Nos services</a></li>
-          <li><a href="#" onclick="document.querySelector('.approach-section').scrollIntoView({behavior:'smooth'})">Notre approche</a></li>
-          <li><a href="#" onclick="document.querySelector('.carousel-section').scrollIntoView({behavior:'smooth'})">Réalisations</a></li>
-        </ul>
+      <div class="footer-info-item">
+        <div class="info-icon">✉️</div>
+        <h3>Une question ?</h3>
+        <a href="mailto:info@bauv.ch">info@bauv.ch</a>
       </div>
 
-      <div class="footer-col">
-        <h4>Entreprise</h4>
-        <ul>
-          <li><a href="#" onclick="document.querySelector('.mission').scrollIntoView({behavior:'smooth'})">Notre mission</a></li>
-          <li><a href="#" onclick="document.querySelector('.clients-section').scrollIntoView({behavior:'smooth'})">Qui on accompagne</a></li>
-          <li><a href="#" onclick="document.querySelector('.contact-cta').scrollIntoView({behavior:'smooth'})">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col footer-contact">
-        <h4>Nous contacter</h4>
-        <div class="contact-info">
-          <div class="info-item">
-            <span class="info-label">Téléphone</span>
-            <a href="tel:+41782685442">+41 78 268 54 42</a>
-          </div>
-          <div class="info-item">
-            <span class="info-label">Email</span>
-            <a href="mailto:info@bauv.ch">info@bauv.ch</a>
-          </div>
-          <div class="info-item">
-            <span class="info-label">Adresse</span>
-            <p>Avenue des Morgines 12<br>1213 Petit-Lancy</p>
-          </div>
-        </div>
+      <div class="footer-info-item">
+        <div class="info-icon">📍</div>
+        <h3>Nous trouver</h3>
+        <p>Avenue des Morgines 12<br>1213 Petit-Lancy</p>
       </div>
     </div>
 
+    <!-- SEPARATOR -->
+    <div class="footer-separator"></div>
+
+    <!-- MAIN FOOTER CONTENT -->
+    <div class="footer-main">
+      <div class="footer-left">
+        <div class="footer-logo">
+          <img src="images/logo.png" alt="bauV Logo" class="logo-img">
+        </div>
+        <p class="footer-description">Les spécialistes qui transforment chaque espace en atout.</p>
+      </div>
+
+      <div class="footer-middle">
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#" onclick="document.querySelector('.services-grid-section').scrollIntoView({behavior:'smooth'})">Nos services</a></li>
+            <li><a href="#" onclick="document.querySelector('.approach-section').scrollIntoView({behavior:'smooth'})">Notre approche</a></li>
+            <li><a href="#" onclick="document.querySelector('.carousel-section').scrollIntoView({behavior:'smooth'})">Réalisations</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Entreprise</h4>
+          <ul>
+            <li><a href="#" onclick="document.querySelector('.mission').scrollIntoView({behavior:'smooth'})">Notre mission</a></li>
+            <li><a href="#" onclick="document.querySelector('.clients-section').scrollIntoView({behavior:'smooth'})">Qui on accompagne</a></li>
+            <li><a href="#" onclick="document.querySelector('.contact-cta').scrollIntoView({behavior:'smooth'})">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-right">
+        <h3>Besoin de nous contacter ?</h3>
+        <p>Nous répondons à toutes vos questions et vous mettons en relation avec la bonne personne.</p>
+        <a href="#" onclick="document.querySelector('.contact-cta').scrollIntoView({behavior:'smooth'})" class="footer-cta-btn">
+          Contactez-nous
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- BOTTOM SECTION -->
     <div class="footer-bottom">
       <p>&copy; 2024 bauV - Tous droits réservés | Rénovation & Construction Professionnelle</p>
     </div>
