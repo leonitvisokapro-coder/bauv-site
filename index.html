@@ -224,23 +224,28 @@
           transform: scale(0.98);
         }
 
-        /* CONTENU DÉTAILLÉ - animation identique */
+        /* CONTENU DÉTAILLÉ - animation SANS LATENCE */
         .hero-value-detail,
         .client-detail,
         .approach-detail {
           opacity: 0;
-          transform: translateY(15px);
-          transition: all 0.4s ease;
-          display: none;
+          transform: translateY(10px);
+          transition: all 0.25s ease;
+          
+          visibility: hidden;
+          position: absolute;
+          width: 100%;
         }
 
-        /* État ACTIF du contenu détaillé */
+        /* État ACTIF du contenu détaillé - INSTANTANÉ */
         .hero-value-detail.active,
         .client-detail.active,
         .approach-detail.active {
-          display: block;
           opacity: 1;
           transform: translateY(0);
+          
+          visibility: visible;
+          position: relative;
         }
         
         /* HERO */
