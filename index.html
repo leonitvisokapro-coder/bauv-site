@@ -171,6 +171,38 @@
         nav a:hover::after { width: 100%; }
         nav a:hover { color: var(--green-dark); }
 
+        /* HAMBURGER MENU */
+        .hamburger {
+          display: none;
+          flex-direction: column;
+          gap: 6px;
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 0;
+          z-index: 1001;
+        }
+
+        .hamburger span {
+          width: 25px;
+          height: 3px;
+          background: var(--dark-gray);
+          transition: all 0.3s ease;
+          border-radius: 2px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+          transform: rotate(45deg) translate(10px, 10px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+          opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+          transform: rotate(-45deg) translate(7px, -7px);
+        }
+
         /* HERO */
         .hero {
           margin-top: 90px;
@@ -759,8 +791,24 @@
         @media (max-width: 768px) {
           header { padding: 0 30px; height: 70px; }
           .logo-img { height: 45px; }
-          nav { gap: 20px; }
-          nav a { font-size: 11px; letter-spacing: 0.5px; }
+          
+          .hamburger { display: flex; }
+          nav { 
+            position: fixed;
+            top: 70px;
+            left: -100%;
+            width: 100%;
+            height: calc(100vh - 70px);
+            background: white;
+            flex-direction: column;
+            padding: 40px 30px;
+            gap: 20px;
+            transition: left 0.3s ease;
+            z-index: 999;
+            overflow-y: auto;
+          }
+          nav.active { left: 0; }
+          nav a { font-size: 16px; letter-spacing: 0; text-transform: none; }
           
           .clients-section { padding: 100px 40px; }
           .clients-tabs { grid-template-columns: 1fr; }
@@ -2131,14 +2179,20 @@
   <div class="header-logo">
     <img src="images/logo-noir.png" alt="bauV Logo" class="logo-img">
   </div>
-  <nav>
-    <a onclick="document.querySelector('.mission').scrollIntoView({behavior:'smooth'}); return false;">Notre mission</a>
-    <a onclick="document.querySelector('.clients-section').scrollIntoView({behavior:'smooth'}); return false;">Nos clients</a>
-    <a onclick="document.querySelector('.services-grid-section').scrollIntoView({behavior:'smooth'}); return false;">Nos compétences</a>
-    <a onclick="document.querySelector('.approach-section').scrollIntoView({behavior:'smooth'}); return false;">Notre approche</a>
-    <a onclick="document.querySelector('.carousel-section').scrollIntoView({behavior:'smooth'}); return false;">Nos réalisations</a>
-    <a onclick="document.querySelector('.contact-cta').scrollIntoView({behavior:'smooth'}); return false;">Contact</a>
+  <nav id="mainNav">
+    <a onclick="document.querySelector('.mission').scrollIntoView({behavior:'smooth'}); document.getElementById('hamburger').classList.remove('active'); document.getElementById('mainNav').classList.remove('active'); return false;">Notre mission</a>
+    <a onclick="document.querySelector('.clients-section').scrollIntoView({behavior:'smooth'}); document.getElementById('hamburger').classList.remove('active'); document.getElementById('mainNav').classList.remove('active'); return false;">Nos clients</a>
+    <a onclick="document.querySelector('.services-grid-section').scrollIntoView({behavior:'smooth'}); document.getElementById('hamburger').classList.remove('active'); document.getElementById('mainNav').classList.remove('active'); return false;">Nos compétences</a>
+    <a onclick="document.querySelector('.approach-section').scrollIntoView({behavior:'smooth'}); document.getElementById('hamburger').classList.remove('active'); document.getElementById('mainNav').classList.remove('active'); return false;">Notre approche</a>
+    <a onclick="document.querySelector('.carousel-section').scrollIntoView({behavior:'smooth'}); document.getElementById('hamburger').classList.remove('active'); document.getElementById('mainNav').classList.remove('active'); return false;">Nos réalisations</a>
+    <a onclick="document.querySelector('.contact-cta').scrollIntoView({behavior:'smooth'}); document.getElementById('hamburger').classList.remove('active'); document.getElementById('mainNav').classList.remove('active'); return false;">Contact</a>
   </nav>
+  
+  <button id="hamburger" class="hamburger" onclick="this.classList.toggle('active'); document.getElementById('mainNav').classList.toggle('active');">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </header>
 
 <section class="hero">
