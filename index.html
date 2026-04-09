@@ -776,6 +776,44 @@
           transform: scale(1.05);
         }
 
+        .service-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.75);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 40px 30px;
+          text-align: center;
+          opacity: 0;
+          transition: opacity 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+          z-index: 5;
+        }
+
+        .service-card-image:hover .service-overlay {
+          opacity: 1;
+        }
+
+        .service-overlay h3 {
+          color: var(--white);
+          font-size: 22px;
+          font-weight: 800;
+          margin-bottom: 15px;
+          font-family: 'Poppins', sans-serif;
+        }
+
+        .service-overlay p {
+          color: var(--green-light);
+          font-size: 15px;
+          line-height: 1.6;
+          font-weight: 300;
+          margin: 0;
+        }
+
         .service-card-label {
           position: absolute;
           bottom: 0;
@@ -791,6 +829,11 @@
           z-index: 2;
           text-align: center;
           white-space: nowrap;
+          transition: opacity 0.7s ease;
+        }
+
+        .service-card-image:hover .service-card-label {
+          opacity: 0;
         }
 
         @media (max-width: 1200px) {
@@ -1911,37 +1954,65 @@
 
   <div class="services-grid">
     <div class="service-card-image">
-      <img src="https://images.unsplash.com/photo-1504917595217-3404ee9c6601?w=600&h=400&fit=crop" alt="Maçonnerie">
-      <div class="service-card-label">Maçonnerie</div>
+      <img src="https://images.unsplash.com/photo-1504917595217-3404ee9c6601?w=600&h=400&fit=crop" alt="Rénovation complète">
+      <div class="service-overlay">
+        <h3>Rénovation complète</h3>
+        <p>Prise en charge globale de votre projet, du gros œuvre aux finitions</p>
+      </div>
+      <div class="service-card-label">Rénovation complète</div>
     </div>
 
     <div class="service-card-image">
-      <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=400&fit=crop" alt="Démolition">
-      <div class="service-card-label">Démolition</div>
+      <img src="https://images.unsplash.com/photo-1581092333021-2e8b1e24e45d?w=600&h=400&fit=crop" alt="Conception & plans">
+      <div class="service-overlay">
+        <h3>Conception & plans</h3>
+        <p>Dessin architectural, aménagement intérieur et extérieur, optimisation des espaces</p>
+      </div>
+      <div class="service-card-label">Conception & plans</div>
     </div>
 
     <div class="service-card-image">
-      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop" alt="Façade">
-      <div class="service-card-label">Façade</div>
+      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop" alt="Gros œuvre & structure">
+      <div class="service-overlay">
+        <h3>Gros œuvre & structure</h3>
+        <p>Maçonnerie, démolition, création d'ouvertures, extensions</p>
+      </div>
+      <div class="service-card-label">Gros œuvre & structure</div>
     </div>
 
     <div class="service-card-image">
-      <img src="https://images.unsplash.com/photo-1581092333021-2e8b1e24e45d?w=600&h=400&fit=crop" alt="Chapes">
-      <div class="service-card-label">Chapes</div>
+      <img src="https://images.unsplash.com/photo-1589939705066-5c39e7effa41?w=600&h=400&fit=crop" alt="Aménagement intérieur">
+      <div class="service-overlay">
+        <h3>Aménagement intérieur</h3>
+        <p>Plâtrerie, peinture, cloisons, faux plafonds</p>
+      </div>
+      <div class="service-card-label">Aménagement intérieur</div>
     </div>
 
     <div class="service-card-image">
-      <img src="https://images.unsplash.com/photo-1589939705066-5c39e7effa41?w=600&h=400&fit=crop" alt="Plâtrerie Peinture">
-      <div class="service-card-label">Plâtrerie Peinture</div>
+      <img src="https://images.unsplash.com/photo-1599005614506-d92c8ef5a4f2?w=600&h=400&fit=crop" alt="Revêtements & finitions">
+      <div class="service-overlay">
+        <h3>Revêtements & finitions</h3>
+        <p>Sols, carrelage, parquet, finitions haut de gamme</p>
+      </div>
+      <div class="service-card-label">Revêtements & finitions</div>
     </div>
 
     <div class="service-card-image">
-      <img src="https://images.unsplash.com/photo-1599005614506-d92c8ef5a4f2?w=600&h=400&fit=crop" alt="Revêtements de sols">
-      <div class="service-card-label">Revêtements de sols</div>
+      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop" alt="Façades & extérieur">
+      <div class="service-overlay">
+        <h3>Façades & extérieur</h3>
+        <p>Ravalement de façade, aménagements extérieurs</p>
+      </div>
+      <div class="service-card-label">Façades & extérieur</div>
     </div>
 
     <div class="service-card-image">
-      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop" alt="Services complémentaires">
+      <img src="https://images.unsplash.com/photo-1504917595217-3404ee9c6601?w=600&h=400&fit=crop" alt="Services complémentaires">
+      <div class="service-overlay">
+        <h3>Services complémentaires</h3>
+        <p>Conseils, suivi de chantier, coordination des travaux</p>
+      </div>
       <div class="service-card-label">Services complémentaires</div>
     </div>
   </div>
