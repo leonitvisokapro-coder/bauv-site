@@ -1144,7 +1144,7 @@
           .reality-word { font-size: 36px; }
         }
         .carousel-section {
-          padding: 150px 100px;
+          padding: 100px 100px;
           background: var(--white);
         }
 
@@ -1163,6 +1163,212 @@
         .carousel-title p {
           font-size: 18px;
           color: var(--text-muted);
+        }
+
+        .projects-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 40px;
+          max-width: 1400px;
+          margin: 0 auto;
+        }
+
+        .project-card {
+          background: var(--white);
+          border: 1px solid #e0e0e0;
+          border-radius: 12px;
+          overflow: hidden;
+          cursor: pointer;
+          transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .project-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+          border-color: var(--green-dark);
+        }
+
+        .project-image {
+          width: 100%;
+          height: 300px;
+          overflow: hidden;
+          background: #f5f5f5;
+        }
+
+        .project-image img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.4s ease;
+        }
+
+        .project-card:hover .project-image img {
+          transform: scale(1.08);
+        }
+
+        .project-info {
+          padding: 40px 30px;
+        }
+
+        .project-info h3 {
+          font-size: 22px;
+          font-weight: 800;
+          color: var(--dark-gray);
+          margin-bottom: 12px;
+          font-family: 'Poppins', sans-serif;
+        }
+
+        .project-type {
+          font-size: 13px;
+          color: var(--green-dark);
+          font-weight: 800;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          margin-bottom: 15px !important;
+          font-family: 'Poppins', sans-serif;
+        }
+
+        .project-desc {
+          font-size: 15px;
+          color: var(--text-muted);
+          line-height: 1.6;
+          font-weight: 300;
+          margin: 0;
+        }
+
+        /* PROJECT MODAL */
+        .project-modal {
+          display: none;
+          position: fixed;
+          z-index: 1000;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.7);
+          overflow-y: auto;
+        }
+
+        .project-modal.active {
+          display: block;
+          animation: fadeIn 0.4s ease;
+        }
+
+        .project-modal-content {
+          background: var(--white);
+          margin: 50px auto;
+          padding: 60px;
+          border-radius: 12px;
+          max-width: 1000px;
+          position: relative;
+        }
+
+        .project-modal-close {
+          position: absolute;
+          right: 30px;
+          top: 30px;
+          font-size: 40px;
+          font-weight: bold;
+          color: var(--text-muted);
+          cursor: pointer;
+          transition: color 0.3s;
+        }
+
+        .project-modal-close:hover {
+          color: var(--dark-gray);
+        }
+
+        .project-modal-header {
+          margin-bottom: 50px;
+          text-align: center;
+        }
+
+        .project-modal-header h2 {
+          font-size: 42px;
+          font-weight: 800;
+          color: var(--dark-gray);
+          margin-bottom: 15px;
+          font-family: 'Poppins', sans-serif;
+        }
+
+        .project-location {
+          font-size: 16px;
+          color: var(--green-dark);
+          font-weight: 600;
+          margin: 0;
+        }
+
+        .project-modal-gallery {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+          margin-bottom: 60px;
+        }
+
+        .project-modal-gallery img {
+          width: 100%;
+          height: 300px;
+          object-fit: cover;
+          border-radius: 8px;
+        }
+
+        .project-modal-details {
+          max-width: 900px;
+        }
+
+        .project-detail-section {
+          margin-bottom: 50px;
+        }
+
+        .project-detail-section h3 {
+          font-size: 24px;
+          font-weight: 800;
+          color: var(--dark-gray);
+          margin-bottom: 20px;
+          font-family: 'Poppins', sans-serif;
+        }
+
+        .project-detail-section p {
+          font-size: 16px;
+          color: var(--text-muted);
+          line-height: 1.8;
+          margin-bottom: 15px;
+        }
+
+        .project-works {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        .project-works li {
+          font-size: 15px;
+          color: var(--dark-gray);
+          margin-bottom: 12px;
+          padding-left: 30px;
+          position: relative;
+          font-weight: 300;
+        }
+
+        .project-works li::before {
+          content: '✓';
+          position: absolute;
+          left: 0;
+          color: var(--green-dark);
+          font-weight: 800;
+          font-size: 16px;
+        }
+
+        @media (max-width: 1024px) {
+          .projects-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+          .carousel-section { padding: 80px 40px; }
+          .project-modal-content { padding: 40px; }
+        }
+
+        @media (max-width: 768px) {
+          .projects-grid { grid-template-columns: 1fr; }
+          .carousel-section { padding: 60px 30px; }
+          .project-modal-gallery { grid-template-columns: 1fr; }
         }
 
         .carousel-container {
@@ -2103,60 +2309,171 @@
     <p>Découvrez une sélection de nos projets les plus remarquables</p>
   </div>
 
-  <div class="carousel-container">
-    <div class="carousel-wrapper" id="carouselWrapper">
-      <div class="carousel-item">
-        <div class="carousel-card">
-          <div class="carousel-image">
-            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop" alt="Cuisine">
-          </div>
-          <div class="carousel-text">
-            <h3>Cuisine Rénovée - Prilly</h3>
-            <p>Transformation complète d'une cuisine avec matériaux premium. Coordination fluide avec tous les artisans pour un résultat impeccable.</p>
-          </div>
-        </div>
+  <div class="projects-grid">
+    <div class="project-card" onclick="openProjectModal('project1')">
+      <div class="project-image">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop" alt="Rénovation complète - Genève">
       </div>
-
-      <div class="carousel-item">
-        <div class="carousel-card">
-          <div class="carousel-image">
-            <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&h=400&fit=crop" alt="Salle de bain">
-          </div>
-          <div class="carousel-text">
-            <h3>Salle de Bain Luxe - Lausanne</h3>
-            <p>Aménagement d'une salle de bain haut de gamme avec équipements modernes. Respect strict des délais et du budget.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="carousel-item">
-        <div class="carousel-card">
-          <div class="carousel-image">
-            <img src="https://images.unsplash.com/photo-1536376072261-38c75010e6c9?w=600&h=400&fit=crop" alt="Façade">
-          </div>
-          <div class="carousel-text">
-            <h3>Rénovation Façade - Vernier</h3>
-            <p>Modernisation complète de la façade avec respect de l'architecture. Gestion des autorisations administratives incluse.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="carousel-item">
-        <div class="carousel-card">
-          <div class="carousel-image">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop" alt="Terrasse">
-          </div>
-          <div class="carousel-text">
-            <h3>Terrasse Aménagée - Chavannes</h3>
-            <p>Création d'une terrasse extérieure harmonieuse avec espaces verts et mobilier intégré. Coordination paysagiste incluse.</p>
-          </div>
-        </div>
+      <div class="project-info">
+        <h3>Rénovation complète - Genève</h3>
+        <p class="project-type">Rénovation complète</p>
+        <p class="project-desc">Transformation intégrale d'un appartement avec gestion de tous les corps de métiers.</p>
       </div>
     </div>
 
-    <div class="carousel-controls">
-      <button class="carousel-btn" onclick="prevSlide()">‹</button>
-      <button class="carousel-btn" onclick="nextSlide()">›</button>
+    <div class="project-card" onclick="openProjectModal('project2')">
+      <div class="project-image">
+        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&h=400&fit=crop" alt="Rénovation complète - Lausanne">
+      </div>
+      <div class="project-info">
+        <h3>Rénovation complète - Lausanne</h3>
+        <p class="project-type">Rénovation complète</p>
+        <p class="project-desc">Rénovation d'une maison ancienne avec modernisation des installations.</p>
+      </div>
+    </div>
+
+    <div class="project-card" onclick="openProjectModal('project3')">
+      <div class="project-image">
+        <img src="https://images.unsplash.com/photo-1536376072261-38c75010e6c9?w=600&h=400&fit=crop" alt="Rénovation complète - Vernier">
+      </div>
+      <div class="project-info">
+        <h3>Rénovation complète - Vernier</h3>
+        <p class="project-type">Rénovation complète</p>
+        <p class="project-desc">Transformation d'une propriété avec création d'espaces extérieurs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT MODALS -->
+<div id="project1Modal" class="project-modal">
+  <div class="project-modal-content">
+    <span class="project-modal-close" onclick="closeProjectModal('project1')">&times;</span>
+    <div class="project-modal-header">
+      <h2>Rénovation complète - Genève</h2>
+      <p class="project-location">📍 Genève, Suisse</p>
+    </div>
+
+    <div class="project-modal-gallery">
+      <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop" alt="Projet 1 - Photo 1">
+      <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&h=600&fit=crop" alt="Projet 1 - Photo 2">
+      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop" alt="Projet 1 - Photo 3">
+      <img src="https://images.unsplash.com/photo-1581092333021-2e8b1e24e45d?w=800&h=600&fit=crop" alt="Projet 1 - Photo 4">
+    </div>
+
+    <div class="project-modal-details">
+      <div class="project-detail-section">
+        <h3>À propos du projet</h3>
+        <p>Transformation intégrale d'un appartement de 120m² situé dans le centre de Genève. Ce projet ambitieux a nécessité une coordination exemplaire entre tous les corps de métiers pour assurer la continuité des travaux et le respect des délais.</p>
+      </div>
+
+      <div class="project-detail-section">
+        <h3>Travaux réalisés</h3>
+        <ul class="project-works">
+          <li>Démolition des cloisons existantes et restructuration de l'espace</li>
+          <li>Gros œuvre : création d'ouvertures, renforcement de la structure</li>
+          <li>Installation électrique et plomberie complètes</li>
+          <li>Plâtrerie et aménagement intérieur</li>
+          <li>Peinture et revêtements de sols (carrelage, parquet)</li>
+          <li>Cuisine sur mesure avec équipements haut de gamme</li>
+          <li>Salle de bain luxe avec équipements modernes</li>
+        </ul>
+      </div>
+
+      <div class="project-detail-section">
+        <h3>Points clés</h3>
+        <p><strong>Durée :</strong> 4 mois</p>
+        <p><strong>Équipe :</strong> 8 artisans coordinés</p>
+        <p><strong>Budget maîtrisé :</strong> Économies réalisées grâce à notre optimisation</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="project2Modal" class="project-modal">
+  <div class="project-modal-content">
+    <span class="project-modal-close" onclick="closeProjectModal('project2')">&times;</span>
+    <div class="project-modal-header">
+      <h2>Rénovation complète - Lausanne</h2>
+      <p class="project-location">📍 Lausanne, Suisse</p>
+    </div>
+
+    <div class="project-modal-gallery">
+      <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&h=600&fit=crop" alt="Projet 2 - Photo 1">
+      <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop" alt="Projet 2 - Photo 2">
+      <img src="https://images.unsplash.com/photo-1589939705066-5c39e7effa41?w=800&h=600&fit=crop" alt="Projet 2 - Photo 3">
+      <img src="https://images.unsplash.com/photo-1599005614506-d92c8ef5a4f2?w=800&h=600&fit=crop" alt="Projet 2 - Photo 4">
+    </div>
+
+    <div class="project-modal-details">
+      <div class="project-detail-section">
+        <h3>À propos du projet</h3>
+        <p>Rénovation complète d'une maison ancienne de 180m² avec modernisation intégrale. Ce projet a combiné la préservation du charme architectural initial avec l'intégration de technologies modernes et d'aménagements contemporains.</p>
+      </div>
+
+      <div class="project-detail-section">
+        <h3>Travaux réalisés</h3>
+        <ul class="project-works">
+          <li>Diagnostic et traitement des anomalies structurelles</li>
+          <li>Isolation thermique et acoustique complète</li>
+          <li>Remplacement des fenêtres et portes avec menuiserie haute performance</li>
+          <li>Ravalement et réparation de la façade</li>
+          <li>Installation chauffage et climatisation</li>
+          <li>Rénovation complète intérieur et agencements</li>
+          <li>Création d'une terrasse extérieure avec aménagement paysager</li>
+        </ul>
+      </div>
+
+      <div class="project-detail-section">
+        <h3>Points clés</h3>
+        <p><strong>Durée :</strong> 6 mois</p>
+        <p><strong>Équipe :</strong> 12 artisans spécialisés</p>
+        <p><strong>Respect de l'environnement :</strong> Matériaux écologiques et rénovation éco-responsable</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="project3Modal" class="project-modal">
+  <div class="project-modal-content">
+    <span class="project-modal-close" onclick="closeProjectModal('project3')">&times;</span>
+    <div class="project-modal-header">
+      <h2>Rénovation complète - Vernier</h2>
+      <p class="project-location">📍 Vernier, Suisse</p>
+    </div>
+
+    <div class="project-modal-gallery">
+      <img src="https://images.unsplash.com/photo-1536376072261-38c75010e6c9?w=800&h=600&fit=crop" alt="Projet 3 - Photo 1">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop" alt="Projet 3 - Photo 2">
+      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop" alt="Projet 3 - Photo 3">
+      <img src="https://images.unsplash.com/photo-1581092333021-2e8b1e24e45d?w=800&h=600&fit=crop" alt="Projet 3 - Photo 4">
+    </div>
+
+    <div class="project-modal-details">
+      <div class="project-detail-section">
+        <h3>À propos du projet</h3>
+        <p>Transformation d'une propriété de 200m² avec création d'espaces extérieurs harmonieux. Ce projet a nécessité une vision globale intégrant la rénovation intérieure et l'aménagement paysager pour créer un lieu de vie cohérent et accueillant.</p>
+      </div>
+
+      <div class="project-detail-section">
+        <h3>Travaux réalisés</h3>
+        <ul class="project-works">
+          <li>Restructuration intérieure et création d'espaces ouverts</li>
+          <li>Rénovation gros œuvre avec renforcement structurel</li>
+          <li>Modernisation des installations techniques complètes</li>
+          <li>Aménagement intérieur design et fonctionnel</li>
+          <li>Création terrasse extérieure et espace paysager</li>
+          <li>Mise en place d'un système domotique intégré</li>
+          <li>Finitions haut de gamme dans tous les espaces</li>
+        </ul>
+      </div>
+
+      <div class="project-detail-section">
+        <h3>Points clés</h3>
+        <p><strong>Durée :</strong> 5 mois</p>
+        <p><strong>Équipe :</strong> 10 artisans coordinés</p>
+        <p><strong>Innovation :</strong> Intégration domotique et efficacité énergétique</p>
+      </div>
     </div>
   </div>
 </section>
@@ -2310,6 +2627,42 @@ function prevSlide() {
   currentSlide--;
   showSlide(currentSlide);
 }
+
+// PROJECT MODAL FUNCTIONS
+function openProjectModal(projectId) {
+  const modal = document.getElementById(projectId + 'Modal');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeProjectModal(projectId) {
+  const modal = document.getElementById(projectId + 'Modal');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+}
+
+// Close modal when clicking outside
+document.addEventListener('click', function(event) {
+  if (event.target.classList.contains('project-modal')) {
+    const modal = event.target;
+    const projectId = modal.id.replace('Modal', '');
+    closeProjectModal(projectId);
+  }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    document.querySelectorAll('.project-modal.active').forEach(modal => {
+      const projectId = modal.id.replace('Modal', '');
+      closeProjectModal(projectId);
+    });
+  }
+});
 
 // Changer les mots dans le hero avec animation smooth
 const words = ['SIMPLIFIÉES', 'RÉUSSIES', 'DURABLES'];
