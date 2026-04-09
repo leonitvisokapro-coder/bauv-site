@@ -2358,6 +2358,105 @@
             }
           }
         }
+
+        /* ========================= */
+        /* ✨ AMÉLIORATIONS PREMIUM MOBILE */
+        /* ========================= */
+        @media (max-width: 768px) {
+
+          /* 🔧 1. HERO rapproché de l'en-tête */
+          .hero {
+            margin-top: 60px;   /* avant 90px → on rapproche */
+            padding: 40px 20px; /* moins d'air */
+          }
+
+          .hero h1 {
+            font-size: 34px;
+            line-height: 1.25;
+            margin-bottom: 10px;
+          }
+
+          .hero p {
+            font-size: 15px;
+            margin-bottom: 25px;
+          }
+
+          /* 📐 2. Rythme vertical global */
+          section {
+            padding: 70px 20px !important;
+          }
+
+          h2 {
+            margin-bottom: 25px !important;
+            letter-spacing: -0.5px;
+          }
+
+          p {
+            line-height: 1.7;
+          }
+
+          /* 🧠 3. Services-grid : version mobile lisible */
+          .services-grid {
+            flex-direction: column;
+            height: auto;
+          }
+
+          .service-card-image {
+            flex: none;
+            height: 220px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+          }
+
+          .service-card-image.expanded {
+            flex: none;
+          }
+
+          /* Toujours afficher le contenu (pas au hover) */
+          .service-overlay {
+            opacity: 1;
+            background: rgba(0, 0, 0, 0.55);
+            padding: 20px;
+          }
+
+          .service-overlay h3 {
+            font-size: 18px;
+          }
+
+          .service-overlay p {
+            font-size: 14px;
+          }
+
+          /* On supprime le label du bas */
+          .service-card-label {
+            display: none;
+          }
+
+          /* 🧩 4. Footer : Services + Entreprise côte à côte */
+          .footer-middle {
+            grid-template-columns: 1fr 1fr; /* côte à côte */
+            gap: 30px;
+          }
+
+          .footer-col h4 {
+            font-size: 12px;
+            margin-bottom: 15px;
+          }
+
+          .footer-col a {
+            font-size: 13px;
+          }
+
+          /* ✨ 5. Détails premium */
+          .btn {
+            width: 100%;
+            text-align: center;
+          }
+
+          .cta-buttons {
+            gap: 12px;
+          }
+        }
     </style>
 </head>
 <body>
