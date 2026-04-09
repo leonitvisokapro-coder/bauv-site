@@ -1001,6 +1001,10 @@
         }
 
         @keyframes slideIn {
+          from {
+            width: 0;
+            opacity: 0;
+          }
           to {
             width: 100%;
             opacity: 1;
@@ -1029,6 +1033,10 @@
         }
 
         @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
           to {
             opacity: 1;
             transform: translateY(0);
@@ -1260,82 +1268,224 @@
         }
 
         /* CONTACT CTA */
+        /* CONTACT CTA */
         .contact-cta {
           padding: 120px 100px;
           background: linear-gradient(135deg, #f9f9f9 0%, var(--light-gray) 100%);
           text-align: center;
         }
 
-        .contact-cta h2 {
-          font-size: 56px;
-          font-weight: 300;
-          margin-bottom: 30px;
-          color: var(--dark-gray);
+        .contact-container {
+          max-width: 700px;
+          margin: 0 auto;
         }
 
-        .contact-cta p {
+        .contact-cta h2 {
+          font-size: 56px;
+          font-weight: 800;
+          margin-bottom: 20px;
+          color: var(--dark-gray);
+          font-family: 'Poppins', sans-serif;
+        }
+
+        .contact-cta h2 .accent {
+          color: var(--green-dark);
+        }
+
+        .contact-cta > p {
           font-size: 18px;
           color: var(--text-muted);
           margin-bottom: 60px;
-          max-width: 800px;
-          margin-left: auto;
-          margin-right: auto;
+          line-height: 1.8;
+          font-weight: 300;
+        }
+
+        .contact-form {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .form-group {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+          padding: 16px 20px;
+          border: 2px solid var(--light-gray);
+          border-radius: 8px;
+          font-size: 16px;
+          font-family: 'Poppins', sans-serif;
+          transition: all 0.3s ease;
+          background: var(--white);
+          color: var(--dark-gray);
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+          color: var(--text-muted);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+          outline: none;
+          border-color: var(--green-dark);
+          box-shadow: 0 0 0 3px rgba(23, 97, 49, 0.1);
+        }
+
+        .contact-form textarea {
+          resize: vertical;
+          min-height: 150px;
+          font-family: 'Poppins', sans-serif;
+        }
+
+        .contact-form .btn {
+          margin-top: 10px;
+          padding: 16px 40px;
+          font-size: 16px;
+          font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+          .contact-cta { padding: 100px 40px; }
+          .contact-cta h2 { font-size: 36px; }
+          .contact-cta > p { font-size: 16px; }
         }
 
         /* FOOTER */
         footer {
-          background: var(--dark-gray);
+          background: #1a1a1a;
           color: #999;
-          padding: 100px;
+          padding: 80px 100px;
         }
 
-        .footer-grid {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 80px;
+        .footer-content {
           max-width: 1400px;
-          margin: 0 auto 60px;
+          margin: 0 auto;
+        }
+
+        .footer-top {
+          display: grid;
+          grid-template-columns: 2fr 1fr 1fr 1.5fr;
+          gap: 60px;
+          margin-bottom: 60px;
+        }
+
+        .footer-brand {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .footer-logo {
+          margin-bottom: 25px;
+          display: flex;
+          align-items: center;
+        }
+
+        .footer-logo img {
+          height: 60px;
+          width: auto;
+          object-fit: contain;
+        }
+
+        .footer-slogan {
+          font-size: 14px;
+          color: var(--green-light);
+          font-weight: 500;
+          line-height: 1.6;
         }
 
         .footer-col h4 {
           color: var(--white);
-          font-size: 14px;
-          font-weight: 700;
+          font-size: 13px;
+          font-weight: 800;
           text-transform: uppercase;
-          letter-spacing: 1px;
+          letter-spacing: 1.5px;
           margin-bottom: 25px;
+          font-family: 'Poppins', sans-serif;
         }
 
-        .footer-col p,
+        .footer-col ul {
+          list-style: none;
+          padding: 0;
+        }
+
+        .footer-col ul li {
+          margin-bottom: 12px;
+        }
+
         .footer-col a {
-          font-size: 13px;
+          font-size: 14px;
           color: #999;
           text-decoration: none;
-          line-height: 2;
-          transition: color 0.3s;
+          transition: color 0.3s ease;
+          cursor: pointer;
         }
 
         .footer-col a:hover {
           color: var(--green-light);
         }
 
-        .footer-logo {
-          font-size: 26px;
-          font-weight: 800;
-          color: var(--white);
-          margin-bottom: 20px;
+        .footer-contact {
+          display: flex;
+          flex-direction: column;
         }
 
-        .footer-logo .green {
+        .contact-info {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .info-item {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .info-label {
+          font-size: 12px;
           color: var(--green-light);
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          margin-bottom: 6px;
+          font-family: 'Poppins', sans-serif;
+        }
+
+        .contact-info a {
+          font-size: 14px;
+          color: #999;
+        }
+
+        .contact-info a:hover {
+          color: var(--green-light);
+        }
+
+        .contact-info p {
+          font-size: 14px;
+          color: #999;
+          line-height: 1.6;
+          margin: 0;
         }
 
         .footer-bottom {
           text-align: center;
-          padding-top: 50px;
+          padding-top: 40px;
           border-top: 1px solid #444;
           font-size: 12px;
           color: #666;
+        }
+
+        @media (max-width: 1024px) {
+          .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+          footer { padding: 60px 40px; }
+        }
+
+        @media (max-width: 768px) {
+          .footer-top { grid-template-columns: 1fr; }
+          footer { padding: 60px 40px; }
         }
 
         /* SCROLLING TEXT SECTION */
@@ -1686,20 +1836,6 @@
   </div>
 </section>
 
-<section class="vision-reality-section">
-  <div class="vision-reality-container">
-    <div class="vision-reality-content">
-      <div class="vision-line left-line"></div>
-      <div class="vision-text">
-        <span class="vision-word">De la vision</span>
-        <span class="to-word">à la</span>
-        <span class="reality-word">réalité</span>
-      </div>
-      <div class="reality-line right-line"></div>
-    </div>
-  </div>
-</section>
-
 <section class="carousel-section">
   <div class="carousel-title">
     <h2>Nos <span class="accent">réalisations</span></h2>
@@ -1764,93 +1900,103 @@
   </div>
 </section>
 
-<section class="stats-section">
-  <div class="stats-grid">
-    <div class="stat-box">
-      <div class="stat-number">30+</div>
-      <div class="stat-label">Ans d'expertise</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-number">20%</div>
-      <div class="stat-label">Économies réalisées pour les clients</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-number">10000+</div>
-      <div class="stat-label">m² gérés</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-number">99%</div>
-      <div class="stat-label">Clients satisfaits</div>
-    </div>
-  </div>
-</section>
-
-<section class="testimonials">
-  <div class="testimonials-title">
-    <h2>Ce que nos clients <span class="accent">en disent</span></h2>
-  </div>
-
-  <div class="testimonials-grid">
-    <div class="testimonial-card">
-      <div class="testimonial-text">"bauV a géré notre projet avec professionnalisme et rigueur. Une vraie relation de partenariat tout au long du chantier."</div>
-      <div class="testimonial-author">Sophie Renard</div>
-      <div class="testimonial-role">Propriétaire - Prilly</div>
-    </div>
-
-    <div class="testimonial-card">
-      <div class="testimonial-text">"L'équipe est réactive et sait résoudre les problématiques rapidement. Excellente communication et suivi quotidien."</div>
-      <div class="testimonial-author">Marc Dubois</div>
-      <div class="testimonial-role">Architecte - Lausanne</div>
-    </div>
-
-    <div class="testimonial-card">
-      <div class="testimonial-text">"Des spécialistes qui comprennent vraiment le métier. Qualité, délais et coûts maîtrisés - exactement ce qu'on attendait."</div>
-      <div class="testimonial-author">Jean-Claude Moreau</div>
-      <div class="testimonial-role">Maître d'ouvrage - Vernier</div>
-    </div>
-  </div>
-</section>
-
 <section class="contact-cta">
-  <h2>Vous avez un projet ?</h2>
-  <p>Contactez-nous pour discuter de vos besoins. Nous vous proposerons la meilleure approche pour concrétiser vos ambitions.</p>
-  <button class="btn btn-primary">Demander un devis gratuit</button>
+  <div class="contact-container">
+    <h2>Vous avez un <span class="accent">projet</span> ?</h2>
+    <p>Remplissez le formulaire ci-dessous et nous vous répondrons rapidement pour discuter de vos besoins.</p>
+    
+    <form class="contact-form" id="contactForm">
+      <div class="form-group">
+        <input type="text" placeholder="Votre nom" required>
+      </div>
+      <div class="form-group">
+        <input type="email" placeholder="Votre email" required>
+      </div>
+      <div class="form-group">
+        <input type="tel" placeholder="Votre téléphone" required>
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Votre adresse" required>
+      </div>
+      <div class="form-group">
+        <textarea placeholder="Décrivez votre projet..." rows="6" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Envoyer ma demande</button>
+    </form>
+  </div>
 </section>
 
 <footer>
-  <div class="footer-grid">
-    <div class="footer-col">
-      <div class="footer-logo">bau<span class="green">V</span></div>
-      <p>Rénovation et construction professionnelle. Votre partenaire de confiance pour tous vos projets.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <a href="#">Direction des travaux</a>
-      <a href="#">Entreprise générale</a>
-      <a href="#">Gestion de projets</a>
-      <a href="#">Consultation</a>
-    </div>
-    <div class="footer-col">
-      <h4>Entreprise</h4>
-      <a href="#">À propos</a>
-      <a href="#">Notre équipe</a>
-      <a href="#">Réalisations</a>
-      <a href="#">Blog</a>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <p>+33 (0)X XX XX XX XX</p>
-      <p>contact@bauv.fr</p>
-      <p>Rumilly, Rhône-Alpes</p>
-    </div>
-  </div>
+  <div class="footer-content">
+    <div class="footer-top">
+      <div class="footer-col footer-brand">
+        <div class="footer-logo">
+          <img src="images/logo.png" alt="bauV Logo">
+        </div>
+        <p class="footer-slogan">Les spécialistes qui transforment chaque espace en atout.</p>
+      </div>
 
-  <div class="footer-bottom">
-    <p>&copy; 2024 bauV - Tous droits réservés | Rénovation & Construction Professionnelle</p>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#" onclick="document.querySelector('.services-grid-section').scrollIntoView({behavior:'smooth'})">Nos services</a></li>
+          <li><a href="#" onclick="document.querySelector('.approach-section').scrollIntoView({behavior:'smooth'})">Notre approche</a></li>
+          <li><a href="#" onclick="document.querySelector('.carousel-section').scrollIntoView({behavior:'smooth'})">Réalisations</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Entreprise</h4>
+        <ul>
+          <li><a href="#" onclick="document.querySelector('.mission').scrollIntoView({behavior:'smooth'})">Notre mission</a></li>
+          <li><a href="#" onclick="document.querySelector('.clients-section').scrollIntoView({behavior:'smooth'})">Qui on accompagne</a></li>
+          <li><a href="#" onclick="document.querySelector('.contact-cta').scrollIntoView({behavior:'smooth'})">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-contact">
+        <h4>Nous contacter</h4>
+        <div class="contact-info">
+          <div class="info-item">
+            <span class="info-label">Téléphone</span>
+            <a href="tel:+41782685442">+41 78 268 54 42</a>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Email</span>
+            <a href="mailto:info@bauv.ch">info@bauv.ch</a>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Adresse</span>
+            <p>Avenue des Morgines 12<br>1213 Petit-Lancy</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2024 bauV - Tous droits réservés | Rénovation & Construction Professionnelle</p>
+    </div>
   </div>
 </footer>
 
 <script>
+// Contact form mailto
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const form = this;
+  const nom = form.querySelector('input[type="text"]').value;
+  const email = form.querySelector('input[type="email"]').value;
+  const telephone = form.querySelector('input[type="tel"]').value;
+  const adresse = form.querySelectorAll('input[type="text"]')[1].value;
+  const message = form.querySelector('textarea').value;
+  
+  const subject = `Nouvelle demande de projet - ${nom}`;
+  const body = `Nom: ${nom}%0AEmail: ${email}%0ATéléphone: ${telephone}%0AAdresse: ${adresse}%0A%0AMessage:%0A${message}`;
+  
+  window.location.href = `mailto:info@bauv.ch?subject=${encodeURIComponent(subject)}&body=${body}`;
+});
+
 let currentSlide = 0;
 
 function showSlide(n) {
@@ -1893,25 +2039,19 @@ function changeWord() {
   }
 }
 
-// Vision Reality section animation on scroll
-const visionSection = document.querySelector('.vision-reality-section');
-if (visionSection) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const lines = visionSection.querySelectorAll('.vision-line, .reality-line');
-        const words = visionSection.querySelectorAll('.vision-word, .to-word, .reality-word');
-        
-        lines.forEach(line => line.classList.add('animate'));
-        words.forEach(word => word.classList.add('animate'));
-        
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.3 });
-  
-  observer.observe(visionSection);
-}
+// Vision Reality section animation on load
+window.addEventListener('load', function() {
+  const visionSection = document.querySelector('.vision-reality-section');
+  if (visionSection) {
+    setTimeout(() => {
+      const lines = visionSection.querySelectorAll('.vision-line, .reality-line');
+      const words = visionSection.querySelectorAll('.vision-word, .to-word, .reality-word');
+      
+      lines.forEach(line => line.classList.add('animate'));
+      words.forEach(word => word.classList.add('animate'));
+    }, 300);
+  }
+});
 
 // Clients tabs interaction
 document.querySelectorAll('.client-tab').forEach((tab, index) => {
