@@ -125,7 +125,7 @@
           margin-top: 75px;
           padding: 80px 100px;
           background: linear-gradient(135deg, #f5f5f5 0%, var(--light-gray) 100%);
-          min-height: 120vh;
+          min-height: auto;
           display: flex;
           align-items: center;
           position: relative;
@@ -133,13 +133,19 @@
         }
 
         .hero-wrapper {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          max-width: 1500px;
+          margin: 0 auto;
+        }
+
+        .hero-top {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 80px;
           align-items: flex-start;
-          width: 100%;
-          max-width: 1500px;
-          margin: 0 auto;
+          margin-bottom: 60px;
         }
 
         .hero::before {
@@ -163,7 +169,7 @@
 
         .hero-image {
           width: 100%;
-          height: 700px;
+          height: 500px;
           background: linear-gradient(135deg, rgba(102, 187, 106, 0.15) 0%, rgba(26, 92, 58, 0.15) 100%);
           border-radius: 12px;
           overflow: hidden;
@@ -180,6 +186,13 @@
 
         .hero-image:hover img {
           transform: scale(1.05);
+        }
+
+        .hero-separator {
+          width: 100%;
+          height: 1px;
+          background: #ddd;
+          margin: 40px 0;
         }
 
         .hero h1 {
@@ -203,24 +216,6 @@
           text-transform: uppercase;
         }
 
-        .hero-tagline {
-          font-size: 18px;
-          color: var(--text-muted);
-          margin-bottom: 25px;
-          line-height: 1.6;
-          font-weight: 400;
-          font-family: 'Poppins', sans-serif;
-          animation: fadeInUp 1s ease 0.3s both;
-        }
-
-        .tagline-highlight {
-          background: linear-gradient(120deg, var(--green-dark) 0%, var(--green-light) 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          font-weight: 800;
-        }
-
         .hero p {
           font-size: 21px;
           color: var(--text-muted);
@@ -240,6 +235,14 @@
         .cta-buttons .btn:only-child {
           min-width: 300px;
           text-align: center;
+        }
+
+        .hero-values {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 20px;
+          width: 100%;
+          animation: fadeInUp 1s ease 0.8s both;
         }
 
         .btn {
@@ -1682,35 +1685,39 @@
 
 <section class="hero">
   <div class="hero-wrapper">
-    <div class="hero-content">
-      <h1>VOS RÉNOVATIONS <span class="accent" id="changingWord">SIMPLIFIÉES</span></h1>
-      <p>bauV assure la gestion complète de vos projets de rénovation et construction. Expertise, rigueur et transparence sont nos valeurs fondamentales.</p>
-      <div class="cta-buttons">
-        <button class="btn btn-primary" onclick="document.querySelector('.contact-cta').scrollIntoView({behavior:'smooth'})">Parlons de votre projet</button>
+    <div class="hero-top">
+      <div class="hero-content">
+        <h1>VOS RÉNOVATIONS <span class="accent" id="changingWord">SIMPLIFIÉES</span></h1>
+        <p>bauV assure la gestion complète de vos projets de rénovation et construction. Expertise, rigueur et transparence sont nos valeurs fondamentales.</p>
+        <div class="cta-buttons">
+          <button class="btn btn-primary" onclick="document.querySelector('.contact-cta').scrollIntoView({behavior:'smooth'})">Parlons de votre projet</button>
+        </div>
       </div>
 
-      <div class="hero-values">
-        <div class="value-item">
-          <div class="value-title">Qualité</div>
-          <div class="value-text">Perfectionnisme en tous points</div>
-        </div>
-        <div class="value-item">
-          <div class="value-title">Rigueur</div>
-          <div class="value-text">Suivi quotidien des travaux</div>
-        </div>
-        <div class="value-item">
-          <div class="value-title">Transparence</div>
-          <div class="value-text">Communication claire et régulière</div>
-        </div>
-        <div class="value-item">
-          <div class="value-title">Expertise</div>
-          <div class="value-text">30+ ans d'expérience</div>
-        </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=700&h=600&fit=crop" alt="Rénovation cuisine">
       </div>
     </div>
 
-    <div class="hero-image">
-      <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=700&h=600&fit=crop" alt="Rénovation cuisine">
+    <div class="hero-separator"></div>
+
+    <div class="hero-values">
+      <div class="value-item">
+        <div class="value-title">Qualité</div>
+        <div class="value-text">Perfectionnisme en tous points</div>
+      </div>
+      <div class="value-item">
+        <div class="value-title">Rigueur</div>
+        <div class="value-text">Suivi quotidien des travaux</div>
+      </div>
+      <div class="value-item">
+        <div class="value-title">Transparence</div>
+        <div class="value-text">Communication claire et régulière</div>
+      </div>
+      <div class="value-item">
+        <div class="value-title">Expertise</div>
+        <div class="value-text">30+ ans d'expérience</div>
+      </div>
     </div>
   </div>
 </section>
