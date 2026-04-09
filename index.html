@@ -56,6 +56,12 @@
           box-sizing: border-box;
         }
 
+        img {
+          max-width: 100%;
+          height: auto;
+          display: block;
+        }
+
         html { scroll-behavior: smooth; }
 
         body {
@@ -1980,6 +1986,28 @@
         @media (max-width: 768px) {
           * { box-sizing: border-box; }
           
+          /* FORCER TOUS LES GRIDS EN 1 COLONNE */
+          [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+          .grid-template-columns-2 { grid-template-columns: 1fr !important; }
+          .grid-template-columns-3 { grid-template-columns: 1fr !important; }
+          .grid-template-columns-4 { grid-template-columns: 1fr !important; }
+          
+          /* FORCER TOUS LES FLEX EN COLONNE */
+          [style*="flex-direction"] { flex-direction: column !important; }
+          
+          /* FORCER LES GRIDS SPÉCIFIQUES */
+          .clients-tabs { grid-template-columns: 1fr !important; }
+          .approach-tabs { grid-template-columns: 1fr !important; }
+          .projects-grid { grid-template-columns: 1fr !important; }
+          .stats-grid { grid-template-columns: 1fr !important; }
+          .hero-values { grid-template-columns: 1fr !important; }
+          .carousel-grid { grid-template-columns: 1fr !important; }
+          .services-grid { grid-template-columns: 1fr !important; }
+          .mission-content { grid-template-columns: 1fr !important; }
+          .footer-grid { grid-template-columns: 1fr !important; }
+          .footer-top-section { grid-template-columns: 1fr !important; }
+          .footer-main { grid-template-columns: 1fr !important; }
+          
           header { padding: 0 20px; height: 65px; }
           .logo-img { height: 40px; }
           .hamburger { display: flex; }
@@ -1990,7 +2018,7 @@
             width: 100%;
             height: calc(100vh - 65px);
             background: white;
-            flex-direction: column;
+            flex-direction: column !important;
             padding: 30px 20px;
             gap: 15px;
             transition: left 0.3s ease;
@@ -2003,7 +2031,6 @@
           .hero { padding: 50px 20px; margin-top: 65px; }
           .hero h1 { font-size: 26px; }
           .hero p { font-size: 14px; }
-          .hero-values { grid-template-columns: 1fr; gap: 15px; }
           
           .mission { padding: 50px 20px; }
           .mission-text h2 { font-size: 24px; }
@@ -2016,10 +2043,8 @@
           .carousel-title h2 { font-size: 24px; }
           
           .stats-section { padding: 50px 20px; }
-          .stats-grid { grid-template-columns: 1fr; gap: 15px; }
           
           .approach-section { padding: 50px 20px; }
-          .approach-tabs { grid-template-columns: 1fr; gap: 12px; }
           
           .contact-cta { padding: 50px 20px; }
           .contact-cta h2 { font-size: 24px; }
