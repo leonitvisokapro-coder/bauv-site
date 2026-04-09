@@ -2080,9 +2080,56 @@
           header {
             padding: 0 20px;
             height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
           }
           nav {
             display: none;
+          }
+
+          /* Hamburger menu button */
+          .menu-toggle {
+            display: block;
+            font-size: 26px;
+            cursor: pointer;
+            color: var(--dark-gray);
+            background: none;
+            border: none;
+            padding: 0;
+          }
+
+          /* Mobile menu déroulant */
+          .mobile-menu {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            display: none;
+            flex-direction: column;
+            padding: 20px;
+            gap: 15px;
+            z-index: 999;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          }
+
+          .mobile-menu a {
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--dark-gray);
+            font-size: 16px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--light-gray);
+            cursor: pointer;
+          }
+
+          .mobile-menu a:last-child {
+            border-bottom: none;
+          }
+
+          .mobile-menu.active {
+            display: flex;
           }
           
           /* HERO */
@@ -2405,6 +2452,20 @@
             
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
+            position: relative;
+          }
+
+          /* Fade gradient discret sur le côté droit */
+          .services-grid::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            height: 100%;
+            background: linear-gradient(to left, var(--light-gray), transparent);
+            pointer-events: none;
+            border-radius: 0 12px 12px 0;
           }
 
           .service-card-image {
@@ -2463,15 +2524,8 @@
           .services-grid::-webkit-scrollbar {
             display: none;
           }
-
-          /* Hint pour swiper */
-          .mobile-scroll-hint {
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-left: 20px;
-            margin-bottom: 10px;
-            font-style: italic;
-          }
+          
+          /* ✨ Fin services slider */
 
           /* 🧩 4. Footer : Services + Entreprise côte à côte */
           .footer-middle {
@@ -2514,7 +2568,18 @@
     <a onclick="document.querySelector('.carousel-section').scrollIntoView({behavior:'smooth'}); return false;">Nos réalisations</a>
     <a onclick="document.querySelector('.contact-cta').scrollIntoView({behavior:'smooth'}); return false;">Contact</a>
   </nav>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 </header>
+
+<!-- Menu mobile déroulant -->
+<div class="mobile-menu" id="mobileMenu">
+  <a onclick="document.querySelector('.mission').scrollIntoView({behavior:'smooth'}); toggleMenu(); return false;">Notre mission</a>
+  <a onclick="document.querySelector('.clients-section').scrollIntoView({behavior:'smooth'}); toggleMenu(); return false;">Nos clients</a>
+  <a onclick="document.querySelector('.services-grid-section').scrollIntoView({behavior:'smooth'}); toggleMenu(); return false;">Nos compétences</a>
+  <a onclick="document.querySelector('.approach-section').scrollIntoView({behavior:'smooth'}); toggleMenu(); return false;">Notre approche</a>
+  <a onclick="document.querySelector('.carousel-section').scrollIntoView({behavior:'smooth'}); toggleMenu(); return false;">Nos réalisations</a>
+  <a onclick="document.querySelector('.contact-cta').scrollIntoView({behavior:'smooth'}); toggleMenu(); return false;">Contact</a>
+</div>
 
 <section class="hero">
   <div class="hero-wrapper">
@@ -2680,8 +2745,6 @@
     <h2>L'étendue de nos <span class="accent">compétences</span></h2>
     <p>Généraliste et innovante, notre entreprise gère la totalité de vos projets : du design initial à la réalisation complète. Cette approche holistique nous permet d'optimiser les ressources, réduire les coûts et garantir une exécution sans faille.</p>
   </div>
-
-  <p class="mobile-scroll-hint">👉 Faites défiler pour voir plus</p>
 
   <div class="services-grid">
     <div class="service-card-image">
@@ -3181,6 +3244,23 @@ document.addEventListener('keydown', function(event) {
       const projectId = modal.id.replace('Modal', '');
       closeProjectModal(projectId);
     });
+  }
+});
+
+// Fonction menu hamburger mobile
+function toggleMenu() {
+  const mobileMenu = document.getElementById("mobileMenu");
+  if (mobileMenu) {
+    mobileMenu.classList.toggle("active");
+  }
+}
+
+// Fermer le menu quand on clique en dehors
+document.addEventListener("click", function(event) {
+  const mobileMenu = document.getElementById("mobileMenu");
+  const menuToggle = document.querySelector(".menu-toggle");
+  if (mobileMenu && menuToggle && !mobileMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+    mobileMenu.classList.remove("active");
   }
 });
 
