@@ -2397,19 +2397,28 @@
 
           /* 🧠 3. Services-grid : version mobile lisible */
           .services-grid {
-            flex-direction: column;
-            height: auto;
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+            gap: 15px;
+            padding: 20px;
+            
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
           }
 
           .service-card-image {
-            flex: none;
-            height: 220px;
-            margin-bottom: 15px;
-            border-radius: 8px;
+            flex: 0 0 80%;
+            height: 240px;
+            border-radius: 12px;
+            margin-bottom: 0;
+            
+            scroll-snap-align: center;
+            position: relative;
           }
 
           .service-card-image.expanded {
-            flex: none;
+            flex: 0 0 80%;
           }
 
           /* Toujours afficher le contenu (pas au hover) */
@@ -2430,6 +2439,20 @@
           /* On supprime le label du bas */
           .service-card-label {
             display: none;
+          }
+
+          /* Scrollbar invisible */
+          .services-grid::-webkit-scrollbar {
+            display: none;
+          }
+
+          /* Hint pour swiper */
+          .mobile-scroll-hint {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-left: 20px;
+            margin-bottom: 10px;
+            font-style: italic;
           }
 
           /* 🧩 4. Footer : Services + Entreprise côte à côte */
@@ -2639,6 +2662,8 @@
     <h2>L'étendue de nos <span class="accent">compétences</span></h2>
     <p>Généraliste et innovante, notre entreprise gère la totalité de vos projets : du design initial à la réalisation complète. Cette approche holistique nous permet d'optimiser les ressources, réduire les coûts et garantir une exécution sans faille.</p>
   </div>
+
+  <p class="mobile-scroll-hint">👉 Faites défiler pour voir plus</p>
 
   <div class="services-grid">
     <div class="service-card-image">
