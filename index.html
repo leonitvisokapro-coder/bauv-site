@@ -171,6 +171,78 @@
         nav a:hover::after { width: 100%; }
         nav a:hover { color: var(--green-dark); }
 
+        /* ========================= */
+        /* MENU MOBILE / BURGER (styles globaux) */
+        /* ========================= */
+        
+        /* Cacher le menu mobile et le burger par défaut (desktop) */
+        .menu-toggle {
+          display: none;
+        }
+
+        .mobile-menu {
+          display: none;
+        }
+
+        /* ========================= */
+        /* 🎯 UNIFICATION ANIMATIONS TABS */
+        /* ========================= */
+        
+        /* BASE ANIMATION IDENTIQUE pour TOUS les tabs */
+        .hero-value-tab,
+        .client-tab,
+        .approach-tab {
+          transition: 
+            background 0.4s ease,
+            color 0.3s ease,
+            transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+            box-shadow 0.35s ease;
+        }
+
+        /* HOVER - identique partout */
+        .hero-value-tab:hover,
+        .client-tab:hover,
+        .approach-tab:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ACTIVE (au clic) - identique partout */
+        .hero-value-tab.active,
+        .client-tab.active,
+        .approach-tab.active {
+          transform: translateY(-6px) scale(1.02);
+          box-shadow: 
+            0 20px 50px rgba(0,0,0,0.15),
+            0 0 0 1px rgba(130, 189, 65, 0.2);
+        }
+
+        /* PRESS - micro feedback identique */
+        .hero-value-tab:active,
+        .client-tab:active,
+        .approach-tab:active {
+          transform: scale(0.98);
+        }
+
+        /* CONTENU DÉTAILLÉ - animation identique */
+        .hero-value-detail,
+        .client-detail,
+        .approach-detail {
+          opacity: 0;
+          transform: translateY(15px);
+          transition: all 0.4s ease;
+          display: none;
+        }
+
+        /* État ACTIF du contenu détaillé */
+        .hero-value-detail.active,
+        .client-detail.active,
+        .approach-detail.active {
+          display: block;
+          opacity: 1;
+          transform: translateY(0);
+        }
+        
         /* HERO */
         .hero {
           margin-top: 90px;
@@ -339,13 +411,6 @@
           cursor: pointer;
           border: 2px solid transparent;
           text-align: center;
-          
-          /* Transitions fluides premium */
-          transition: 
-            background 0.4s ease,
-            color 0.3s ease,
-            transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
-            box-shadow 0.35s ease;
         }
 
         .hero-value-tab:hover {
@@ -357,8 +422,6 @@
           background: var(--dark-gray);
           color: var(--white);
           border-color: var(--green-dark);
-          
-          /* Animation au clic : lift + scale subtle */
           transform: translateY(-6px) scale(1.02);
           box-shadow: 
             0 20px 50px rgba(0,0,0,0.15),
@@ -592,13 +655,6 @@
           cursor: pointer;
           border: 2px solid transparent;
           text-align: center;
-          
-          /* Transitions fluides premium */
-          transition: 
-            background 0.4s ease,
-            color 0.3s ease,
-            transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
-            box-shadow 0.35s ease;
         }
 
         .client-tab:hover {
@@ -611,8 +667,6 @@
           background: var(--dark-gray) !important;
           color: var(--white) !important;
           border-color: var(--green-dark);
-          
-          /* Animation au clic : lift + scale subtle */
           transform: translateY(-6px) scale(1.02);
           box-shadow: 
             0 20px 50px rgba(0,0,0,0.15),
@@ -958,13 +1012,6 @@
           cursor: pointer;
           border: 2px solid transparent;
           text-align: center;
-          
-          /* Transitions fluides premium */
-          transition: 
-            background 0.4s ease,
-            color 0.3s ease,
-            transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
-            box-shadow 0.35s ease;
         }
 
         .approach-tab:hover {
@@ -976,8 +1023,6 @@
           background: var(--dark-gray);
           color: var(--white);
           border-color: var(--green-dark);
-          
-          /* Animation au clic : lift + scale subtle */
           transform: translateY(-6px) scale(1.02);
           box-shadow: 
             0 20px 50px rgba(0,0,0,0.15),
