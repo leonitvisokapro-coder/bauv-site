@@ -2196,6 +2196,122 @@
             padding: 40px 20px;
           }
         }
+
+        /* ========================= */
+        /* 📱 PATCH MOBILE AVANCÉ - ChatGPT */
+        /* ========================= */
+        @media (max-width: 768px) {
+          /* Réduire les carrés */
+          .client-tab,
+          .approach-tab,
+          .hero-value-tab {
+            padding: 25px 20px;
+          }
+
+          /* Titres uniformisés dans les carrés */
+          .client-tab h3,
+          .approach-tab h3,
+          .hero-value-tab h3 {
+            font-size: 16px !important;
+            line-height: 1.15;
+            margin-bottom: 6px;
+            font-weight: 800;
+          }
+
+          /* Sous-texte des carrés */
+          .client-tab p,
+          .approach-tab p,
+          .hero-value-tab p {
+            font-size: 13px !important;
+            line-height: 1.35;
+            margin: 0;
+            opacity: 0.9;
+          }
+
+          /* Numéros des carrés */
+          .tab-number,
+          .value-number {
+            font-size: 12px !important;
+            margin-bottom: 8px;
+          }
+
+          /* Contenu détaillé des carrés - plus compact */
+          .client-detail,
+          .approach-detail,
+          .hero-value-detail {
+            padding: 30px 20px !important;
+          }
+
+          .client-detail h3,
+          .approach-detail h3,
+          .hero-value-detail h3 {
+            font-size: 24px !important;
+            margin-bottom: 15px;
+            line-height: 1.2;
+          }
+
+          .client-detail p,
+          .approach-detail p,
+          .hero-value-detail p {
+            font-size: 14px !important;
+            line-height: 1.6;
+            margin-bottom: 15px;
+          }
+
+          .detail-list li {
+            font-size: 13px !important;
+            margin-bottom: 10px;
+          }
+
+          /* Uniformiser TOUS les titres de sections */
+          .clients-section h2,
+          .approach-section h2,
+          .carousel-section h2,
+          .contact-cta h2 {
+            font-size: 32px !important;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 40px;
+          }
+
+          /* Accent vert ne dépasse plus */
+          .hero h1 .accent,
+          .mission-text h2 .accent,
+          .clients-section h2 .accent,
+          .approach-section h2 .accent,
+          .carousel-title h2 .accent,
+          .contact-cta h2 .accent {
+            white-space: normal;
+            overflow-wrap: break-word;
+            word-break: break-word;
+            display: inline;
+            min-width: auto;
+          }
+
+          /* Grilles compactes */
+          .clients-tabs,
+          .approach-tabs,
+          .hero-values {
+            gap: 12px;
+          }
+
+          /* Moins d'espace vide entre sections */
+          .mission,
+          .clients-section,
+          .services-grid-section,
+          .approach-section,
+          .carousel-section,
+          .contact-cta {
+            padding: 70px 20px !important;
+          }
+
+          /* Contenu détaillé plus compact */
+          .clients-content,
+          .approach-content {
+            padding: 25px !important;
+            gap: 15px;
+          }
+        }
     </style>
 </head>
 <body>
