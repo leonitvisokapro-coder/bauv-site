@@ -736,10 +736,18 @@
         }
 
         @media (max-width: 1024px) {
+          header { padding: 0 50px; }
+          nav { gap: 25px; }
+          nav a { font-size: 11px; }
           .clients-tabs { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
+          header { padding: 0 30px; height: 70px; }
+          .logo-img { height: 45px; }
+          nav { gap: 20px; }
+          nav a { font-size: 11px; letter-spacing: 0.5px; }
+          
           .clients-section { padding: 100px 40px; }
           .clients-tabs { grid-template-columns: 1fr; }
           .clients-content { padding: 40px; }
@@ -2054,6 +2062,52 @@
           .footer-grid { grid-template-columns: repeat(2, 1fr); }
           .scrolling-text-section { padding: 100px 40px; }
           .scrolling-text { font-size: 42px; }
+        }
+
+        /* MOBILE PETIT (< 480px) */
+        @media (max-width: 480px) {
+          header { padding: 0 20px; height: 70px; }
+          .logo-img { height: 40px; }
+          nav { gap: 15px; }
+          nav a { font-size: 10px; letter-spacing: 0.5px; }
+          
+          .hero { padding: 60px 20px; margin-top: 70px; }
+          .hero h1 { font-size: 36px; margin-bottom: 15px; }
+          .hero p { font-size: 16px; margin-bottom: 30px; }
+          .cta-buttons { flex-direction: column; gap: 15px; }
+          .btn { padding: 14px 30px; font-size: 12px; }
+          .hero-values { grid-template-columns: 1fr; gap: 25px; margin-top: 50px; padding-top: 50px; }
+          
+          .mission { padding: 80px 20px; }
+          .mission-content { gap: 40px; }
+          .mission-text h2 { font-size: 36px; margin-bottom: 25px; }
+          .mission-text p { font-size: 15px; }
+          
+          .two-services { padding: 80px 20px; }
+          .two-services-title h2 { font-size: 32px; }
+          .service-block { padding: 40px 25px; }
+          .service-block h3 { font-size: 22px; margin-bottom: 20px; }
+          .service-list li { font-size: 14px; }
+          
+          .carousel-section { padding: 80px 20px; }
+          .carousel-title h2 { font-size: 36px; }
+          .carousel-title p { font-size: 16px; }
+          
+          .stats-section { padding: 80px 20px; }
+          .stats-grid { grid-template-columns: 1fr; gap: 30px; }
+          .stat-number { font-size: 48px; }
+          
+          .approach-section { padding: 80px 20px; }
+          .approach-section h2 { font-size: 36px; }
+          
+          .contact-cta { padding: 80px 20px; }
+          .contact-cta h2 { font-size: 36px; margin-bottom: 20px; }
+          .contact-cta p { font-size: 16px; margin-bottom: 40px; }
+          
+          footer { padding: 60px 20px; }
+          .footer-top-section { padding: 40px 20px; }
+          .footer-main { padding: 50px 20px; grid-template-columns: 1fr; gap: 40px; }
+          .footer-bottom { padding: 30px 20px; }
         }
     </style>
 </head>
