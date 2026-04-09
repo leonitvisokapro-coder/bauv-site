@@ -10,7 +10,7 @@
           --green-dark: #176131;
           --green-light: #82bd41;
           --white: #ffffff;
-          --light-gray: #f8f8f8;
+          --light-gray: #f5f5f5;
           --dark-gray: #2a2a2a;
           --text-muted: #666666;
         }
@@ -124,7 +124,7 @@
         .hero {
           margin-top: 75px;
           padding: 80px 100px;
-          background: linear-gradient(135deg, #fafafa 0%, var(--light-gray) 100%);
+          background: linear-gradient(135deg, #f5f5f5 0%, var(--light-gray) 100%);
           min-height: 120vh;
           display: flex;
           align-items: center;
@@ -753,7 +753,7 @@
           .service-card-label { font-size: 14px; }
         }
           padding: 150px 100px;
-          background: linear-gradient(135deg, #f9f9f9 0%, var(--light-gray) 100%);
+          background: linear-gradient(135deg, #f5f5f5 0%, var(--light-gray) 100%);
         }
 
         .two-services-title {
@@ -1230,7 +1230,7 @@
         }
 
         .testimonial-card {
-          background: linear-gradient(135deg, #f9f9f9 0%, var(--light-gray) 100%);
+          background: linear-gradient(135deg, #f5f5f5 0%, var(--light-gray) 100%);
           padding: 50px;
           border-radius: 8px;
           border-left: 4px solid var(--green-dark);
@@ -1271,7 +1271,7 @@
         /* CONTACT CTA */
         .contact-cta {
           padding: 120px 100px;
-          background: linear-gradient(135deg, #f9f9f9 0%, var(--light-gray) 100%);
+          background: linear-gradient(135deg, #f5f5f5 0%, var(--light-gray) 100%);
           text-align: center;
         }
 
@@ -1383,8 +1383,9 @@
         .footer-info-card {
           display: flex;
           flex-direction: column;
-          align-items: flex-start;
+          align-items: center;
           gap: 12px;
+          text-align: center;
         }
 
         .info-icon {
@@ -1440,6 +1441,8 @@
         .footer-left {
           display: flex;
           flex-direction: column;
+          align-items: center;
+          text-align: center;
         }
 
         .footer-logo {
@@ -1516,6 +1519,8 @@
         .footer-right {
           display: flex;
           flex-direction: column;
+          align-items: center;
+          text-align: center;
         }
 
         .footer-right h3 {
@@ -1668,10 +1673,10 @@
 <header>
   <div class="logo">bau<span class="green">V</span></div>
   <nav>
-    <a onclick="document.querySelector('.mission').scrollIntoView({behavior:'smooth'})">Mission</a>
-    <a onclick="document.querySelector('.two-services').scrollIntoView({behavior:'smooth'})">Services</a>
-    <a onclick="document.querySelector('.carousel-section').scrollIntoView({behavior:'smooth'})">Réalisations</a>
-    <a onclick="document.querySelector('.contact-cta').scrollIntoView({behavior:'smooth'})">Contact</a>
+    <a onclick="document.querySelector('.mission').scrollIntoView({behavior:'smooth'}); return false;">Mission</a>
+    <a onclick="document.querySelector('.services-grid-section').scrollIntoView({behavior:'smooth'}); return false;">Services</a>
+    <a onclick="document.querySelector('.carousel-section').scrollIntoView({behavior:'smooth'}); return false;">Réalisations</a>
+    <a onclick="document.querySelector('.contact-cta').scrollIntoView({behavior:'smooth'}); return false;">Contact</a>
   </nav>
 </header>
 
