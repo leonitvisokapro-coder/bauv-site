@@ -10,7 +10,7 @@
           --green-dark: #176131;
           --green-light: #82bd41;
           --white: #ffffff;
-          --light-gray: #f5f5f5;
+          --light-gray: #f0f0f0;
           --dark-gray: #2a2a2a;
           --text-muted: #666666;
         }
@@ -140,7 +140,7 @@
         .hero {
           margin-top: 75px;
           padding: 80px 100px;
-          background: #f5f5f5;
+          background: #f0f0f0;
           min-height: auto;
           display: flex;
           align-items: center;
@@ -298,7 +298,7 @@
         }
 
         .hero-value-tab {
-          background: #f5f5f5;
+          background: #f0f0f0;
           padding: 40px 30px;
           border-radius: 8px;
           cursor: pointer;
@@ -355,7 +355,7 @@
         }
 
         .hero-values-detail {
-          background: #f5f5f5;
+          background: #f0f0f0;
           padding: 60px;
           border-radius: 8px;
           margin-top: 40px;
@@ -862,7 +862,7 @@
           .service-card-label { font-size: 14px; }
         }
           padding: 150px 100px;
-          background: #f5f5f5;
+          background: #f0f0f0;
         }
 
         .two-services-title {
@@ -1261,7 +1261,7 @@
           width: 100%;
           height: 300px;
           overflow: hidden;
-          background: #f5f5f5;
+          background: #f0f0f0;
         }
 
         .project-image img {
@@ -1598,7 +1598,7 @@
         }
 
         .testimonial-card {
-          background: #f5f5f5;
+          background: #f0f0f0;
           padding: 50px;
           border-radius: 8px;
           border-left: 4px solid var(--green-dark);
@@ -1639,7 +1639,7 @@
         /* CONTACT CTA */
         .contact-cta {
           padding: 120px 100px;
-          background: #f5f5f5;
+          background: #f2f2f2;
           text-align: center;
         }
 
@@ -1731,8 +1731,8 @@
         }
 
         footer {
-          background: #0f0f0f;
-          color: #ffffff;
+          background: #1a1a1a;
+          color: #999;
         }
 
         .footer-wrapper {
@@ -1784,7 +1784,7 @@
 
         .footer-info-card a,
         .footer-info-card p {
-          color: #ffffff;
+          color: #999;
           font-size: 14px;
           text-decoration: none;
           margin: 0;
@@ -1873,7 +1873,7 @@
         }
 
         .footer-col a {
-          color: #ffffff;
+          color: #999;
           font-size: 14px;
           text-decoration: none;
           transition: color 0.3s;
@@ -1901,7 +1901,7 @@
         }
 
         .footer-right p {
-          color: #ffffff;
+          color: #999;
           font-size: 14px;
           line-height: 1.8;
           margin-bottom: 30px;
@@ -1946,7 +1946,7 @@
           padding: 40px 100px;
           border-top: 1px solid #333;
           font-size: 12px;
-          color: #ffffff;
+          color: #666;
         }
 
         @media (max-width: 1024px) {
@@ -2478,8 +2478,8 @@
     </div>
 
     <div class="project-modal-gallery">
-      <img src="images/lausanne-1.jpg" alt="Projet 2 - Photo 1">
-      <img src="images/lausanne-2.jpg" alt="Projet 2 - Photo 2">
+      <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&h=600&fit=crop" alt="Projet 2 - Photo 1">
+      <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop" alt="Projet 2 - Photo 2">
       <img src="images/lausanne-3.jpg" alt="Projet 2 - Photo 3">
       <img src="images/lausanne-4.jpg" alt="Projet 2 - Photo 4">
     </div>
@@ -2609,7 +2609,7 @@
           </svg>
         </div>
         <h3>Une question ?</h3>
-        <a href="/cdn-cgi/l/email-protection#ea83848c85aa888b9f9cc48982"><span class="__cf_email__" data-cfemail="dab3b4bcb59ab8bbafacf4b9b2">[email&#160;protected]</span></a>
+        <a href="mailto:info@bauv.ch">info@bauv.ch</a>
       </div>
 
       <div class="footer-info-card">
@@ -2670,7 +2670,7 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 // Contact form mailto
 document.getElementById('contactForm').addEventListener('submit', function(e) {
   e.preventDefault();
@@ -2854,4 +2854,13 @@ if (changingWordElement) {
 setInterval(changeWord, 3500);
 
 document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
-  btn.addEventListener('clic
+  btn.addEventListener('click', function() {
+    if (this.textContent.includes('devis') || this.textContent.includes('contact')) {
+      document.querySelector('.contact-cta').scrollIntoView({behavior: 'smooth'});
+    }
+  });
+});
+</script>
+
+</body>
+</html>
