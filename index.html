@@ -3,14 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bauV - Rénovation et Construction</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="images/favicon.jpg">
+    <link rel="apple-touch-icon" href="images/favicon.jpg">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TRT4H1BEPZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TRT4H1BEPZ');
+    </script>
+    
+    <title>bauV Genève - Rénovation et Construction Professionnelle | Direction Travaux</title>
+    <meta name="description" content="bauV Genève : rénovation et construction professionnelle. Direction de travaux, entreprise générale, gros œuvre. Expertise depuis 30 ans à Genève, Lausanne et Arc Lémanique. Devis gratuit.">
+    <meta name="keywords" content="rénovation Genève, rénovation maison Genève, rénovation appartement Genève, direction travaux Genève, construction Genève, gros œuvre Genève, entreprise générale Genève, rénovation intérieur Genève, rénovation extérieur Genève, Petit-Lancy, Vernier, Prilly, Lausanne, Arc Lémanique">
+    <meta name="author" content="bauV">
+    <meta name="robots" content="index, follow">
+    <meta name="geo.placename" content="Genève, Petit-Lancy, Suisse">
+    <meta name="geo.region" content="CH-GE">
+    <meta name="geo.position" content="46.1903;-6.1422">
+    <link rel="canonical" href="https://bauv-site.vercel.app/">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="bauV Genève - Rénovation et Construction Professionnelle">
+    <meta property="og:description" content="Rénovation et construction à Genève. Direction de travaux, entreprise générale, expertise 30 ans. Devis gratuit.">
+    <meta property="og:url" content="https://bauv-site.vercel.app/">
+    <meta property="og:image" content="https://bauv-site.vercel.app/images/logo-noir.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="bauV Genève - Rénovation Professionnelle">
+    <meta name="twitter:description" content="Direction travaux et rénovation à Genève. Expertise 30 ans, devis gratuit.">
+    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
           --green-dark: #176131;
           --green-light: #82bd41;
           --white: #ffffff;
-          --light-gray: #f5f5f5;
+          --light-gray: #f8f8f8;
           --dark-gray: #2a2a2a;
           --text-muted: #666666;
         }
@@ -68,7 +103,7 @@
           top: 0;
           left: 0;
           right: 0;
-          height: 75px;
+          height: 90px;
           background: rgba(255, 255, 255, 0.98);
           backdrop-filter: blur(20px);
           border-bottom: 1px solid rgba(26, 92, 58, 0.1);
@@ -88,9 +123,9 @@
         }
 
         .logo-img {
-          height: 50px;
+          height: 70px;
           width: auto;
-          max-width: 150px;
+          max-width: 200px;
         }
 
         .logo {
@@ -138,9 +173,9 @@
 
         /* HERO */
         .hero {
-          margin-top: 75px;
+          margin-top: 90px;
           padding: 80px 100px;
-          background: #f5f5f5;
+          background: #f8f8f8;
           min-height: auto;
           display: flex;
           align-items: center;
@@ -298,7 +333,7 @@
         }
 
         .hero-value-tab {
-          background: #f5f5f5;
+          background: #f8f8f8;
           padding: 40px 30px;
           border-radius: 8px;
           cursor: pointer;
@@ -355,7 +390,7 @@
         }
 
         .hero-values-detail {
-          background: #f5f5f5;
+          background: #f8f8f8;
           padding: 60px;
           border-radius: 8px;
           margin-top: 40px;
@@ -715,10 +750,18 @@
         }
 
         @media (max-width: 1024px) {
+          header { padding: 0 50px; }
+          nav { gap: 25px; }
+          nav a { font-size: 11px; }
           .clients-tabs { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
+          header { padding: 0 30px; height: 70px; }
+          .logo-img { height: 45px; }
+          nav { gap: 20px; }
+          nav a { font-size: 11px; letter-spacing: 0.5px; }
+          
           .clients-section { padding: 100px 40px; }
           .clients-tabs { grid-template-columns: 1fr; }
           .clients-content { padding: 40px; }
@@ -862,7 +905,7 @@
           .service-card-label { font-size: 14px; }
         }
           padding: 150px 100px;
-          background: #f5f5f5;
+          background: #f8f8f8;
         }
 
         .two-services-title {
@@ -1261,7 +1304,7 @@
           width: 100%;
           height: 300px;
           overflow: hidden;
-          background: #f5f5f5;
+          background: #f8f8f8;
         }
 
         .project-image img {
@@ -1598,7 +1641,7 @@
         }
 
         .testimonial-card {
-          background: #f5f5f5;
+          background: #f8f8f8;
           padding: 50px;
           border-radius: 8px;
           border-left: 4px solid var(--green-dark);
@@ -1639,7 +1682,7 @@
         /* CONTACT CTA */
         .contact-cta {
           padding: 120px 100px;
-          background: #f5f5f5;
+          background: #f2f2f2;
           text-align: center;
         }
 
@@ -1731,8 +1774,8 @@
         }
 
         footer {
-          background: #1a1a1a;
-          color: #999;
+          background: #000000;
+          color: #ffffff;
         }
 
         .footer-wrapper {
@@ -2034,6 +2077,52 @@
           .scrolling-text-section { padding: 100px 40px; }
           .scrolling-text { font-size: 42px; }
         }
+
+        /* MOBILE PETIT (< 480px) */
+        @media (max-width: 480px) {
+          header { padding: 0 20px; height: 70px; }
+          .logo-img { height: 40px; }
+          nav { gap: 15px; }
+          nav a { font-size: 10px; letter-spacing: 0.5px; }
+          
+          .hero { padding: 60px 20px; margin-top: 70px; }
+          .hero h1 { font-size: 36px; margin-bottom: 15px; }
+          .hero p { font-size: 16px; margin-bottom: 30px; }
+          .cta-buttons { flex-direction: column; gap: 15px; }
+          .btn { padding: 14px 30px; font-size: 12px; }
+          .hero-values { grid-template-columns: 1fr; gap: 25px; margin-top: 50px; padding-top: 50px; }
+          
+          .mission { padding: 80px 20px; }
+          .mission-content { gap: 40px; }
+          .mission-text h2 { font-size: 36px; margin-bottom: 25px; }
+          .mission-text p { font-size: 15px; }
+          
+          .two-services { padding: 80px 20px; }
+          .two-services-title h2 { font-size: 32px; }
+          .service-block { padding: 40px 25px; }
+          .service-block h3 { font-size: 22px; margin-bottom: 20px; }
+          .service-list li { font-size: 14px; }
+          
+          .carousel-section { padding: 80px 20px; }
+          .carousel-title h2 { font-size: 36px; }
+          .carousel-title p { font-size: 16px; }
+          
+          .stats-section { padding: 80px 20px; }
+          .stats-grid { grid-template-columns: 1fr; gap: 30px; }
+          .stat-number { font-size: 48px; }
+          
+          .approach-section { padding: 80px 20px; }
+          .approach-section h2 { font-size: 36px; }
+          
+          .contact-cta { padding: 80px 20px; }
+          .contact-cta h2 { font-size: 36px; margin-bottom: 20px; }
+          .contact-cta p { font-size: 16px; margin-bottom: 40px; }
+          
+          footer { padding: 60px 20px; }
+          .footer-top-section { padding: 40px 20px; }
+          .footer-main { padding: 50px 20px; grid-template-columns: 1fr; gap: 40px; }
+          .footer-bottom { padding: 30px 20px; }
+        }
     </style>
 </head>
 <body>
@@ -2081,7 +2170,7 @@
         <h3>Rigueur</h3>
         <p>Suivi quotidien des travaux</p>
       </div>
-      <div class="hero-value-tab" data-tab="transparence">
+      <div class="hero-value-tab" data-tab="hero-transparence">
         <div class="value-number">03</div>
         <h3>Transparence</h3>
         <p>Communication claire et régulière</p>
@@ -2106,7 +2195,7 @@
         <p>Notre suivi quotidien des travaux assure une coordination sans faille. Nous veillons au respect des délais, à la qualité d'exécution et à la satisfaction continue de nos clients.</p>
       </div>
 
-      <div class="hero-value-detail" id="transparence">
+      <div class="hero-value-detail" id="hero-transparence">
         <div class="detail-line"></div>
         <h3>Transparence</h3>
         <p>La communication claire est au cœur de nos relations. Nous maintenons un dialogue constant avec nos clients et partenaires pour assurer une compréhension mutuelle et une confiance durable.</p>
@@ -2235,7 +2324,7 @@
 
   <div class="services-grid">
     <div class="service-card-image">
-      <img src="images/renovation-complete.jpg" w=600&h=400&fit=crop" alt="Rénovation complète">
+      <img src="images/renovation-complete.jpg" alt=" alt="Rénovation complète">
       <div class="service-overlay">
         <h3>Rénovation complète</h3>
         <p>Prise en charge globale de votre projet, du gros œuvre aux finitions</p>
@@ -2563,21 +2652,21 @@
     <h2>Vous avez un <span class="accent">projet</span> ?</h2>
     <p>Remplissez le formulaire ci-dessous et nous vous répondrons rapidement pour discuter de vos besoins.</p>
     
-    <form class="contact-form" id="contactForm">
+    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mgopblkk" method="POST">
       <div class="form-group">
-        <input type="text" placeholder="Votre nom" required>
+        <input type="text" name="nom" placeholder="Votre nom" required>
       </div>
       <div class="form-group">
-        <input type="email" placeholder="Votre email" required>
+        <input type="email" name="email" placeholder="Votre email" required>
       </div>
       <div class="form-group">
-        <input type="tel" placeholder="Votre téléphone" required>
+        <input type="tel" name="telephone" placeholder="Votre téléphone" required>
       </div>
       <div class="form-group">
-        <input type="text" placeholder="Votre adresse" required>
+        <input type="text" name="adresse" placeholder="Votre adresse" required>
       </div>
       <div class="form-group">
-        <textarea placeholder="Décrivez votre projet..." rows="6" required></textarea>
+        <textarea name="message" placeholder="Décrivez votre projet..." rows="6" required></textarea>
       </div>
       <button type="submit" class="btn btn-primary">Envoyer ma demande</button>
     </form>
@@ -2609,7 +2698,7 @@
           </svg>
         </div>
         <h3>Une question ?</h3>
-        <a href="/cdn-cgi/l/email-protection#99f0f7fff6d9fbf8ecefb7faf1"><span class="__cf_email__" data-cfemail="224b4c444d62404357540c414a">[email&#160;protected]</span></a>
+        <a href="mailto:info@bauv.ch">info@bauv.ch</a>
       </div>
 
       <div class="footer-info-card">
@@ -2670,23 +2759,13 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Contact form mailto
 document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  
-  const form = this;
-  const nom = form.querySelector('input[type="text"]').value;
-  const email = form.querySelector('input[type="email"]').value;
-  const telephone = form.querySelector('input[type="tel"]').value;
-  const adresse = form.querySelectorAll('input[type="text"]')[1].value;
-  const message = form.querySelector('textarea').value;
-  
-  const subject = `Nouvelle demande de projet - ${nom}`;
-  const body = `Nom: ${nom}%0AEmail: ${email}%0ATéléphone: ${telephone}%0AAdresse: ${adresse}%0A%0AMessage:%0A${message}`;
-  
-  window.location.href = `mailto:info@bauv.ch?subject=${encodeURIComponent(subject)}&body=${body}`;
+  // Formspree gère tout automatiquement !
+  // Le formulaire sera envoyé et l'utilisateur verra un message de confirmation
 });
+
 
 let currentSlide = 0;
 
@@ -2816,7 +2895,10 @@ document.querySelectorAll('.hero-value-tab').forEach((tab, index) => {
 document.querySelectorAll('.approach-tab').forEach((tab, index) => {
   if (index === 0) {
     tab.classList.add('active');
-    document.getElementById(tab.dataset.tab).classList.add('active');
+    const tabId = tab.dataset.tab;
+    if (tabId) {
+      document.getElementById(tabId).classList.add('active');
+    }
   }
   
   tab.addEventListener('click', function() {
@@ -2824,7 +2906,13 @@ document.querySelectorAll('.approach-tab').forEach((tab, index) => {
     document.querySelectorAll('.approach-detail').forEach(d => d.classList.remove('active'));
     
     this.classList.add('active');
-    document.getElementById(this.dataset.tab).classList.add('active');
+    const tabId = this.dataset.tab;
+    if (tabId) {
+      const detailElement = document.getElementById(tabId);
+      if (detailElement) {
+        detailElement.classList.add('active');
+      }
+    }
   });
 });
 
@@ -2854,4 +2942,51 @@ if (changingWordElement) {
 setInterval(changeWord, 3500);
 
 document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
-  btn.addEventListener('clic
+  btn.addEventListener('click', function() {
+    if (this.textContent.includes('devis') || this.textContent.includes('contact')) {
+      document.querySelector('.contact-cta').scrollIntoView({behavior: 'smooth'});
+    }
+  });
+});
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "bauV Genève",
+  "alternateName": "bauV - Rénovation Genève",
+  "image": "https://bauv-site.vercel.app/images/logo-noir.png",
+  "description": "Entreprise générale de rénovation et construction à Genève. Direction de travaux, gestion complète, expertise depuis 30 ans.",
+  "url": "https://bauv-site.vercel.app/",
+  "telephone": "+41782685442",
+  "email": "info@bauv.ch",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Avenue des Morgines 12",
+    "addressLocality": "Petit-Lancy",
+    "postalCode": "1213",
+    "addressRegion": "Genève",
+    "addressCountry": "CH"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "46.1903",
+    "longitude": "-6.1422"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Genève"
+    },
+    {
+      "@type": "City",
+      "name": "Petit-Lancy"
+    },
+    {
+      "@type": "City",
+      "name": "Vernier"
+    },
+    {
+      "@type": "City",
+      "name": "Prilly"
+    }
