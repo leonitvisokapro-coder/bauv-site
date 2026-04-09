@@ -3399,7 +3399,7 @@ function changeWord() {
       // Fade in
       changingWordElement.style.opacity = '1';
       changingWordElement.style.transform = 'translateY(0)';
-    }, 300);
+    }, 200);
   }
 }
 
@@ -3492,12 +3492,12 @@ setInterval(() => {
 // Initialiser le premier mot
 if (changingWordElement) {
   changingWordElement.textContent = words[0];
-  changingWordElement.style.transition = 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)';
+  changingWordElement.style.transition = 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)';
   wordIndex = 1;
 }
 
-// Changer les mots tous les 3.5 secondes
-setInterval(changeWord, 3500);
+// Changer les mots tous les 2.5 secondes (plus rapide et dynamique)
+setInterval(changeWord, 2500);
 
 document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
   btn.addEventListener('click', function() {
