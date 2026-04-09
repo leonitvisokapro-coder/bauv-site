@@ -2652,21 +2652,21 @@
     <h2>Vous avez un <span class="accent">projet</span> ?</h2>
     <p>Remplissez le formulaire ci-dessous et nous vous répondrons rapidement pour discuter de vos besoins.</p>
     
-    <form class="contact-form" id="contactForm">
+    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mgopblkk" method="POST">
       <div class="form-group">
-        <input type="text" placeholder="Votre nom" required>
+        <input type="text" name="nom" placeholder="Votre nom" required>
       </div>
       <div class="form-group">
-        <input type="email" placeholder="Votre email" required>
+        <input type="email" name="email" placeholder="Votre email" required>
       </div>
       <div class="form-group">
-        <input type="tel" placeholder="Votre téléphone" required>
+        <input type="tel" name="telephone" placeholder="Votre téléphone" required>
       </div>
       <div class="form-group">
-        <input type="text" placeholder="Votre adresse" required>
+        <input type="text" name="adresse" placeholder="Votre adresse" required>
       </div>
       <div class="form-group">
-        <textarea placeholder="Décrivez votre projet..." rows="6" required></textarea>
+        <textarea name="message" placeholder="Décrivez votre projet..." rows="6" required></textarea>
       </div>
       <button type="submit" class="btn btn-primary">Envoyer ma demande</button>
     </form>
@@ -2762,20 +2762,10 @@
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Contact form mailto
 document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  
-  const form = this;
-  const nom = form.querySelector('input[type="text"]').value;
-  const email = form.querySelector('input[type="email"]').value;
-  const telephone = form.querySelector('input[type="tel"]').value;
-  const adresse = form.querySelectorAll('input[type="text"]')[1].value;
-  const message = form.querySelector('textarea').value;
-  
-  const subject = `Nouvelle demande de projet - ${nom}`;
-  const body = `Nom: ${nom}%0AEmail: ${email}%0ATéléphone: ${telephone}%0AAdresse: ${adresse}%0A%0AMessage:%0A${message}`;
-  
-  window.location.href = `mailto:info@bauv.ch?subject=${encodeURIComponent(subject)}&body=${body}`;
+  // Formspree gère tout automatiquement !
+  // Le formulaire sera envoyé et l'utilisateur verra un message de confirmation
 });
+
 
 let currentSlide = 0;
 
