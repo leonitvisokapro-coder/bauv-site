@@ -991,53 +991,20 @@
           height: 3px;
           background: var(--green-dark);
           border-radius: 2px;
+          width: 0;
           opacity: 0;
         }
 
-        .left-line {
-          animation: slideFromLeft 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-          animation-delay: 0.2s;
+        .vision-line.animate,
+        .reality-line.animate {
+          animation: slideIn 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         }
 
-        .right-line {
-          animation: slideFromRight 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-          animation-delay: 0.2s;
-        }
-
-        @keyframes slideFromLeft {
-          from {
-            width: 0;
-            opacity: 0;
-            transform: translateX(-50px);
-          }
+        @keyframes slideIn {
           to {
             width: 100%;
             opacity: 1;
-            transform: translateX(0);
           }
-        }
-
-        @keyframes slideFromRight {
-          from {
-            width: 0;
-            opacity: 0;
-            transform: translateX(50px);
-          }
-          to {
-            width: 100%;
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        .vision-text {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 12px;
-          min-width: 300px;
-          text-align: center;
-          z-index: 2;
         }
 
         .vision-word,
@@ -1046,32 +1013,22 @@
           font-family: 'Poppins', sans-serif;
           font-weight: 800;
           letter-spacing: -1px;
+          opacity: 0;
         }
 
-        .vision-word {
-          font-size: 48px;
-          color: var(--dark-gray);
-          animation: fadeInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+        .vision-word.animate {
+          animation: fadeInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s forwards;
         }
 
-        .to-word {
-          font-size: 18px;
-          color: var(--text-muted);
-          font-weight: 400;
-          animation: fadeInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
+        .to-word.animate {
+          animation: fadeInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s forwards;
         }
 
-        .reality-word {
-          font-size: 48px;
-          color: var(--green-dark);
-          animation: fadeInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both;
+        .reality-word.animate {
+          animation: fadeInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s forwards;
         }
 
         @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
           to {
             opacity: 1;
             transform: translateY(0);
@@ -1934,6 +1891,26 @@ function changeWord() {
       changingWordElement.style.transform = 'translateY(0)';
     }, 300);
   }
+}
+
+// Vision Reality section animation on scroll
+const visionSection = document.querySelector('.vision-reality-section');
+if (visionSection) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const lines = visionSection.querySelectorAll('.vision-line, .reality-line');
+        const words = visionSection.querySelectorAll('.vision-word, .to-word, .reality-word');
+        
+        lines.forEach(line => line.classList.add('animate'));
+        words.forEach(word => word.classList.add('animate'));
+        
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  
+  observer.observe(visionSection);
 }
 
 // Clients tabs interaction
