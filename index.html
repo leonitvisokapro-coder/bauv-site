@@ -81,6 +81,18 @@
           position: relative;
         }
 
+        .header-logo {
+          display: flex;
+          align-items: center;
+          animation: slideIn 0.8s ease;
+        }
+
+        .logo-img {
+          height: 50px;
+          width: auto;
+          max-width: 150px;
+        }
+
         .logo {
           font-size: 28px;
           font-weight: 800;
@@ -93,18 +105,18 @@
 
         nav {
           display: flex;
-          gap: 70px;
+          gap: 40px;
           animation: slideInRight 0.8s ease;
         }
 
         nav a {
-          font-size: 13px;
+          font-size: 12px;
           color: var(--text-muted);
           text-decoration: none;
           cursor: pointer;
           transition: all 0.3s;
           text-transform: uppercase;
-          letter-spacing: 1px;
+          letter-spacing: 0.8px;
           font-weight: 600;
           position: relative;
           padding-bottom: 8px;
@@ -1207,6 +1219,16 @@
           color: var(--dark-gray);
         }
 
+        .carousel-title h2 .gray {
+          color: var(--dark-gray);
+          font-weight: 300;
+        }
+
+        .carousel-title h2 .accent {
+          color: var(--green-dark);
+          font-weight: 700;
+        }
+
         .carousel-title p {
           font-size: 18px;
           color: var(--text-muted);
@@ -2017,11 +2039,15 @@
 <body>
 
 <header>
-  <div class="logo">bau<span class="green">V</span></div>
+  <div class="header-logo">
+    <img src="images/logo.png" alt="bauV Logo" class="logo-img">
+  </div>
   <nav>
-    <a onclick="document.querySelector('.mission').scrollIntoView({behavior:'smooth'}); return false;">Mission</a>
-    <a onclick="document.querySelector('.services-grid-section').scrollIntoView({behavior:'smooth'}); return false;">Services</a>
-    <a onclick="document.querySelector('.carousel-section').scrollIntoView({behavior:'smooth'}); return false;">Réalisations</a>
+    <a onclick="document.querySelector('.mission').scrollIntoView({behavior:'smooth'}); return false;">Notre mission</a>
+    <a onclick="document.querySelector('.clients-section').scrollIntoView({behavior:'smooth'}); return false;">Nos clients</a>
+    <a onclick="document.querySelector('.services-grid-section').scrollIntoView({behavior:'smooth'}); return false;">Nos compétences</a>
+    <a onclick="document.querySelector('.approach-section').scrollIntoView({behavior:'smooth'}); return false;">Notre approche</a>
+    <a onclick="document.querySelector('.carousel-section').scrollIntoView({behavior:'smooth'}); return false;">Nos réalisations</a>
     <a onclick="document.querySelector('.contact-cta').scrollIntoView({behavior:'smooth'}); return false;">Contact</a>
   </nav>
 </header>
