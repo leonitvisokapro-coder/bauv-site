@@ -237,6 +237,41 @@
           text-align: center;
         }
 
+        .btn {
+          padding: 16px 50px;
+          border: none;
+          cursor: pointer;
+          font-size: 13px;
+          letter-spacing: 1.5px;
+          border-radius: 30px;
+          font-weight: 800;
+          text-transform: uppercase;
+          transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+          font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-primary {
+          background: var(--green-dark);
+          color: var(--white);
+        }
+
+        .btn-primary:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 25px 60px rgba(26, 92, 58, 0.4);
+        }
+
+        .btn-secondary {
+          background: transparent;
+          color: var(--green-dark);
+          border: 2px solid var(--green-dark);
+        }
+
+        .btn-secondary:hover {
+          background: var(--green-dark);
+          color: var(--white);
+          transform: translateY(-4px);
+        }
+
         .hero-values {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
