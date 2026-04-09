@@ -337,13 +337,19 @@
           padding: 40px 30px;
           border-radius: 8px;
           cursor: pointer;
-          transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
           border: 2px solid transparent;
           text-align: center;
+          
+          /* Transitions fluides premium */
+          transition: 
+            background 0.4s ease,
+            color 0.3s ease,
+            transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+            box-shadow 0.35s ease;
         }
 
         .hero-value-tab:hover {
-          transform: translateY(-5px);
+          transform: translateY(-4px);
           box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
         }
 
@@ -351,6 +357,16 @@
           background: var(--dark-gray);
           color: var(--white);
           border-color: var(--green-dark);
+          
+          /* Animation au clic : lift + scale subtle */
+          transform: translateY(-6px) scale(1.02);
+          box-shadow: 
+            0 20px 50px rgba(0,0,0,0.15),
+            0 0 0 1px rgba(130, 189, 65, 0.2);
+        }
+
+        .hero-value-tab:active {
+          transform: scale(0.98);
         }
 
         .value-number {
@@ -398,11 +414,15 @@
 
         .hero-value-detail {
           display: none;
+          opacity: 0;
+          transform: translateY(10px);
+          transition: all 0.4s ease;
         }
 
         .hero-value-detail.active {
           display: block;
-          animation: fadeIn 0.4s ease;
+          opacity: 1;
+          transform: translateY(0);
         }
 
         .hero-value-detail .detail-line {
@@ -570,20 +590,37 @@
           padding: 40px 30px;
           border-radius: 8px;
           cursor: pointer;
-          transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
           border: 2px solid transparent;
           text-align: center;
+          
+          /* Transitions fluides premium */
+          transition: 
+            background 0.4s ease,
+            color 0.3s ease,
+            transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+            box-shadow 0.35s ease;
         }
 
         .client-tab:hover {
-          transform: translateY(-5px);
+          transform: translateY(-4px);
           box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
         }
 
+        /* État ACTIF = NOIR comme les autres (+ animations) */
         .client-tab.active {
-          background: var(--green-dark);
-          color: var(--white);
-          border-color: var(--green-light);
+          background: var(--dark-gray) !important;
+          color: var(--white) !important;
+          border-color: var(--green-dark);
+          
+          /* Animation au clic : lift + scale subtle */
+          transform: translateY(-6px) scale(1.02);
+          box-shadow: 
+            0 20px 50px rgba(0,0,0,0.15),
+            0 0 0 1px rgba(130, 189, 65, 0.2);
+        }
+
+        .client-tab:active {
+          transform: scale(0.98);
         }
 
         .client-tab .tab-number {
@@ -629,11 +666,15 @@
 
         .client-detail {
           display: none;
+          opacity: 0;
+          transform: translateY(10px);
+          transition: all 0.4s ease;
         }
 
         .client-detail.active {
           display: block;
-          animation: fadeIn 0.4s ease;
+          opacity: 1;
+          transform: translateY(0);
         }
 
         .client-detail .detail-line {
@@ -915,13 +956,19 @@
           padding: 40px 30px;
           border-radius: 8px;
           cursor: pointer;
-          transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
           border: 2px solid transparent;
           text-align: center;
+          
+          /* Transitions fluides premium */
+          transition: 
+            background 0.4s ease,
+            color 0.3s ease,
+            transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+            box-shadow 0.35s ease;
         }
 
         .approach-tab:hover {
-          transform: translateY(-5px);
+          transform: translateY(-4px);
           box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
         }
 
@@ -929,6 +976,16 @@
           background: var(--dark-gray);
           color: var(--white);
           border-color: var(--green-dark);
+          
+          /* Animation au clic : lift + scale subtle */
+          transform: translateY(-6px) scale(1.02);
+          box-shadow: 
+            0 20px 50px rgba(0,0,0,0.15),
+            0 0 0 1px rgba(130, 189, 65, 0.2);
+        }
+
+        .approach-tab:active {
+          transform: scale(0.98);
         }
 
         .tab-number {
@@ -974,11 +1031,15 @@
 
         .approach-detail {
           display: none;
+          opacity: 0;
+          transform: translateY(10px);
+          transition: all 0.4s ease;
         }
 
         .approach-detail.active {
           display: block;
-          animation: fadeIn 0.4s ease;
+          opacity: 1;
+          transform: translateY(0);
         }
 
         .detail-line {
