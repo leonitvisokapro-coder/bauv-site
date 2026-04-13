@@ -75,24 +75,26 @@
         /* Bouton Skip */
         #skipButton {
           position: absolute;
-          bottom: 20px;
-          right: 20px;
-          padding: 12px 20px;
-          background: rgba(0, 0, 0, 0.6);
-          color: white;
-          border: 1px solid rgba(255, 255, 255, 0.3);
-          border-radius: 4px;
+          bottom: 15px;
+          right: 15px;
+          padding: 8px 14px;
+          background: rgba(0, 0, 0, 0.4);
+          color: rgba(255, 255, 255, 0.8);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: 20px;
           cursor: pointer;
-          font-weight: 600;
-          font-size: 14px;
+          font-weight: 500;
+          font-size: 12px;
           font-family: 'Poppins', sans-serif;
           transition: all 0.3s ease;
           z-index: 10000;
+          backdrop-filter: blur(8px);
         }
 
         #skipButton:hover {
-          background: rgba(0, 0, 0, 0.8);
-          border-color: rgba(255, 255, 255, 0.6);
+          background: rgba(0, 0, 0, 0.5);
+          border-color: rgba(255, 255, 255, 0.4);
+          color: rgba(255, 255, 255, 1);
         }
 
         /* Fade out de l'intro */
@@ -3591,41 +3593,27 @@ document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
 const introVideo = document.getElementById("introVideo");
 const intro = document.getElementById("intro");
 const skipButton = document.getElementById("skipButton");
-const body = document.body;
 
 function endIntro() {
-  // Fade out
-  intro.classList.add("fade-out");
-  
+  intro.style.opacity = "0";
   setTimeout(() => {
     intro.style.display = "none";
-    body.classList.remove("intro-playing");
-    sessionStorage.setItem("introPlayed", "true");
-  }, 1000);
+  }, 500);
 }
 
-// Ajouter la classe intro-playing
-body.classList.add("intro-playing");
+// Fin de la vidéo
+if (introVideo) {
+  introVideo.onended = endIntro;
+}
 
-// Vérifier si l'intro a déjà été jouée
-if (sessionStorage.getItem("introPlayed")) {
-  intro.style.display = "none";
-  body.classList.remove("intro-playing");
-} else {
-  // Fin normale de la vidéo
-  if (introVideo) {
-    introVideo.onended = endIntro;
-  }
-  
-  // Bouton skip
-  if (skipButton) {
-    skipButton.onclick = () => {
-      if (introVideo) {
-        introVideo.pause();
-      }
-      endIntro();
-    };
-  }
+// Bouton Passer
+if (skipButton) {
+  skipButton.onclick = () => {
+    if (introVideo) {
+      introVideo.pause();
+    }
+    endIntro();
+  };
 }
 </script>
 <script type="application/ld+json">
