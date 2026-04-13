@@ -50,6 +50,68 @@
           --text-muted: #666666;
         }
 
+        /* ========================= */
+        /* 🎬 INTRO VIDEO */
+        /* ========================= */
+        #intro {
+          position: fixed;
+          inset: 0;
+          background: #000000;
+          z-index: 9999;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+        }
+
+        #introVideo {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        /* Bouton Skip */
+        #skipButton {
+          position: absolute;
+          bottom: 20px;
+          right: 20px;
+          padding: 12px 20px;
+          background: rgba(0, 0, 0, 0.6);
+          color: white;
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          border-radius: 4px;
+          cursor: pointer;
+          font-weight: 600;
+          font-size: 14px;
+          font-family: 'Poppins', sans-serif;
+          transition: all 0.3s ease;
+          z-index: 10000;
+        }
+
+        #skipButton:hover {
+          background: rgba(0, 0, 0, 0.8);
+          border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Fade out de l'intro */
+        #intro.fade-out {
+          opacity: 0;
+          transition: opacity 1s ease;
+          pointer-events: none;
+        }
+
+        /* Contenu principal caché initialement */
+        body.intro-playing {
+          overflow: hidden;
+        }
+        
+        /* ========================= */
+        /* STYLES PRINCIPAUX */
+        /* ========================= */
+
         * {
           margin: 0;
           padding: 0;
@@ -2673,6 +2735,18 @@
 </head>
 <body>
 
+<!-- INTRO VIDEO -->
+<div id="intro">
+  <video id="introVideo" autoplay muted playsinline>
+    <!-- MOBILE -->
+    <source src="videos/intro-mobile.mp4" media="(max-width: 768px)">
+    <!-- DESKTOP -->
+    <source src="videos/intro-desktop.mp4" media="(min-width: 769px)">
+    Votre navigateur ne supporte pas les vidéos HTML5.
+  </video>
+  <button id="skipButton">Passer</button>
+</div>
+
 <header>
   <div class="header-logo">
     <img src="images/logo-noir.png" alt="bauV Logo" class="logo-img">
@@ -3506,6 +3580,49 @@ document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
     }
   });
 });
+
+/* ========================= */
+/* 🎬 GESTION INTRO VIDEO */
+/* ========================= */
+const introVideo = document.getElementById("introVideo");
+const intro = document.getElementById("intro");
+const skipButton = document.getElementById("skipButton");
+const body = document.body;
+
+function endIntro() {
+  // Fade out
+  intro.classList.add("fade-out");
+  
+  setTimeout(() => {
+    intro.style.display = "none";
+    body.classList.remove("intro-playing");
+    sessionStorage.setItem("introPlayed", "true");
+  }, 1000);
+}
+
+// Ajouter la classe intro-playing
+body.classList.add("intro-playing");
+
+// Vérifier si l'intro a déjà été jouée
+if (sessionStorage.getItem("introPlayed")) {
+  intro.style.display = "none";
+  body.classList.remove("intro-playing");
+} else {
+  // Fin normale de la vidéo
+  if (introVideo) {
+    introVideo.onended = endIntro;
+  }
+  
+  // Bouton skip
+  if (skipButton) {
+    skipButton.onclick = () => {
+      if (introVideo) {
+        introVideo.pause();
+      }
+      endIntro();
+    };
+  }
+}
 </script>
 <script type="application/ld+json">
 {
