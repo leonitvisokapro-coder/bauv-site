@@ -1359,6 +1359,149 @@
           .vision-section h2 { font-size: 28px; padding: 0 30px; }
         }
 
+        /* ===== SECTION POURQUOI BAUVÉ ===== */
+        .why-bauv-section {
+          padding: 100px 40px;
+          background: var(--white);
+        }
+
+        .why-bauv-container {
+          max-width: 900px;
+          margin: 0 auto;
+        }
+
+        .why-bauv-section h2 {
+          font-size: 52px;
+          font-weight: 800;
+          text-align: center;
+          margin-bottom: 80px;
+          font-family: 'Poppins', sans-serif;
+          color: var(--dark-gray);
+        }
+
+        .why-bauv-section h2 .accent {
+          color: var(--green-dark);
+        }
+
+        .why-bauv-list {
+          display: flex;
+          flex-direction: column;
+          gap: 60px;
+          margin-bottom: 80px;
+        }
+
+        .why-bauv-item {
+          display: flex;
+          gap: 50px;
+          align-items: flex-start;
+        }
+
+        .why-bauv-number {
+          font-size: 56px;
+          font-weight: 800;
+          color: var(--green-dark);
+          min-width: 100px;
+          font-family: 'Poppins', sans-serif;
+          line-height: 1;
+        }
+
+        .why-bauv-content h3 {
+          font-size: 24px;
+          font-weight: 800;
+          color: var(--dark-gray);
+          margin-bottom: 12px;
+          font-family: 'Poppins', sans-serif;
+        }
+
+        .why-bauv-content p {
+          font-size: 16px;
+          color: var(--text-muted);
+          line-height: 1.7;
+        }
+
+        .why-bauv-cta {
+          text-align: center;
+        }
+
+        /* ANIMATION SUBTILE */
+        .why-bauv-item {
+          opacity: 0;
+          animation: slideInUp 0.6s ease forwards;
+        }
+
+        .why-bauv-item:nth-child(1) { animation-delay: 0.1s; }
+        .why-bauv-item:nth-child(2) { animation-delay: 0.2s; }
+        .why-bauv-item:nth-child(3) { animation-delay: 0.3s; }
+        .why-bauv-item:nth-child(4) { animation-delay: 0.4s; }
+        .why-bauv-item:nth-child(5) { animation-delay: 0.5s; }
+        .why-bauv-item:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes slideInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+          .why-bauv-section {
+            padding: 80px 40px;
+          }
+
+          .why-bauv-section h2 {
+            font-size: 42px;
+          }
+
+          .why-bauv-item {
+            gap: 40px;
+          }
+
+          .why-bauv-number {
+            font-size: 48px;
+            min-width: 80px;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .why-bauv-section {
+            padding: 70px 20px;
+          }
+
+          .why-bauv-section h2 {
+            font-size: 36px;
+            margin-bottom: 60px;
+          }
+
+          .why-bauv-list {
+            gap: 50px;
+            margin-bottom: 60px;
+          }
+
+          .why-bauv-item {
+            gap: 30px;
+            flex-direction: column;
+            align-items: flex-start;
+          }
+
+          .why-bauv-number {
+            font-size: 42px;
+            min-width: auto;
+          }
+
+          .why-bauv-content h3 {
+            font-size: 20px;
+          }
+
+          .why-bauv-content p {
+            font-size: 15px;
+          }
+        }
+
         .carousel-section {
           padding: 100px 100px;
           background: var(--white);
@@ -3335,50 +3478,62 @@ Entreprise de rénovation à Genève – bauV
   </div>
 </section>
 
-<section class="vision-section" style="background: #f8f8f8; padding: 80px 20px;">
-  <div style="max-width: 1200px; margin: 0 auto;">
-    <h2 style="text-align: center; margin-bottom: 60px; font-size: 42px; font-weight: 800;">Pourquoi choisir <span class="accent">bauV</span> à Genève</h2>
+<section class="why-bauv-section">
+  <div class="why-bauv-container">
+    <h2>Pourquoi choisir <span class="accent">bauV</span></h2>
     
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
-      <div style="text-align: center;">
-        <div style="font-size: 48px; color: var(--green-dark); font-weight: 800; margin-bottom: 15px;">30+</div>
-        <h3 style="font-size: 20px; font-weight: 800; color: var(--dark-gray); margin-bottom: 10px;">Années d'expérience</h3>
-        <p style="color: var(--text-muted); line-height: 1.6;">Expertise dans la rénovation et construction à Genève depuis plus de 3 décennies</p>
+    <div class="why-bauv-list">
+      <div class="why-bauv-item">
+        <div class="why-bauv-number">30+</div>
+        <div class="why-bauv-content">
+          <h3>Années d'expérience</h3>
+          <p>Plus de 30 ans d'expertise dans la rénovation et construction à Genève</p>
+        </div>
       </div>
-      
-      <div style="text-align: center;">
-        <div style="font-size: 48px; color: var(--green-dark); font-weight: 800; margin-bottom: 15px;">1</div>
-        <h3 style="font-size: 20px; font-weight: 800; color: var(--dark-gray); margin-bottom: 10px;">Seul interlocuteur</h3>
-        <p style="color: var(--text-muted); line-height: 1.6;">Un point de contact unique pour toute la durée de votre projet</p>
+
+      <div class="why-bauv-item">
+        <div class="why-bauv-number">1</div>
+        <div class="why-bauv-content">
+          <h3>Interlocuteur unique</h3>
+          <p>Un point de contact unique du diagnostic à la livraison de votre projet</p>
+        </div>
       </div>
-      
-      <div style="text-align: center;">
-        <div style="font-size: 48px; color: var(--green-dark); font-weight: 800; margin-bottom: 15px;">✓</div>
-        <h3 style="font-size: 20px; font-weight: 800; color: var(--dark-gray); margin-bottom: 10px;">Délais respectés</h3>
-        <p style="color: var(--text-muted); line-height: 1.6;">Respect strict des délais et budgets convenus avec transparence</p>
+
+      <div class="why-bauv-item">
+        <div class="why-bauv-number">100%</div>
+        <div class="why-bauv-content">
+          <h3>Délais respectés</h3>
+          <p>Respect strict des délais et budgets convenus avec totale transparence</p>
+        </div>
       </div>
-      
-      <div style="text-align: center;">
-        <div style="font-size: 48px; color: var(--green-dark); font-weight: 800; margin-bottom: 15px;">✓</div>
-        <h3 style="font-size: 20px; font-weight: 800; color: var(--dark-gray); margin-bottom: 10px;">Qualité premium</h3>
-        <p style="color: var(--text-muted); line-height: 1.6;">Finitions irréprochables et matériaux haut de gamme</p>
+
+      <div class="why-bauv-item">
+        <div class="why-bauv-number">✓</div>
+        <div class="why-bauv-content">
+          <h3>Qualité premium</h3>
+          <p>Finitions irréprochables et matériaux haut de gamme systématiquement</p>
+        </div>
       </div>
-      
-      <div style="text-align: center;">
-        <div style="font-size: 48px; color: var(--green-dark); font-weight: 800; margin-bottom: 15px;">✓</div>
-        <h3 style="font-size: 20px; font-weight: 800; color: var(--dark-gray); margin-bottom: 10px;">Entreprise générale</h3>
-        <p style="color: var(--text-muted); line-height: 1.6;">Gestion complète de tous les corps de métiers</p>
+
+      <div class="why-bauv-item">
+        <div class="why-bauv-number">✓</div>
+        <div class="why-bauv-content">
+          <h3>Entreprise générale</h3>
+          <p>Gestion complète de tous les corps de métiers sous un seul pilotage</p>
+        </div>
       </div>
-      
-      <div style="text-align: center;">
-        <div style="font-size: 48px; color: var(--green-dark); font-weight: 800; margin-bottom: 15px;">✓</div>
-        <h3 style="font-size: 20px; font-weight: 800; color: var(--dark-gray); margin-bottom: 10px;">Accompagnement</h3>
-        <p style="color: var(--text-muted); line-height: 1.6;">Suivi personnalisé du diagnostic à la livraison</p>
+
+      <div class="why-bauv-item">
+        <div class="why-bauv-number">✓</div>
+        <div class="why-bauv-content">
+          <h3>Accompagnement</h3>
+          <p>Suivi personnalisé et conseils à chaque étape de votre rénovation</p>
+        </div>
       </div>
     </div>
-    
-    <div style="text-align: center; margin-top: 60px;">
-      <a href="#contact" class="btn btn-primary" style="display: inline-block;">Demander un devis gratuit</a>
+
+    <div class="why-bauv-cta">
+      <a href="#contact" class="btn btn-primary">Demander un devis gratuit</a>
     </div>
   </div>
 </section>
