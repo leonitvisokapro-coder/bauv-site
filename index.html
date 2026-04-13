@@ -1363,17 +1363,17 @@
         .why-bauv-section {
           padding: 100px 40px;
           background: var(--white);
+          text-align: center;
         }
 
         .why-bauv-container {
-          max-width: 900px;
+          max-width: 1100px;
           margin: 0 auto;
         }
 
         .why-bauv-section h2 {
           font-size: 52px;
           font-weight: 800;
-          text-align: center;
           margin-bottom: 80px;
           font-family: 'Poppins', sans-serif;
           color: var(--dark-gray);
@@ -1383,87 +1383,73 @@
           color: var(--green-dark);
         }
 
-        .why-bauv-list {
+        /* LIGNE HORIZONTALE */
+        .why-bauv-row {
           display: flex;
-          flex-direction: column;
-          gap: 60px;
-          margin-bottom: 80px;
+          justify-content: center;
+          gap: 80px;
+          flex-wrap: wrap;
+          margin-bottom: 60px;
+          align-items: stretch;
         }
 
-        .why-bauv-item {
-          display: flex;
-          gap: 50px;
-          align-items: flex-start;
+        .why-bauv-box {
+          text-align: center;
+          min-width: 140px;
+          padding: 30px 20px;
+          flex: 1;
+          max-width: 200px;
+          transition: transform 0.3s ease;
         }
 
-        .why-bauv-number {
-          font-size: 56px;
+        .why-bauv-box:hover {
+          transform: translateY(-5px);
+        }
+
+        .why-bauv-box span {
+          display: block;
+          font-size: 48px;
           font-weight: 800;
           color: var(--green-dark);
-          min-width: 100px;
+          margin-bottom: 15px;
           font-family: 'Poppins', sans-serif;
           line-height: 1;
         }
 
-        .why-bauv-content h3 {
-          font-size: 24px;
-          font-weight: 800;
-          color: var(--dark-gray);
-          margin-bottom: 12px;
-          font-family: 'Poppins', sans-serif;
-        }
-
-        .why-bauv-content p {
-          font-size: 16px;
+        .why-bauv-box p {
+          font-size: 15px;
           color: var(--text-muted);
-          line-height: 1.7;
+          font-weight: 600;
+          line-height: 1.5;
         }
 
         .why-bauv-cta {
-          text-align: center;
-        }
-
-        /* ANIMATION SUBTILE */
-        .why-bauv-item {
-          opacity: 0;
-          animation: slideInUp 0.6s ease forwards;
-        }
-
-        .why-bauv-item:nth-child(1) { animation-delay: 0.1s; }
-        .why-bauv-item:nth-child(2) { animation-delay: 0.2s; }
-        .why-bauv-item:nth-child(3) { animation-delay: 0.3s; }
-        .why-bauv-item:nth-child(4) { animation-delay: 0.4s; }
-        .why-bauv-item:nth-child(5) { animation-delay: 0.5s; }
-        .why-bauv-item:nth-child(6) { animation-delay: 0.6s; }
-
-        @keyframes slideInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+          margin-top: 40px;
         }
 
         /* RESPONSIVE */
         @media (max-width: 1024px) {
           .why-bauv-section {
-            padding: 80px 40px;
+            padding: 80px 30px;
           }
 
           .why-bauv-section h2 {
+            font-size: 44px;
+            margin-bottom: 60px;
+          }
+
+          .why-bauv-row {
+            gap: 60px;
+          }
+
+          .why-bauv-box {
+            max-width: 180px;
+            padding: 25px 15px;
+          }
+
+          .why-bauv-box span {
             font-size: 42px;
-          }
-
-          .why-bauv-item {
-            gap: 40px;
-          }
-
-          .why-bauv-number {
-            font-size: 48px;
-            min-width: 80px;
+            margin-bottom: 12px;
           }
         }
 
@@ -1474,31 +1460,52 @@
 
           .why-bauv-section h2 {
             font-size: 36px;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
           }
 
-          .why-bauv-list {
-            gap: 50px;
-            margin-bottom: 60px;
-          }
-
-          .why-bauv-item {
+          .why-bauv-row {
             gap: 30px;
-            flex-direction: column;
-            align-items: flex-start;
+            margin-bottom: 50px;
           }
 
-          .why-bauv-number {
-            font-size: 42px;
-            min-width: auto;
+          .why-bauv-box {
+            min-width: 130px;
+            max-width: 150px;
+            padding: 20px 12px;
           }
 
-          .why-bauv-content h3 {
-            font-size: 20px;
+          .why-bauv-box span {
+            font-size: 36px;
+            margin-bottom: 10px;
           }
 
-          .why-bauv-content p {
-            font-size: 15px;
+          .why-bauv-box p {
+            font-size: 13px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .why-bauv-section h2 {
+            font-size: 28px;
+            margin-bottom: 40px;
+          }
+
+          .why-bauv-row {
+            gap: 20px;
+          }
+
+          .why-bauv-box {
+            min-width: 100px;
+            max-width: 120px;
+            padding: 15px 10px;
+          }
+
+          .why-bauv-box span {
+            font-size: 28px;
+          }
+
+          .why-bauv-box p {
+            font-size: 12px;
           }
         }
 
@@ -3482,53 +3489,25 @@ Entreprise de rénovation à Genève – bauV
   <div class="why-bauv-container">
     <h2>Pourquoi choisir <span class="accent">bauV</span></h2>
     
-    <div class="why-bauv-list">
-      <div class="why-bauv-item">
-        <div class="why-bauv-number">30+</div>
-        <div class="why-bauv-content">
-          <h3>Années d'expérience</h3>
-          <p>Plus de 30 ans d'expertise dans la rénovation et construction à Genève</p>
-        </div>
+    <div class="why-bauv-row">
+      <div class="why-bauv-box">
+        <span>30+</span>
+        <p>Ans d'expérience</p>
       </div>
 
-      <div class="why-bauv-item">
-        <div class="why-bauv-number">1</div>
-        <div class="why-bauv-content">
-          <h3>Interlocuteur unique</h3>
-          <p>Un point de contact unique du diagnostic à la livraison de votre projet</p>
-        </div>
+      <div class="why-bauv-box">
+        <span>1</span>
+        <p>Interlocuteur unique</p>
       </div>
 
-      <div class="why-bauv-item">
-        <div class="why-bauv-number">100%</div>
-        <div class="why-bauv-content">
-          <h3>Délais respectés</h3>
-          <p>Respect strict des délais et budgets convenus avec totale transparence</p>
-        </div>
+      <div class="why-bauv-box">
+        <span>100%</span>
+        <p>Délais respectés</p>
       </div>
 
-      <div class="why-bauv-item">
-        <div class="why-bauv-number">✓</div>
-        <div class="why-bauv-content">
-          <h3>Qualité premium</h3>
-          <p>Finitions irréprochables et matériaux haut de gamme systématiquement</p>
-        </div>
-      </div>
-
-      <div class="why-bauv-item">
-        <div class="why-bauv-number">✓</div>
-        <div class="why-bauv-content">
-          <h3>Entreprise générale</h3>
-          <p>Gestion complète de tous les corps de métiers sous un seul pilotage</p>
-        </div>
-      </div>
-
-      <div class="why-bauv-item">
-        <div class="why-bauv-number">✓</div>
-        <div class="why-bauv-content">
-          <h3>Accompagnement</h3>
-          <p>Suivi personnalisé et conseils à chaque étape de votre rénovation</p>
-        </div>
+      <div class="why-bauv-box">
+        <span>Premium</span>
+        <p>Qualité haut de gamme</p>
       </div>
     </div>
 
