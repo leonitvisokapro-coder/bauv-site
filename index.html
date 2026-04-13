@@ -1525,17 +1525,49 @@
         }
 
         .project-modal-gallery {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
+          display: flex;
           gap: 20px;
+          overflow-x: auto;
+          overflow-y: hidden;
+          scroll-snap-type: x mandatory;
           margin-bottom: 60px;
+          padding: 10px 0;
+          scroll-behavior: smooth;
+        }
+
+        .project-modal-gallery::-webkit-scrollbar {
+          height: 6px;
+        }
+
+        .project-modal-gallery::-webkit-scrollbar-track {
+          background: #f1f1f1;
+          border-radius: 10px;
+        }
+
+        .project-modal-gallery::-webkit-scrollbar-thumb {
+          background: var(--green-light);
+          border-radius: 10px;
+        }
+
+        .project-modal-gallery::-webkit-scrollbar-thumb:hover {
+          background: var(--green-dark);
         }
 
         .project-modal-gallery img {
-          width: 100%;
+          min-width: 400px;
+          width: 400px;
           height: 300px;
           object-fit: cover;
-          border-radius: 8px;
+          border-radius: 12px;
+          scroll-snap-align: start;
+          flex-shrink: 0;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          cursor: pointer;
+        }
+
+        .project-modal-gallery img:hover {
+          transform: scale(1.02);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
         }
 
         .project-modal-details {
@@ -1594,7 +1626,148 @@
         @media (max-width: 768px) {
           .projects-grid { grid-template-columns: 1fr; }
           .carousel-section { padding: 60px 30px; }
-          .project-modal-gallery { grid-template-columns: 1fr; }
+          .project-modal-gallery { 
+            gap: 15px;
+            padding: 10px 0;
+          }
+          .project-modal-gallery img {
+            min-width: 280px;
+            width: 280px;
+            height: 220px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+          }
+
+          .project-modal-gallery img:hover {
+            transform: scale(1.05);
+            opacity: 0.8;
+          }
+        }
+
+        /* ===== LIGHTBOX STYLES ===== */
+        .project-lightbox {
+          display: none;
+          position: fixed;
+          z-index: 2000;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.95);
+          justify-content: center;
+          align-items: center;
+          animation: fadeIn 0.3s ease;
+        }
+
+        .project-lightbox.active {
+          display: flex;
+        }
+
+        .lightbox-container {
+          position: relative;
+          width: 90%;
+          height: 90%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        #lightboxImage {
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: contain;
+          border-radius: 8px;
+          animation: zoomIn 0.4s ease;
+        }
+
+        @keyframes zoomIn {
+          from {
+            opacity: 0;
+            transform: scale(0.8);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+
+        .lightbox-close {
+          position: absolute;
+          top: 30px;
+          right: 30px;
+          font-size: 50px;
+          color: white;
+          cursor: pointer;
+          transition: color 0.3s ease;
+          z-index: 2001;
+          line-height: 1;
+        }
+
+        .lightbox-close:hover {
+          color: var(--green-light);
+        }
+
+        .lightbox-prev,
+        .lightbox-next {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: rgba(255, 255, 255, 0.2);
+          color: white;
+          border: none;
+          font-size: 40px;
+          padding: 20px 25px;
+          cursor: pointer;
+          border-radius: 8px;
+          transition: all 0.3s ease;
+          z-index: 2001;
+        }
+
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+          background: rgba(255, 255, 255, 0.4);
+          transform: translateY(-50%) scale(1.1);
+        }
+
+        .lightbox-prev {
+          left: 30px;
+        }
+
+        .lightbox-next {
+          right: 30px;
+        }
+
+        .lightbox-counter {
+          position: absolute;
+          bottom: 30px;
+          left: 50%;
+          transform: translateX(-50%);
+          color: white;
+          font-size: 16px;
+          background: rgba(0, 0, 0, 0.5);
+          padding: 10px 20px;
+          border-radius: 25px;
+          font-weight: 600;
+          z-index: 2001;
+        }
+
+        @media (max-width: 768px) {
+          .lightbox-prev,
+          .lightbox-next {
+            font-size: 30px;
+            padding: 15px 18px;
+          }
+
+          .lightbox-close {
+            font-size: 40px;
+            top: 20px;
+            right: 20px;
+          }
+
+          .lightbox-counter {
+            font-size: 14px;
+            padding: 8px 15px;
+          }
         }
 
         .carousel-container {
@@ -3286,6 +3459,19 @@ Entreprise de rénovation à Genève – bauV
 </div>
 </section>
 
+<!-- LIGHTBOX POUR GALERIES PROJETS -->
+<div id="projectLightbox" class="project-lightbox">
+  <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+  <div class="lightbox-container">
+    <img id="lightboxImage" src="" alt="Image agrandie">
+    <button class="lightbox-prev" onclick="prevImage()">‹</button>
+    <button class="lightbox-next" onclick="nextImage()">›</button>
+    <div class="lightbox-counter">
+      <span id="currentImageIndex">1</span> / <span id="totalImages">1</span>
+    </div>
+  </div>
+</div>
+
 <section class="contact-cta">
   <div class="contact-container">
     <h2>Vous avez un <span class="accent">projet</span> ?</h2>
@@ -3459,6 +3645,85 @@ document.addEventListener('keydown', function(event) {
       const projectId = modal.id.replace('Modal', '');
       closeProjectModal(projectId);
     });
+  }
+});
+
+/* ===== LIGHTBOX FUNCTIONS ===== */
+let currentLightboxGallery = [];
+let currentLightboxIndex = 0;
+
+// Ajouter les event listeners aux images des galeries
+document.addEventListener('DOMContentLoaded', function() {
+  const galleryImages = document.querySelectorAll('.project-modal-gallery img');
+  
+  galleryImages.forEach((img, index) => {
+    img.addEventListener('click', function(e) {
+      const gallery = this.closest('.project-modal-gallery');
+      currentLightboxGallery = Array.from(gallery.querySelectorAll('img')).map(i => i.src);
+      currentLightboxIndex = index;
+      openLightbox();
+    });
+  });
+});
+
+function openLightbox() {
+  const lightbox = document.getElementById('projectLightbox');
+  const image = document.getElementById('lightboxImage');
+  const counter = document.getElementById('currentImageIndex');
+  const total = document.getElementById('totalImages');
+  
+  image.src = currentLightboxGallery[currentLightboxIndex];
+  counter.textContent = currentLightboxIndex + 1;
+  total.textContent = currentLightboxGallery.length;
+  
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById('projectLightbox');
+  lightbox.classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+
+function nextImage() {
+  currentLightboxIndex = (currentLightboxIndex + 1) % currentLightboxGallery.length;
+  updateLightboxImage();
+}
+
+function prevImage() {
+  currentLightboxIndex = (currentLightboxIndex - 1 + currentLightboxGallery.length) % currentLightboxGallery.length;
+  updateLightboxImage();
+}
+
+function updateLightboxImage() {
+  const image = document.getElementById('lightboxImage');
+  const counter = document.getElementById('currentImageIndex');
+  
+  image.src = currentLightboxGallery[currentLightboxIndex];
+  counter.textContent = currentLightboxIndex + 1;
+}
+
+// Close lightbox with Escape key
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    closeLightbox();
+  }
+});
+
+// Close lightbox when clicking outside the image
+document.getElementById('projectLightbox').addEventListener('click', function(e) {
+  if (e.target === this) {
+    closeLightbox();
+  }
+});
+
+// Keyboard navigation
+document.addEventListener('keydown', function(event) {
+  const lightbox = document.getElementById('projectLightbox');
+  if (lightbox.classList.contains('active')) {
+    if (event.key === 'ArrowRight') nextImage();
+    if (event.key === 'ArrowLeft') prevImage();
   }
 });
 
