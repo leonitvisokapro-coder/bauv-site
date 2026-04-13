@@ -1360,53 +1360,58 @@
         }
 
         /* ===== SECTION POURQUOI BAUVÉ ===== */
-        .why-bauv-section {
-          padding: 100px 40px;
+        .why-dribbble {
+          padding: 120px 40px;
           background: var(--white);
-          text-align: center;
         }
 
-        .why-bauv-container {
-          max-width: 1100px;
+        .why-dribbble-container {
+          max-width: 1200px;
           margin: 0 auto;
         }
 
-        .why-bauv-section h2 {
+        .why-dribbble h2 {
+          text-align: center;
+          margin-bottom: 70px;
           font-size: 52px;
           font-weight: 800;
-          margin-bottom: 80px;
           font-family: 'Poppins', sans-serif;
           color: var(--dark-gray);
         }
 
-        .why-bauv-section h2 .accent {
+        .why-dribbble h2 .accent {
           color: var(--green-dark);
         }
 
-        /* LIGNE HORIZONTALE */
-        .why-bauv-row {
-          display: flex;
-          justify-content: center;
-          gap: 80px;
-          flex-wrap: wrap;
+        /* GRILLE DRIBBBLE DÉCALÉE */
+        .why-dribbble-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 24px;
           margin-bottom: 60px;
-          align-items: stretch;
         }
 
-        .why-bauv-box {
-          text-align: center;
-          min-width: 140px;
-          padding: 30px 20px;
-          flex: 1;
-          max-width: 200px;
-          transition: transform 0.3s ease;
+        /* CARD DE BASE */
+        .why-card {
+          background: var(--light-gray);
+          padding: 40px;
+          border-radius: 12px;
+          border: 1px solid rgba(23, 97, 49, 0.08);
+          transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          min-height: 200px;
         }
 
-        .why-bauv-box:hover {
-          transform: translateY(-5px);
+        .why-card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 15px 40px rgba(23, 97, 49, 0.12);
+          border-color: var(--green-light);
         }
 
-        .why-bauv-box span {
+        /* CHIFFRE */
+        .why-card span {
           display: block;
           font-size: 48px;
           font-weight: 800;
@@ -1416,96 +1421,140 @@
           line-height: 1;
         }
 
-        .why-bauv-box p {
-          font-size: 15px;
-          color: var(--text-muted);
-          font-weight: 600;
-          line-height: 1.5;
+        /* TITRE */
+        .why-card h3 {
+          font-size: 20px;
+          font-weight: 800;
+          color: var(--dark-gray);
+          margin-bottom: 12px;
+          font-family: 'Poppins', sans-serif;
+          line-height: 1.3;
         }
 
-        .why-bauv-cta {
-          margin-top: 40px;
+        /* TEXTE */
+        .why-card p {
+          font-size: 14px;
+          color: var(--text-muted);
+          line-height: 1.6;
+          margin: 0;
+        }
+
+        /* CARD BIG (2x2) */
+        .why-card-big {
+          grid-column: span 2;
+          grid-row: span 2;
+          min-height: auto;
+        }
+
+        .why-card-big span {
+          font-size: 56px;
+          margin-bottom: 20px;
+        }
+
+        .why-card-big h3 {
+          font-size: 28px;
+          margin-bottom: 15px;
+        }
+
+        .why-card-big p {
+          font-size: 16px;
+          line-height: 1.7;
+        }
+
+        /* CARD WIDE (2 colonnes) */
+        .why-card-wide {
+          grid-column: span 2;
+          min-height: 200px;
         }
 
         /* RESPONSIVE */
         @media (max-width: 1024px) {
-          .why-bauv-section {
-            padding: 80px 30px;
+          .why-dribbble {
+            padding: 100px 30px;
           }
 
-          .why-bauv-section h2 {
+          .why-dribbble h2 {
             font-size: 44px;
             margin-bottom: 60px;
           }
 
-          .why-bauv-row {
-            gap: 60px;
+          .why-dribbble-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
           }
 
-          .why-bauv-box {
-            max-width: 180px;
-            padding: 25px 15px;
+          .why-card {
+            padding: 30px;
+            min-height: 180px;
           }
 
-          .why-bauv-box span {
-            font-size: 42px;
-            margin-bottom: 12px;
+          .why-card span {
+            font-size: 40px;
+          }
+
+          .why-card h3 {
+            font-size: 18px;
+          }
+
+          .why-card-big {
+            grid-column: span 2;
+            grid-row: span 1;
+          }
+
+          .why-card-big span {
+            font-size: 48px;
+          }
+
+          .why-card-big h3 {
+            font-size: 24px;
           }
         }
 
         @media (max-width: 768px) {
-          .why-bauv-section {
-            padding: 70px 20px;
+          .why-dribbble {
+            padding: 80px 20px;
           }
 
-          .why-bauv-section h2 {
+          .why-dribbble h2 {
             font-size: 36px;
             margin-bottom: 50px;
           }
 
-          .why-bauv-row {
-            gap: 30px;
-            margin-bottom: 50px;
+          .why-dribbble-grid {
+            grid-template-columns: 1fr;
+            gap: 16px;
           }
 
-          .why-bauv-box {
-            min-width: 130px;
-            max-width: 150px;
-            padding: 20px 12px;
+          .why-card {
+            padding: 25px;
+            min-height: 140px;
           }
 
-          .why-bauv-box span {
+          .why-card span {
             font-size: 36px;
             margin-bottom: 10px;
           }
 
-          .why-bauv-box p {
+          .why-card h3 {
+            font-size: 16px;
+          }
+
+          .why-card p {
             font-size: 13px;
           }
-        }
 
-        @media (max-width: 480px) {
-          .why-bauv-section h2 {
-            font-size: 28px;
-            margin-bottom: 40px;
+          .why-card-big,
+          .why-card-wide {
+            grid-column: span 1;
+            grid-row: auto;
           }
 
-          .why-bauv-row {
-            gap: 20px;
+          .why-card-big span {
+            font-size: 36px;
           }
 
-          .why-bauv-box {
-            min-width: 100px;
-            max-width: 120px;
-            padding: 15px 10px;
-          }
-
-          .why-bauv-box span {
-            font-size: 28px;
-          }
-
-          .why-bauv-box p {
-            font-size: 12px;
+          .why-card-big h3 {
+            font-size: 18px;
           }
         }
 
@@ -3485,34 +3534,38 @@ Entreprise de rénovation à Genève – bauV
   </div>
 </section>
 
-<section class="why-bauv-section">
-  <div class="why-bauv-container">
+<section class="why-dribbble">
+  <div class="why-dribbble-container">
     <h2>Pourquoi choisir <span class="accent">bauV</span></h2>
-    
-    <div class="why-bauv-row">
-      <div class="why-bauv-box">
+
+    <div class="why-dribbble-grid">
+      <div class="why-card why-card-big">
         <span>30+</span>
-        <p>Ans d'expérience</p>
+        <h3>Années d'expérience</h3>
+        <p>Expertise en rénovation et construction à Genève depuis plus de 3 décennies.</p>
       </div>
 
-      <div class="why-bauv-box">
+      <div class="why-card">
         <span>1</span>
-        <p>Interlocuteur unique</p>
+        <h3>Interlocuteur unique</h3>
+        <p>Un point de contact unique du diagnostic à la livraison.</p>
       </div>
 
-      <div class="why-bauv-box">
+      <div class="why-card">
         <span>100%</span>
-        <p>Délais respectés</p>
+        <h3>Délais respectés</h3>
+        <p>Respect strict des délais et budgets convenus.</p>
       </div>
 
-      <div class="why-bauv-box">
-        <span>Premium</span>
-        <p>Qualité haut de gamme</p>
+      <div class="why-card why-card-wide">
+        <h3>Entreprise générale</h3>
+        <p>Gestion complète de tous les corps de métier avec un seul pilotage et une coordination fluide.</p>
       </div>
-    </div>
 
-    <div class="why-bauv-cta">
-      <a href="#contact" class="btn btn-primary">Demander un devis gratuit</a>
+      <div class="why-card">
+        <h3>Qualité premium</h3>
+        <p>Finitions irréprochables et matériaux haut de gamme.</p>
+      </div>
     </div>
   </div>
 </section>
