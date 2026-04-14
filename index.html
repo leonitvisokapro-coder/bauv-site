@@ -1372,65 +1372,28 @@
         }
 
         /* ===== SECTION POURQUOI BAUVÉ ===== */
-        /* ===== STATS BAUV SECTION ===== */
-        .stats-bauv {
+        /* ===== STATS PREMIUM SECTION ===== */
+        .stats-premium {
           padding: 120px 20px;
           background: var(--white);
         }
 
-        .stats-bauv .container {
+        .stats-container {
           max-width: 1200px;
           margin: 0 auto;
-        }
-
-        /* GRID STATS */
-        .stats-grid {
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 24px;
-        }
-
-        /* CARD STAT DE BASE */
-        .stat-card {
-          background: var(--white);
-          border: 1px solid #e5e5e5;
-          padding: 40px 30px;
-          border-radius: 16px;
-          text-align: center;
-          transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-          display: flex;
-          flex-direction: column;
+          grid-template-columns: 1fr 2fr;
+          gap: 60px;
           align-items: center;
-          justify-content: flex-start;
         }
 
-        .stat-card:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-          border-color: var(--green-dark);
-        }
-
-        /* STAT CARD MAIN (VERT DOMINANT) */
-        .stat-card.main {
-          background: var(--green-dark);
-          color: var(--white);
-          border: none;
-          grid-row: span 1;
-          padding: 50px 40px;
-        }
-
-        .stat-card.main h3,
-        .stat-card.main p {
-          color: var(--white);
-        }
-
-        /* CHIFFRE STAT */
-        .stat-number {
-          margin-bottom: 20px;
+        /* COLONNE GAUCHE - IMPACT */
+        .stat-main {
+          text-align: left;
         }
 
         .number {
-          font-size: 56px;
+          font-size: 120px;
           font-weight: 800;
           color: var(--green-dark);
           line-height: 1;
@@ -1438,115 +1401,112 @@
           display: inline;
         }
 
-        .stat-card.main .number {
-          color: var(--white);
-        }
-
-        /* PLUS SIGN */
         .plus {
-          font-size: 32px;
+          font-size: 40px;
           font-weight: 800;
           color: var(--green-dark);
-          font-family: 'Poppins', sans-serif;
-          margin-left: 2px;
-        }
-
-        .stat-card.main .plus {
-          color: var(--white);
-        }
-
-        /* ICON */
-        .icon {
-          font-size: 48px;
-          color: var(--green-dark);
-          font-weight: 800;
-          display: block;
           margin-bottom: 10px;
-        }
-
-        .stat-card.main .icon {
-          color: var(--white);
-        }
-
-        /* TITRE STAT */
-        .stat-card h3 {
-          font-size: 18px;
-          font-weight: 800;
-          color: var(--dark-gray);
-          margin: 0 0 12px 0;
+          display: block;
           font-family: 'Poppins', sans-serif;
-          line-height: 1.3;
         }
 
-        /* DESCRIPTION STAT */
-        .stat-card p {
-          font-size: 13px;
+        .stat-main h3 {
+          font-size: 20px;
+          font-weight: 800;
+          margin-top: 15px;
+          margin-bottom: 0;
+          color: var(--dark-gray);
+          font-family: 'Poppins', sans-serif;
+        }
+
+        /* COLONNE DROITE - RASSURANCE */
+        .stat-side {
+          display: flex;
+          flex-direction: column;
+          gap: 40px;
+        }
+
+        .stat-item {
+          transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+          transform: translateX(8px);
+        }
+
+        .stat-item h3 {
+          color: var(--green-dark);
+          font-size: 20px;
+          font-weight: 800;
+          margin: 0 0 10px 0;
+          font-family: 'Poppins', sans-serif;
+        }
+
+        .stat-item p {
           color: var(--text-muted);
-          line-height: 1.6;
+          max-width: 500px;
+          line-height: 1.7;
           margin: 0;
+          font-size: 15px;
           font-weight: 300;
         }
 
-        /* RESPONSIVE STATS */
+        /* RESPONSIVE STATS PREMIUM */
         @media (max-width: 1024px) {
-          .stats-bauv {
+          .stats-premium {
             padding: 100px 20px;
           }
 
-          .stats-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-          }
-
-          .stat-card {
-            padding: 35px 25px;
-          }
-
-          .stat-card.main {
-            padding: 40px 30px;
+          .stats-container {
+            gap: 50px;
           }
 
           .number {
-            font-size: 48px;
+            font-size: 100px;
+          }
+
+          .plus {
+            font-size: 35px;
+          }
+
+          .stat-side {
+            gap: 35px;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .stats-premium {
+            padding: 80px 20px;
+          }
+
+          .stats-container {
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: flex-start;
+          }
+
+          .number {
+            font-size: 80px;
           }
 
           .plus {
             font-size: 28px;
           }
-        }
 
-        @media (max-width: 768px) {
-          .stats-bauv {
-            padding: 80px 20px;
+          .stat-main h3 {
+            font-size: 18px;
           }
 
-          .stats-grid {
-            grid-template-columns: 1fr;
-            gap: 16px;
+          .stat-item h3 {
+            font-size: 18px;
           }
 
-          .stat-card {
-            padding: 30px 20px;
+          .stat-item p {
+            font-size: 14px;
           }
 
-          .stat-card.main {
-            padding: 35px 25px;
-          }
-
-          .number {
-            font-size: 40px;
-          }
-
-          .plus {
-            font-size: 24px;
-          }
-
-          .stat-card h3 {
-            font-size: 16px;
-          }
-
-          .stat-card p {
-            font-size: 12px;
+          .stat-side {
+            gap: 30px;
           }
         }
 
@@ -3525,43 +3485,36 @@ Entreprise de rénovation à Genève – bauV
   </div>
 </section>
 
-<section class="stats-bauv">
-  <div class="container">
-    <div class="stats-grid">
+<section class="stats-premium">
+  <div class="stats-container">
 
-      <div class="stat-card main">
-        <div class="stat-number">
-          <span class="number" data-target="30">0</span><span class="plus">+</span>
-        </div>
-        <h3>Années d'expérience</h3>
-        <p>Une expertise reconnue en rénovation et pilotage de projets à Genève.</p>
-      </div>
+    <!-- COLONNE GAUCHE - IMPACT -->
+    <div class="stat-main">
+      <div class="number" id="counter">0</div>
+      <div class="plus">+</div>
+      <h3>Années d'expérience</h3>
+    </div>
 
-      <div class="stat-card">
-        <div class="stat-number">
-          <span class="number" data-target="100">0</span><span class="plus">+</span>
-        </div>
-        <h3>Projets réalisés</h3>
-        <p>Appartements, maisons et transformations menés avec rigueur.</p>
-      </div>
+    <!-- COLONNE DROITE - RASSURANCE -->
+    <div class="stat-side">
 
-      <div class="stat-card">
-        <div class="stat-number">
-          <span class="number">1</span>
-        </div>
+      <div class="stat-item">
         <h3>Interlocuteur unique</h3>
-        <p>Un seul contact pour un projet simple et maîtrisé.</p>
+        <p>Un seul point de contact pour simplifier chaque étape de votre projet.</p>
       </div>
 
-      <div class="stat-card">
-        <div class="stat-number">
-          <span class="icon">✔</span>
-        </div>
-        <h3>Projets maîtrisés</h3>
-        <p>Suivi précis des délais, du budget et de la qualité.</p>
+      <div class="stat-item">
+        <h3>Projet maîtrisé</h3>
+        <p>Suivi rigoureux des délais, du budget et de la qualité d'exécution.</p>
+      </div>
+
+      <div class="stat-item">
+        <h3>Expertise locale</h3>
+        <p>Une parfaite connaissance des standards et contraintes en Suisse romande.</p>
       </div>
 
     </div>
+
   </div>
 </section>
 
@@ -4222,21 +4175,18 @@ if (skipButton) {
   };
 }
 
-/* ===== STATS ANIMATION ===== */
-const counters = document.querySelectorAll('.number[data-target]');
-const observerOptions = {
-  threshold: 0.5,
-  rootMargin: '0px'
-};
+/* ===== STATS PREMIUM ANIMATION ===== */
+const counter = document.getElementById("counter");
+let started = false;
 
-const animateCounter = (counter) => {
-  const target = +counter.getAttribute('data-target');
+function startCounter() {
   let count = 0;
+  const target = 30;
+  const increment = target / 50;
 
   const update = () => {
-    const increment = target / 50;
+    count += increment;
     if (count < target) {
-      count += increment;
       counter.innerText = Math.ceil(count);
       requestAnimationFrame(update);
     } else {
@@ -4245,19 +4195,20 @@ const animateCounter = (counter) => {
   };
 
   update();
-};
+}
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      animateCounter(entry.target);
-      observer.unobserve(entry.target);
-    }
-  });
-}, observerOptions);
+window.addEventListener("scroll", () => {
+  if (!counter) return;
+  
+  const section = document.querySelector(".stats-premium");
+  if (!section) return;
+  
+  const rect = section.getBoundingClientRect();
 
-counters.forEach(counter => {
-  observer.observe(counter);
+  if (rect.top < window.innerHeight && !started) {
+    startCounter();
+    started = true;
+  }
 });
 </script>
 <script type="application/ld+json">
