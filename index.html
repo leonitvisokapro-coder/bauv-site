@@ -1388,10 +1388,10 @@
           align-items: center;
         }
 
-        /* COLONNE GAUCHE - IMPACT AVEC SÉPARATION */
+        /* COLONNE GAUCHE - IMPACT AVEC STRUCTURE FORTE */
         .stat-main {
-          padding-right: 60px;
-          border-right: 1px solid #e5e5e5;
+          padding-right: 80px;
+          border-right: 1px solid rgba(0, 0, 0, 0.08);
           text-align: left;
         }
 
@@ -1423,10 +1423,21 @@
         /* TITRE COLONNE GAUCHE */
         .stat-main h3 {
           margin-top: 20px;
-          margin-bottom: 0;
+          margin-bottom: 8px;
           font-size: 18px;
           color: #444;
           font-weight: 500;
+          font-family: 'Poppins', sans-serif;
+        }
+
+        /* SOUS-TITRE PREMIUM (LE DÉTAIL QUI TUE) */
+        .stat-sub {
+          margin: 0;
+          color: #777;
+          font-size: 15px;
+          line-height: 1.6;
+          max-width: 300px;
+          font-weight: 300;
           font-family: 'Poppins', sans-serif;
         }
 
@@ -1437,23 +1448,28 @@
           gap: 45px;
         }
 
-        /* ITEMS - AVEC DÉTAIL PREMIUM */
+        /* ITEMS - DESIGN ELEMENT AVEC FLEX */
         .stat-item {
-          padding-left: 20px;
-          position: relative;
+          display: flex;
+          gap: 15px;
+          align-items: flex-start;
           transition: all 0.3s ease;
         }
 
-        /* PETIT POINT VERT (DÉTAIL PREMIUM) */
+        /* BULLET REDESIGNÉ (VRAI ÉLÉMENT DESIGN) */
         .stat-item::before {
           content: "";
-          position: absolute;
-          left: 0;
-          top: 8px;
-          width: 6px;
-          height: 6px;
+          width: 8px;
+          height: 8px;
           background: var(--green-dark);
           border-radius: 50%;
+          margin-top: 8px;
+          flex-shrink: 0;
+        }
+
+        /* WRAPPER TEXTE (POUR STRUCTURE FLEX) */
+        .stat-item-text {
+          flex: 1;
         }
 
         /* TITRES DROITE */
@@ -1491,7 +1507,7 @@
           }
 
           .stat-main {
-            padding-right: 40px;
+            padding-right: 60px;
           }
 
           .number {
@@ -1500,6 +1516,10 @@
 
           .plus {
             font-size: 35px;
+          }
+
+          .stat-sub {
+            max-width: 280px;
           }
 
           .stat-side {
@@ -1521,7 +1541,7 @@
           .stat-main {
             padding-right: 0;
             border-right: none;
-            border-bottom: 1px solid #e5e5e5;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
             padding-bottom: 40px;
           }
 
@@ -1535,6 +1555,11 @@
 
           .stat-main h3 {
             font-size: 16px;
+          }
+
+          .stat-sub {
+            font-size: 14px;
+            max-width: 100%;
           }
 
           .stat-item h3 {
@@ -3534,6 +3559,7 @@ Entreprise de rénovation à Genève – bauV
         <span class="number" id="counter">0</span><span class="plus">+</span>
       </div>
       <h3>Années d'expérience</h3>
+      <p class="stat-sub">Une maîtrise reconnue du chantier, au service de projets exigeants.</p>
     </div>
 
     <!-- COLONNE DROITE - RASSURANCE -->
