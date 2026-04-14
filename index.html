@@ -1372,228 +1372,181 @@
         }
 
         /* ===== SECTION POURQUOI BAUVÉ ===== */
-        /* ===== WHY LUXE SECTION ===== */
-        .why-luxe {
+        /* ===== STATS BAUV SECTION ===== */
+        .stats-bauv {
           padding: 120px 20px;
           background: var(--white);
         }
 
-        .why-luxe .container {
+        .stats-bauv .container {
           max-width: 1200px;
           margin: 0 auto;
         }
 
-        .why-luxe h2 {
-          font-size: 48px;
-          font-weight: 800;
-          margin-bottom: 80px;
-          color: var(--dark-gray);
-          font-family: 'Poppins', sans-serif;
-        }
-
-        .why-luxe h2 span {
-          color: var(--green-dark);
-        }
-
-        /* HERO CARD - ASYMÉTRIQUE */
-        .hero-card {
-          display: flex;
-          align-items: center;
-          gap: 60px;
-          margin-bottom: 80px;
-        }
-
-        .hero-left {
-          flex-shrink: 0;
-        }
-
-        .big-number {
-          font-size: 120px;
-          font-weight: 800;
-          line-height: 1;
-          color: var(--green-dark);
-          font-family: 'Poppins', sans-serif;
-        }
-
-        .hero-right h3 {
-          font-size: 28px;
-          font-weight: 800;
-          margin-bottom: 15px;
-          color: var(--dark-gray);
-          font-family: 'Poppins', sans-serif;
-        }
-
-        .hero-right p {
-          max-width: 400px;
-          font-size: 16px;
-          color: var(--text-muted);
-          line-height: 1.7;
-          font-weight: 300;
-        }
-
-        /* SMALL CARDS GRID */
-        .small-cards {
+        /* GRID STATS */
+        .stats-grid {
           display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 20px;
-          margin-bottom: 60px;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 24px;
         }
 
-        .card {
-          padding: 30px;
-          border-radius: 14px;
-          background: #f7f7f7;
-          transition: all 0.3s ease;
+        /* CARD STAT DE BASE */
+        .stat-card {
+          background: var(--white);
+          border: 1px solid #e5e5e5;
+          padding: 40px 30px;
+          border-radius: 16px;
+          text-align: center;
+          transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
           display: flex;
           flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
         }
 
-        .card:hover {
-          transform: translateY(-6px);
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        .stat-card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+          border-color: var(--green-dark);
         }
 
-        .card span {
-          font-size: 24px;
+        /* STAT CARD MAIN (VERT DOMINANT) */
+        .stat-card.main {
+          background: var(--green-dark);
+          color: var(--white);
+          border: none;
+          grid-row: span 1;
+          padding: 50px 40px;
+        }
+
+        .stat-card.main h3,
+        .stat-card.main p {
+          color: var(--white);
+        }
+
+        /* CHIFFRE STAT */
+        .stat-number {
+          margin-bottom: 20px;
+        }
+
+        .number {
+          font-size: 56px;
           font-weight: 800;
           color: var(--green-dark);
-          margin-bottom: 12px;
+          line-height: 1;
           font-family: 'Poppins', sans-serif;
+          display: inline;
         }
 
-        .card h3 {
+        .stat-card.main .number {
+          color: var(--white);
+        }
+
+        /* PLUS SIGN */
+        .plus {
+          font-size: 32px;
+          font-weight: 800;
+          color: var(--green-dark);
+          font-family: 'Poppins', sans-serif;
+          margin-left: 2px;
+        }
+
+        .stat-card.main .plus {
+          color: var(--white);
+        }
+
+        /* ICON */
+        .icon {
+          font-size: 48px;
+          color: var(--green-dark);
+          font-weight: 800;
+          display: block;
+          margin-bottom: 10px;
+        }
+
+        .stat-card.main .icon {
+          color: var(--white);
+        }
+
+        /* TITRE STAT */
+        .stat-card h3 {
           font-size: 18px;
           font-weight: 800;
-          margin-bottom: 10px;
           color: var(--dark-gray);
+          margin: 0 0 12px 0;
           font-family: 'Poppins', sans-serif;
+          line-height: 1.3;
         }
 
-        .card p {
-          font-size: 14px;
+        /* DESCRIPTION STAT */
+        .stat-card p {
+          font-size: 13px;
           color: var(--text-muted);
           line-height: 1.6;
-          font-weight: 300;
           margin: 0;
-        }
-
-        /* FULL WIDTH CARD */
-        .full-card {
-          padding: 40px 0;
-          border-top: 1px solid #e5e5e5;
-        }
-
-        .full-card h3 {
-          font-size: 26px;
-          font-weight: 800;
-          margin-bottom: 15px;
-          color: var(--dark-gray);
-          font-family: 'Poppins', sans-serif;
-        }
-
-        .full-card p {
-          max-width: 700px;
-          font-size: 16px;
-          color: var(--text-muted);
-          line-height: 1.8;
           font-weight: 300;
-          margin: 0;
         }
 
-        /* RESPONSIVE LUXURY */
+        /* RESPONSIVE STATS */
         @media (max-width: 1024px) {
-          .why-luxe {
+          .stats-bauv {
             padding: 100px 20px;
           }
 
-          .why-luxe h2 {
-            font-size: 40px;
-            margin-bottom: 60px;
+          .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
           }
 
-          .hero-card {
-            gap: 40px;
-            margin-bottom: 60px;
+          .stat-card {
+            padding: 35px 25px;
           }
 
-          .big-number {
-            font-size: 100px;
+          .stat-card.main {
+            padding: 40px 30px;
           }
 
-          .hero-right h3 {
-            font-size: 24px;
+          .number {
+            font-size: 48px;
           }
 
-          .small-cards {
-            margin-bottom: 50px;
-          }
-
-          .full-card {
-            padding: 30px 0;
+          .plus {
+            font-size: 28px;
           }
         }
 
         @media (max-width: 768px) {
-          .why-luxe {
+          .stats-bauv {
             padding: 80px 20px;
           }
 
-          .why-luxe h2 {
-            font-size: 32px;
-            margin-bottom: 50px;
-          }
-
-          .hero-card {
-            flex-direction: column;
-            gap: 30px;
-            margin-bottom: 50px;
-            align-items: flex-start;
-          }
-
-          .hero-left {
-            width: 100%;
-          }
-
-          .big-number {
-            font-size: 80px;
-          }
-
-          .hero-right h3 {
-            font-size: 20px;
-          }
-
-          .hero-right p {
-            max-width: 100%;
-          }
-
-          .small-cards {
+          .stats-grid {
             grid-template-columns: 1fr;
             gap: 16px;
-            margin-bottom: 40px;
           }
 
-          .card {
-            padding: 25px;
+          .stat-card {
+            padding: 30px 20px;
           }
 
-          .card span {
-            font-size: 20px;
+          .stat-card.main {
+            padding: 35px 25px;
           }
 
-          .card h3 {
+          .number {
+            font-size: 40px;
+          }
+
+          .plus {
+            font-size: 24px;
+          }
+
+          .stat-card h3 {
             font-size: 16px;
           }
 
-          .full-card {
-            padding: 25px 0;
-          }
-
-          .full-card h3 {
-            font-size: 22px;
-          }
-
-          .full-card p {
-            font-size: 14px;
+          .stat-card p {
+            font-size: 12px;
           }
         }
 
@@ -3572,39 +3525,42 @@ Entreprise de rénovation à Genève – bauV
   </div>
 </section>
 
-<section class="why-luxe">
+<section class="stats-bauv">
   <div class="container">
-    <h2>Pourquoi choisir <span>bauV</span></h2>
-    
-    <!-- HERO CARD -->
-    <div class="hero-card">
-      <div class="hero-left">
-        <span class="big-number">30+</span>
-      </div>
-      <div class="hero-right">
+    <div class="stats-grid">
+
+      <div class="stat-card main">
+        <div class="stat-number">
+          <span class="number" data-target="30">0</span><span class="plus">+</span>
+        </div>
         <h3>Années d'expérience</h3>
-        <p>Une expertise solide en rénovation à Genève, avec une parfaite maîtrise des contraintes locales.</p>
+        <p>Une expertise reconnue en rénovation et pilotage de projets à Genève.</p>
       </div>
-    </div>
-    
-    <!-- SMALL CARDS -->
-    <div class="small-cards">
-      <div class="card">
-        <span>1</span>
+
+      <div class="stat-card">
+        <div class="stat-number">
+          <span class="number" data-target="100">0</span><span class="plus">+</span>
+        </div>
+        <h3>Projets réalisés</h3>
+        <p>Appartements, maisons et transformations menés avec rigueur.</p>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-number">
+          <span class="number">1</span>
+        </div>
         <h3>Interlocuteur unique</h3>
-        <p>Un seul point de contact pour simplifier votre projet.</p>
+        <p>Un seul contact pour un projet simple et maîtrisé.</p>
       </div>
-      <div class="card">
-        <span>✔</span>
-        <h3>Projet maîtrisé</h3>
+
+      <div class="stat-card">
+        <div class="stat-number">
+          <span class="icon">✔</span>
+        </div>
+        <h3>Projets maîtrisés</h3>
         <p>Suivi précis des délais, du budget et de la qualité.</p>
       </div>
-    </div>
-    
-    <!-- FULL WIDTH -->
-    <div class="full-card">
-      <h3>Pilotage complet</h3>
-      <p>Coordination des intervenants, anticipation des contraintes et organisation structurée pour garantir un chantier fluide, sans friction et parfaitement maîtrisé.</p>
+
     </div>
   </div>
 </section>
@@ -4265,6 +4221,44 @@ if (skipButton) {
     endIntro();
   };
 }
+
+/* ===== STATS ANIMATION ===== */
+const counters = document.querySelectorAll('.number[data-target]');
+const observerOptions = {
+  threshold: 0.5,
+  rootMargin: '0px'
+};
+
+const animateCounter = (counter) => {
+  const target = +counter.getAttribute('data-target');
+  let count = 0;
+
+  const update = () => {
+    const increment = target / 50;
+    if (count < target) {
+      count += increment;
+      counter.innerText = Math.ceil(count);
+      requestAnimationFrame(update);
+    } else {
+      counter.innerText = target;
+    }
+  };
+
+  update();
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateCounter(entry.target);
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+counters.forEach(counter => {
+  observer.observe(counter);
+});
 </script>
 <script type="application/ld+json">
 {
