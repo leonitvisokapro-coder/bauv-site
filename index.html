@@ -1372,201 +1372,191 @@
         }
 
         /* ===== SECTION POURQUOI BAUVÉ ===== */
-        .why-dribbble {
-          padding: 120px 40px;
+        /* ===== WHY PREMIUM SECTION ===== */
+        .why-premium {
+          padding: 100px 20px;
           background: var(--white);
         }
 
-        .why-dribbble-container {
+        .why-premium .container {
+          max-width: 1400px;
+          margin: 0 auto;
+        }
+
+        .why-premium h2 {
+          text-align: center;
+          font-size: 42px;
+          font-weight: 800;
+          margin-bottom: 60px;
+          color: var(--dark-gray);
+          font-family: 'Poppins', sans-serif;
+        }
+
+        .why-premium h2 span {
+          color: var(--green-dark);
+        }
+
+        /* GRILLE PREMIUM DYNAMIQUE */
+        .why-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
           max-width: 1200px;
           margin: 0 auto;
         }
 
-        .why-dribbble h2 {
-          text-align: center;
-          margin-bottom: 70px;
-          font-size: 52px;
-          font-weight: 800;
-          font-family: 'Poppins', sans-serif;
-          color: #000000;
-        }
-
-        .why-dribbble h2 .accent {
-          color: var(--green-dark);
-        }
-
-        /* GRILLE DRIBBBLE DÉCALÉE */
-        .why-dribbble-grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 24px;
-          margin-bottom: 60px;
-        }
-
-        /* CARD DE BASE */
-        .why-card {
+        /* CARD PREMIUM DE BASE */
+        .card {
           background: var(--light-gray);
-          padding: 40px;
-          border-radius: 12px;
-          border: 1px solid rgba(23, 97, 49, 0.08);
-          transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+          padding: 30px;
+          border-radius: 16px;
+          transition: all 0.3s ease;
           display: flex;
           flex-direction: column;
           justify-content: flex-start;
-          min-height: 200px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
 
-        .why-card:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 15px 40px rgba(23, 97, 49, 0.12);
-          border-color: var(--green-light);
+        .card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
         }
 
-        /* CHIFFRE */
-        .why-card span {
-          display: block;
+        /* CARD BIG - Plus grande */
+        .card.big {
+          grid-column: span 1;
+          grid-row: span 1;
+          padding: 40px;
+        }
+
+        /* CARD WIDE - Sur 2 colonnes */
+        .card.wide {
+          grid-column: span 2;
+          padding: 40px;
+        }
+
+        /* CARD DARK - Contraste visuel */
+        .card.dark {
+          background: var(--dark-gray);
+          color: var(--white);
+        }
+
+        .card.dark p {
+          color: #ccc;
+        }
+
+        /* NOMBRE */
+        .number {
           font-size: 48px;
           font-weight: 800;
           color: var(--green-dark);
           margin-bottom: 15px;
-          font-family: 'Poppins', sans-serif;
           line-height: 1;
+          font-family: 'Poppins', sans-serif;
         }
 
-        /* TITRE */
-        .why-card h3 {
+        .card.dark .number {
+          color: var(--green-light);
+        }
+
+        /* ICONE */
+        .icon {
+          font-size: 48px;
+          color: var(--green-light);
+          margin-bottom: 15px;
+          display: block;
+          font-weight: 800;
+        }
+
+        /* TITRE CARD */
+        .card h3 {
+          margin-top: 0;
           font-size: 20px;
           font-weight: 800;
-          color: #000000;
-          margin-bottom: 12px;
+          color: var(--dark-gray);
+          margin-bottom: 10px;
           font-family: 'Poppins', sans-serif;
           line-height: 1.3;
         }
 
-        /* TEXTE */
-        .why-card p {
+        .card.dark h3 {
+          color: var(--white);
+        }
+
+        /* TEXTE CARD */
+        .card p {
+          margin-top: 10px;
           font-size: 14px;
-          color: #000000;
+          color: var(--text-muted);
           line-height: 1.6;
           margin: 0;
+          font-weight: 300;
         }
 
-        /* CARD BIG (2x2) */
-        .why-card-big {
-          grid-column: span 2;
-          grid-row: span 2;
-          min-height: auto;
+        .card.dark p {
+          color: #bbb;
         }
 
-        .why-card-big span {
-          font-size: 56px;
-          margin-bottom: 20px;
-        }
-
-        .why-card-big h3 {
-          font-size: 28px;
-          margin-bottom: 15px;
-        }
-
-        .why-card-big p {
-          font-size: 16px;
-          line-height: 1.7;
-        }
-
-        /* CARD WIDE (2 colonnes) */
-        .why-card-wide {
-          grid-column: span 2;
-          min-height: 200px;
-        }
-
-        /* RESPONSIVE */
+        /* RESPONSIVE PREMIUM */
         @media (max-width: 1024px) {
-          .why-dribbble {
-            padding: 100px 30px;
-          }
-
-          .why-dribbble h2 {
-            font-size: 44px;
-            margin-bottom: 60px;
-          }
-
-          .why-dribbble-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-          }
-
-          .why-card {
-            padding: 30px;
-            min-height: 180px;
-          }
-
-          .why-card span {
-            font-size: 40px;
-          }
-
-          .why-card h3 {
-            font-size: 18px;
-          }
-
-          .why-card-big {
-            grid-column: span 2;
-            grid-row: span 1;
-          }
-
-          .why-card-big span {
-            font-size: 48px;
-          }
-
-          .why-card-big h3 {
-            font-size: 24px;
-          }
-        }
-
-        @media (max-width: 768px) {
-          .why-dribbble {
+          .why-premium {
             padding: 80px 20px;
           }
 
-          .why-dribbble h2 {
+          .why-premium h2 {
             font-size: 36px;
             margin-bottom: 50px;
           }
 
-          .why-dribbble-grid {
-            grid-template-columns: 1fr;
+          .why-grid {
             gap: 16px;
           }
 
-          .why-card {
+          .card {
             padding: 25px;
-            min-height: 140px;
           }
 
-          .why-card span {
-            font-size: 36px;
-            margin-bottom: 10px;
+          .card.wide {
+            padding: 30px;
           }
 
-          .why-card h3 {
+          .number {
+            font-size: 40px;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .why-premium {
+            padding: 60px 20px;
+          }
+
+          .why-premium h2 {
+            font-size: 28px;
+            margin-bottom: 40px;
+          }
+
+          .why-grid {
+            grid-template-columns: 1fr;
+            gap: 12px;
+          }
+
+          .card,
+          .card.big,
+          .card.wide {
+            grid-column: span 1;
+            padding: 20px;
+          }
+
+          .number {
+            font-size: 32px;
+          }
+
+          .card h3 {
             font-size: 16px;
           }
 
-          .why-card p {
+          .card p {
             font-size: 13px;
-          }
-
-          .why-card-big,
-          .why-card-wide {
-            grid-column: span 1;
-            grid-row: auto;
-          }
-
-          .why-card-big span {
-            font-size: 36px;
-          }
-
-          .why-card-big h3 {
-            font-size: 18px;
           }
         }
 
@@ -3545,38 +3535,38 @@ Entreprise de rénovation à Genève – bauV
   </div>
 </section>
 
-<section class="why-dribbble">
-  <div class="why-dribbble-container">
-    <h2>Pourquoi choisir <span class="accent">bauV</span></h2>
+<section class="why-premium">
+  <div class="container">
+    <h2>Pourquoi choisir <span>bauV</span></h2>
 
-    <div class="why-dribbble-grid">
+    <div class="why-grid">
 
-      <div class="why-card why-card-big">
-        <span>30+</span>
+      <div class="card big">
+        <span class="number">30+</span>
         <h3>Années d'expérience</h3>
-        <p>Une expertise solide dans la rénovation à Genève, avec une parfaite connaissance des contraintes locales.</p>
+        <p>Une expertise solide en rénovation à Genève, avec une parfaite connaissance des contraintes locales.</p>
       </div>
 
-      <div class="why-card">
-        <span>1</span>
+      <div class="card">
+        <span class="number">1</span>
         <h3>Interlocuteur unique</h3>
-        <p>Un seul point de contact pour simplifier chaque étape de votre projet.</p>
+        <p>Un seul point de contact pour simplifier chaque étape.</p>
       </div>
 
-      <div class="why-card">
-        <span>✔</span>
+      <div class="card dark">
+        <span class="icon">✔</span>
         <h3>Projet maîtrisé</h3>
-        <p>Délais, budget et qualité sont suivis avec rigueur tout au long du chantier.</p>
+        <p>Délais, budget et qualité suivis avec rigueur.</p>
       </div>
 
-      <div class="why-card why-card-wide">
-        <h3>Pilotage complet</h3>
-        <p>Coordination des intervenants, anticipation des contraintes et organisation structurée pour un chantier fluide et sans imprévus.</p>
-      </div>
-
-      <div class="why-card">
+      <div class="card">
         <h3>Approche sur mesure</h3>
-        <p>Chaque projet est adapté à vos besoins, avec des solutions concrètes et durables.</p>
+        <p>Des solutions adaptées à chaque projet.</p>
+      </div>
+
+      <div class="card wide">
+        <h3>Pilotage complet</h3>
+        <p>Coordination des intervenants, anticipation des contraintes et organisation structurée pour un chantier fluide et maîtrisé.</p>
       </div>
 
     </div>
