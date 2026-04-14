@@ -1372,191 +1372,228 @@
         }
 
         /* ===== SECTION POURQUOI BAUVÉ ===== */
-        /* ===== WHY PREMIUM SECTION ===== */
-        .why-premium {
-          padding: 100px 20px;
+        /* ===== WHY LUXE SECTION ===== */
+        .why-luxe {
+          padding: 120px 20px;
           background: var(--white);
         }
 
-        .why-premium .container {
-          max-width: 1400px;
-          margin: 0 auto;
-        }
-
-        .why-premium h2 {
-          text-align: center;
-          font-size: 42px;
-          font-weight: 800;
-          margin-bottom: 60px;
-          color: var(--dark-gray);
-          font-family: 'Poppins', sans-serif;
-        }
-
-        .why-premium h2 span {
-          color: var(--green-dark);
-        }
-
-        /* GRILLE PREMIUM DYNAMIQUE */
-        .why-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 20px;
+        .why-luxe .container {
           max-width: 1200px;
           margin: 0 auto;
         }
 
-        /* CARD PREMIUM DE BASE */
-        .card {
-          background: var(--light-gray);
-          padding: 30px;
-          border-radius: 16px;
-          transition: all 0.3s ease;
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        }
-
-        .card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
-        }
-
-        /* CARD BIG - Plus grande */
-        .card.big {
-          grid-column: span 1;
-          grid-row: span 1;
-          padding: 40px;
-        }
-
-        /* CARD WIDE - Sur 2 colonnes */
-        .card.wide {
-          grid-column: span 2;
-          padding: 40px;
-        }
-
-        /* CARD DARK - Contraste visuel */
-        .card.dark {
-          background: var(--dark-gray);
-          color: var(--white);
-        }
-
-        .card.dark p {
-          color: #ccc;
-        }
-
-        /* NOMBRE */
-        .number {
+        .why-luxe h2 {
           font-size: 48px;
           font-weight: 800;
-          color: var(--green-dark);
-          margin-bottom: 15px;
-          line-height: 1;
-          font-family: 'Poppins', sans-serif;
-        }
-
-        .card.dark .number {
-          color: var(--green-light);
-        }
-
-        /* ICONE */
-        .icon {
-          font-size: 48px;
-          color: var(--green-light);
-          margin-bottom: 15px;
-          display: block;
-          font-weight: 800;
-        }
-
-        /* TITRE CARD */
-        .card h3 {
-          margin-top: 0;
-          font-size: 20px;
-          font-weight: 800;
+          margin-bottom: 80px;
           color: var(--dark-gray);
-          margin-bottom: 10px;
           font-family: 'Poppins', sans-serif;
-          line-height: 1.3;
         }
 
-        .card.dark h3 {
-          color: var(--white);
+        .why-luxe h2 span {
+          color: var(--green-dark);
         }
 
-        /* TEXTE CARD */
-        .card p {
-          margin-top: 10px;
-          font-size: 14px;
+        /* HERO CARD - ASYMÉTRIQUE */
+        .hero-card {
+          display: flex;
+          align-items: center;
+          gap: 60px;
+          margin-bottom: 80px;
+        }
+
+        .hero-left {
+          flex-shrink: 0;
+        }
+
+        .big-number {
+          font-size: 120px;
+          font-weight: 800;
+          line-height: 1;
+          color: var(--green-dark);
+          font-family: 'Poppins', sans-serif;
+        }
+
+        .hero-right h3 {
+          font-size: 28px;
+          font-weight: 800;
+          margin-bottom: 15px;
+          color: var(--dark-gray);
+          font-family: 'Poppins', sans-serif;
+        }
+
+        .hero-right p {
+          max-width: 400px;
+          font-size: 16px;
           color: var(--text-muted);
-          line-height: 1.6;
-          margin: 0;
+          line-height: 1.7;
           font-weight: 300;
         }
 
-        .card.dark p {
-          color: #bbb;
+        /* SMALL CARDS GRID */
+        .small-cards {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 20px;
+          margin-bottom: 60px;
         }
 
-        /* RESPONSIVE PREMIUM */
+        .card {
+          padding: 30px;
+          border-radius: 14px;
+          background: #f7f7f7;
+          transition: all 0.3s ease;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .card:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .card span {
+          font-size: 24px;
+          font-weight: 800;
+          color: var(--green-dark);
+          margin-bottom: 12px;
+          font-family: 'Poppins', sans-serif;
+        }
+
+        .card h3 {
+          font-size: 18px;
+          font-weight: 800;
+          margin-bottom: 10px;
+          color: var(--dark-gray);
+          font-family: 'Poppins', sans-serif;
+        }
+
+        .card p {
+          font-size: 14px;
+          color: var(--text-muted);
+          line-height: 1.6;
+          font-weight: 300;
+          margin: 0;
+        }
+
+        /* FULL WIDTH CARD */
+        .full-card {
+          padding: 40px 0;
+          border-top: 1px solid #e5e5e5;
+        }
+
+        .full-card h3 {
+          font-size: 26px;
+          font-weight: 800;
+          margin-bottom: 15px;
+          color: var(--dark-gray);
+          font-family: 'Poppins', sans-serif;
+        }
+
+        .full-card p {
+          max-width: 700px;
+          font-size: 16px;
+          color: var(--text-muted);
+          line-height: 1.8;
+          font-weight: 300;
+          margin: 0;
+        }
+
+        /* RESPONSIVE LUXURY */
         @media (max-width: 1024px) {
-          .why-premium {
-            padding: 80px 20px;
+          .why-luxe {
+            padding: 100px 20px;
           }
 
-          .why-premium h2 {
-            font-size: 36px;
+          .why-luxe h2 {
+            font-size: 40px;
+            margin-bottom: 60px;
+          }
+
+          .hero-card {
+            gap: 40px;
+            margin-bottom: 60px;
+          }
+
+          .big-number {
+            font-size: 100px;
+          }
+
+          .hero-right h3 {
+            font-size: 24px;
+          }
+
+          .small-cards {
             margin-bottom: 50px;
           }
 
-          .why-grid {
+          .full-card {
+            padding: 30px 0;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .why-luxe {
+            padding: 80px 20px;
+          }
+
+          .why-luxe h2 {
+            font-size: 32px;
+            margin-bottom: 50px;
+          }
+
+          .hero-card {
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 50px;
+            align-items: flex-start;
+          }
+
+          .hero-left {
+            width: 100%;
+          }
+
+          .big-number {
+            font-size: 80px;
+          }
+
+          .hero-right h3 {
+            font-size: 20px;
+          }
+
+          .hero-right p {
+            max-width: 100%;
+          }
+
+          .small-cards {
+            grid-template-columns: 1fr;
             gap: 16px;
+            margin-bottom: 40px;
           }
 
           .card {
             padding: 25px;
           }
 
-          .card.wide {
-            padding: 30px;
-          }
-
-          .number {
-            font-size: 40px;
-          }
-        }
-
-        @media (max-width: 768px) {
-          .why-premium {
-            padding: 60px 20px;
-          }
-
-          .why-premium h2 {
-            font-size: 28px;
-            margin-bottom: 40px;
-          }
-
-          .why-grid {
-            grid-template-columns: 1fr;
-            gap: 12px;
-          }
-
-          .card,
-          .card.big,
-          .card.wide {
-            grid-column: span 1;
-            padding: 20px;
-          }
-
-          .number {
-            font-size: 32px;
+          .card span {
+            font-size: 20px;
           }
 
           .card h3 {
             font-size: 16px;
           }
 
-          .card p {
-            font-size: 13px;
+          .full-card {
+            padding: 25px 0;
+          }
+
+          .full-card h3 {
+            font-size: 22px;
+          }
+
+          .full-card p {
+            font-size: 14px;
           }
         }
 
@@ -3535,40 +3572,39 @@ Entreprise de rénovation à Genève – bauV
   </div>
 </section>
 
-<section class="why-premium">
+<section class="why-luxe">
   <div class="container">
     <h2>Pourquoi choisir <span>bauV</span></h2>
-
-    <div class="why-grid">
-
-      <div class="card big">
-        <span class="number">30+</span>
+    
+    <!-- HERO CARD -->
+    <div class="hero-card">
+      <div class="hero-left">
+        <span class="big-number">30+</span>
+      </div>
+      <div class="hero-right">
         <h3>Années d'expérience</h3>
-        <p>Une expertise solide en rénovation à Genève, avec une parfaite connaissance des contraintes locales.</p>
+        <p>Une expertise solide en rénovation à Genève, avec une parfaite maîtrise des contraintes locales.</p>
       </div>
-
+    </div>
+    
+    <!-- SMALL CARDS -->
+    <div class="small-cards">
       <div class="card">
-        <span class="number">1</span>
+        <span>1</span>
         <h3>Interlocuteur unique</h3>
-        <p>Un seul point de contact pour simplifier chaque étape.</p>
+        <p>Un seul point de contact pour simplifier votre projet.</p>
       </div>
-
-      <div class="card dark">
-        <span class="icon">✔</span>
-        <h3>Projet maîtrisé</h3>
-        <p>Délais, budget et qualité suivis avec rigueur.</p>
-      </div>
-
       <div class="card">
-        <h3>Approche sur mesure</h3>
-        <p>Des solutions adaptées à chaque projet.</p>
+        <span>✔</span>
+        <h3>Projet maîtrisé</h3>
+        <p>Suivi précis des délais, du budget et de la qualité.</p>
       </div>
-
-      <div class="card wide">
-        <h3>Pilotage complet</h3>
-        <p>Coordination des intervenants, anticipation des contraintes et organisation structurée pour un chantier fluide et maîtrisé.</p>
-      </div>
-
+    </div>
+    
+    <!-- FULL WIDTH -->
+    <div class="full-card">
+      <h3>Pilotage complet</h3>
+      <p>Coordination des intervenants, anticipation des contraintes et organisation structurée pour garantir un chantier fluide, sans friction et parfaitement maîtrisé.</p>
     </div>
   </div>
 </section>
