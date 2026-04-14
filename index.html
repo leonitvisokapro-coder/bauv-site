@@ -1378,91 +1378,124 @@
           background: var(--white);
         }
 
+        /* STRUCTURE PRINCIPALE - ASYMÉTRIQUE */
         .stats-container {
           max-width: 1200px;
           margin: 0 auto;
           display: grid;
-          grid-template-columns: 1fr 2fr;
-          gap: 60px;
+          grid-template-columns: 1fr 1.4fr;
+          gap: 80px;
           align-items: center;
         }
 
-        /* COLONNE GAUCHE - IMPACT */
+        /* COLONNE GAUCHE - IMPACT AVEC SÉPARATION */
         .stat-main {
+          padding-right: 60px;
+          border-right: 1px solid #e5e5e5;
           text-align: left;
         }
 
+        /* GROUPE CHIFFRE (FLEX POUR ALIGNEMENT) */
+        .number-wrapper {
+          display: flex;
+          align-items: flex-start;
+          gap: 5px;
+        }
+
+        /* GROS CHIFFRE - IMPACT */
         .number {
-          font-size: 120px;
-          font-weight: 800;
+          font-size: 140px;
+          font-weight: 700;
           color: var(--green-dark);
           line-height: 1;
           font-family: 'Poppins', sans-serif;
-          display: inline;
         }
 
+        /* PLUS - BIEN ALIGNÉ */
         .plus {
           font-size: 40px;
-          font-weight: 800;
+          font-weight: 600;
           color: var(--green-dark);
-          margin-bottom: 10px;
-          display: block;
+          margin-top: 15px;
           font-family: 'Poppins', sans-serif;
         }
 
+        /* TITRE COLONNE GAUCHE */
         .stat-main h3 {
-          font-size: 20px;
-          font-weight: 800;
-          margin-top: 15px;
+          margin-top: 20px;
           margin-bottom: 0;
+          font-size: 18px;
+          color: #444;
+          font-weight: 500;
+          font-family: 'Poppins', sans-serif;
+        }
+
+        /* COLONNE DROITE - RASSURANCE STRUCTURÉE */
+        .stat-side {
+          display: flex;
+          flex-direction: column;
+          gap: 45px;
+        }
+
+        /* ITEMS - AVEC DÉTAIL PREMIUM */
+        .stat-item {
+          padding-left: 20px;
+          position: relative;
+          transition: all 0.3s ease;
+        }
+
+        /* PETIT POINT VERT (DÉTAIL PREMIUM) */
+        .stat-item::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 8px;
+          width: 6px;
+          height: 6px;
+          background: var(--green-dark);
+          border-radius: 50%;
+        }
+
+        /* TITRES DROITE */
+        .stat-item h3 {
+          font-size: 20px;
+          font-weight: 600;
+          margin: 0 0 6px 0;
           color: var(--dark-gray);
           font-family: 'Poppins', sans-serif;
         }
 
-        /* COLONNE DROITE - RASSURANCE */
-        .stat-side {
-          display: flex;
-          flex-direction: column;
-          gap: 40px;
-        }
-
-        .stat-item {
-          transition: all 0.3s ease;
-        }
-
-        .stat-item:hover {
-          transform: translateX(8px);
-        }
-
-        .stat-item h3 {
-          color: var(--green-dark);
-          font-size: 20px;
-          font-weight: 800;
-          margin: 0 0 10px 0;
-          font-family: 'Poppins', sans-serif;
-        }
-
+        /* TEXTE DROITE */
         .stat-item p {
-          color: var(--text-muted);
-          max-width: 500px;
-          line-height: 1.7;
-          margin: 0;
           font-size: 15px;
+          color: #666;
+          line-height: 1.6;
+          margin: 0;
           font-weight: 300;
         }
 
-        /* RESPONSIVE STATS PREMIUM */
+        /* HOVER SUBTIL */
+        .stat-item:hover {
+          transform: translateX(6px);
+        }
+
+        /* RESPONSIVE PREMIUM */
         @media (max-width: 1024px) {
           .stats-premium {
             padding: 100px 20px;
           }
 
           .stats-container {
-            gap: 50px;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 60px;
+          }
+
+          .stat-main {
+            padding-right: 40px;
           }
 
           .number {
-            font-size: 100px;
+            font-size: 110px;
           }
 
           .plus {
@@ -1470,7 +1503,7 @@
           }
 
           .stat-side {
-            gap: 35px;
+            gap: 40px;
           }
         }
 
@@ -1485,6 +1518,13 @@
             align-items: flex-start;
           }
 
+          .stat-main {
+            padding-right: 0;
+            border-right: none;
+            border-bottom: 1px solid #e5e5e5;
+            padding-bottom: 40px;
+          }
+
           .number {
             font-size: 80px;
           }
@@ -1494,7 +1534,7 @@
           }
 
           .stat-main h3 {
-            font-size: 18px;
+            font-size: 16px;
           }
 
           .stat-item h3 {
@@ -3490,8 +3530,9 @@ Entreprise de rénovation à Genève – bauV
 
     <!-- COLONNE GAUCHE - IMPACT -->
     <div class="stat-main">
-      <div class="number" id="counter">0</div>
-      <div class="plus">+</div>
+      <div class="number-wrapper">
+        <span class="number" id="counter">0</span><span class="plus">+</span>
+      </div>
       <h3>Années d'expérience</h3>
     </div>
 
