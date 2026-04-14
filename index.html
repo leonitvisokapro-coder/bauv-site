@@ -1378,6 +1378,26 @@
           background: var(--white);
         }
 
+        /* WRAPPER POUR TITRE + CONTAINER */
+        .stats-wrapper {
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+
+        /* TITRE SECTION */
+        .stats-premium h2 {
+          text-align: center;
+          font-size: 48px;
+          font-weight: 800;
+          margin-bottom: 70px;
+          color: var(--dark-gray);
+          font-family: 'Poppins', sans-serif;
+        }
+
+        .stats-premium h2 span {
+          color: var(--green-dark);
+        }
+
         /* STRUCTURE PRINCIPALE - ASYMÉTRIQUE */
         .stats-container {
           max-width: 1200px;
@@ -1388,21 +1408,21 @@
           align-items: center;
         }
 
-        /* COLONNE GAUCHE - IMPACT AVEC STRUCTURE FORTE */
+        /* COLONNE GAUCHE - IMPACT AVEC SÉPARATION VERTE */
         .stat-main {
           padding-right: 80px;
-          border-right: 1px solid rgba(0, 0, 0, 0.08);
+          border-right: 2px solid var(--green-dark);
           text-align: left;
         }
 
-        /* GROUPE CHIFFRE (FLEX POUR ALIGNEMENT) */
+        /* GROUPE CHIFFRE */
         .number-wrapper {
           display: flex;
           align-items: flex-start;
           gap: 5px;
         }
 
-        /* GROS CHIFFRE - IMPACT */
+        /* GROS CHIFFRE */
         .number {
           font-size: 140px;
           font-weight: 700;
@@ -1411,7 +1431,7 @@
           font-family: 'Poppins', sans-serif;
         }
 
-        /* PLUS - BIEN ALIGNÉ */
+        /* PLUS */
         .plus {
           font-size: 40px;
           font-weight: 600;
@@ -1420,85 +1440,76 @@
           font-family: 'Poppins', sans-serif;
         }
 
-        /* TITRE COLONNE GAUCHE */
+        /* TITRE GAUCHE */
         .stat-main h3 {
           margin-top: 20px;
           margin-bottom: 8px;
           font-size: 18px;
-          color: #444;
-          font-weight: 500;
+          color: var(--dark-gray);
+          font-weight: 800;
           font-family: 'Poppins', sans-serif;
         }
 
-        /* SOUS-TITRE PREMIUM (LE DÉTAIL QUI TUE) */
+        /* SOUS-TITRE PREMIUM */
         .stat-sub {
           margin: 0;
-          color: #777;
-          font-size: 15px;
+          color: var(--text-muted);
+          font-size: 14px;
           line-height: 1.6;
           max-width: 300px;
-          font-weight: 300;
+          font-weight: 400;
           font-family: 'Poppins', sans-serif;
         }
 
-        /* COLONNE DROITE - RASSURANCE STRUCTURÉE */
+        /* COLONNE DROITE - CASES STRUCTURÉES */
         .stat-side {
           display: flex;
           flex-direction: column;
-          gap: 45px;
+          gap: 20px;
         }
 
-        /* ITEMS - DESIGN ELEMENT AVEC FLEX */
+        /* CASES/CARTES */
         .stat-item {
-          display: flex;
-          gap: 15px;
-          align-items: flex-start;
+          padding: 25px;
+          background: var(--light-gray);
+          border-radius: 14px;
+          border: 1px solid rgba(23, 97, 49, 0.08);
           transition: all 0.3s ease;
         }
 
-        /* BULLET REDESIGNÉ (VRAI ÉLÉMENT DESIGN) */
-        .stat-item::before {
-          content: "";
-          width: 8px;
-          height: 8px;
-          background: var(--green-dark);
-          border-radius: 50%;
-          margin-top: 8px;
-          flex-shrink: 0;
+        .stat-item:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 12px 30px rgba(23, 97, 49, 0.08);
+          border-color: var(--green-dark);
         }
 
-        /* WRAPPER TEXTE (POUR STRUCTURE FLEX) */
-        .stat-item-text {
-          flex: 1;
-        }
-
-        /* TITRES DROITE */
+        /* TITRE CASE */
         .stat-item h3 {
-          font-size: 20px;
-          font-weight: 600;
-          margin: 0 0 6px 0;
+          font-size: 18px;
+          font-weight: 800;
+          margin: 0 0 8px 0;
           color: var(--dark-gray);
           font-family: 'Poppins', sans-serif;
         }
 
-        /* TEXTE DROITE */
+        /* TEXTE CASE */
         .stat-item p {
-          font-size: 15px;
-          color: #666;
+          font-size: 14px;
+          color: var(--text-muted);
           line-height: 1.6;
           margin: 0;
-          font-weight: 300;
+          font-weight: 400;
         }
 
-        /* HOVER SUBTIL */
-        .stat-item:hover {
-          transform: translateX(6px);
-        }
-
-        /* RESPONSIVE PREMIUM */
+        /* RESPONSIVE STATS PREMIUM */
         @media (max-width: 1024px) {
           .stats-premium {
             padding: 100px 20px;
+          }
+
+          .stats-premium h2 {
+            font-size: 40px;
+            margin-bottom: 60px;
           }
 
           .stats-container {
@@ -1523,13 +1534,22 @@
           }
 
           .stat-side {
-            gap: 40px;
+            gap: 18px;
+          }
+
+          .stat-item {
+            padding: 22px;
           }
         }
 
         @media (max-width: 768px) {
           .stats-premium {
             padding: 80px 20px;
+          }
+
+          .stats-premium h2 {
+            font-size: 32px;
+            margin-bottom: 50px;
           }
 
           .stats-container {
@@ -1541,7 +1561,7 @@
           .stat-main {
             padding-right: 0;
             border-right: none;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            border-bottom: 2px solid var(--green-dark);
             padding-bottom: 40px;
           }
 
@@ -1558,20 +1578,24 @@
           }
 
           .stat-sub {
-            font-size: 14px;
+            font-size: 13px;
             max-width: 100%;
           }
 
+          .stat-item {
+            padding: 20px;
+          }
+
           .stat-item h3 {
-            font-size: 18px;
+            font-size: 16px;
           }
 
           .stat-item p {
-            font-size: 14px;
+            font-size: 13px;
           }
 
           .stat-side {
-            gap: 30px;
+            gap: 16px;
           }
         }
 
@@ -3551,10 +3575,13 @@ Entreprise de rénovation à Genève – bauV
 </section>
 
 <section class="stats-premium">
-  <div class="stats-container">
+  <div class="stats-wrapper">
+    
+    <h2>Pourquoi choisir <span>bauV</span></h2>
 
-    <!-- COLONNE GAUCHE - IMPACT -->
-    <div class="stat-main">
+    <div class="stats-container">
+      <!-- COLONNE GAUCHE - IMPACT -->
+      <div class="stat-main">
       <div class="number-wrapper">
         <span class="number" id="counter">0</span><span class="plus">+</span>
       </div>
@@ -3580,6 +3607,7 @@ Entreprise de rénovation à Genève – bauV
         <p>Une parfaite connaissance des standards et contraintes en Suisse romande.</p>
       </div>
 
+    </div>
     </div>
 
   </div>
