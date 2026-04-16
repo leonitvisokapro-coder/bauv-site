@@ -318,7 +318,7 @@
         /* HERO */
         .hero {
           margin-top: 90px;
-          padding: 80px 100px;
+          padding: 80px 100px 30px 100px;
           background: #f8f8f8;
           min-height: auto;
           display: flex;
@@ -715,6 +715,19 @@
           box-shadow: 0 30px 80px rgba(23, 97, 49, 0.2);
         }
 
+
+        /* ========================= */
+        /* VALUES SECTION SÉPARÉE */
+        /* ========================= */
+        .values-section {
+          background: var(--white);
+          padding: 80px 100px;
+        }
+
+        .values-container {
+          max-width: 1200px;
+          margin: 0 auto;
+        }
 
         /* CLIENTS SECTION */
         .clients-section {
@@ -3022,6 +3035,10 @@
             white-space: normal;
           }
           
+          .values-section {
+            padding: 60px 20px !important;
+          }
+
           /* CLIENTS */
           .clients-tabs {
             grid-template-columns: 1fr;
@@ -3686,7 +3703,11 @@ Entreprise de rénovation à Genève – bauV
     </div>
 
     <div class="hero-separator"></div>
+  </div>
+</section>
 
+<section class="values-section">
+  <div class="values-container">
     <div class="hero-values">
       <div class="hero-value-tab" data-tab="qualite">
         <div class="value-number">01</div>
