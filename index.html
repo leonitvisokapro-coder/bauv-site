@@ -2757,10 +2757,23 @@
           .btn { padding: 14px 30px; font-size: 12px; }
           .hero-values { grid-template-columns: 1fr; gap: 25px; margin-top: 50px; padding-top: 50px; }
           
-          .mission { padding: 80px 20px; }
-          .mission-content { gap: 40px; }
-          .mission-text h2 { font-size: 36px; margin-bottom: 25px; }
-          .mission-text p { font-size: 15px; }
+          .mission { padding: 50px 20px !important; }
+          .mission-content { gap: 30px; }
+          .mission-text h2 { font-size: 28px; margin-bottom: 20px; }
+          .mission-text p { font-size: 14px; }
+          
+          .mission-label {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+            margin-bottom: 20px;
+            font-size: 11px;
+          }
+
+          .mission-label::before {
+            width: 20px;
+            height: 2px;
+          }
           
           .two-services { padding: 80px 20px; }
           .two-services-title h2 { font-size: 32px; }
