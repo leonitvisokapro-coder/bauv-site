@@ -287,28 +287,32 @@
           transform: scale(0.98);
         }
 
-        /* CONTENU DÉTAILLÉ - animation SANS LATENCE */
+        /* ⚠️ CONTENU DÉTAILLÉ - AUCUNE ANIMATION */
         .hero-value-detail,
         .client-detail,
         .approach-detail {
-          opacity: 0;
-          transform: translateY(10px);
-          transition: all 0.25s ease;
-          
-          visibility: hidden;
-          position: absolute;
-          width: 100%;
+          display: none !important;
+          animation: none !important;
+          transition: none !important;
         }
 
-        /* État ACTIF du contenu détaillé - INSTANTANÉ */
+        /* État ACTIF - INSTANTANÉ */
         .hero-value-detail.active,
         .client-detail.active,
         .approach-detail.active {
-          opacity: 1;
-          transform: translateY(0);
-          
-          visibility: visible;
-          position: relative;
+          display: block !important;
+          animation: none !important;
+          transition: none !important;
+        }
+
+        /* Tuer TOUTES animations sur les enfants */
+        .hero-value-detail *,
+        .client-detail *,
+        .approach-detail * {
+          animation: none !important;
+          transition: none !important;
+          opacity: 1 !important;
+          transform: none !important;
         }
         
         /* HERO */
@@ -545,15 +549,28 @@
         }
 
         .hero-value-detail {
-          display: none;
-          opacity: 0;
-          transform: translateY(10px);
+          display: none !important;
+          opacity: 0 !important;
+          transform: translateY(10px) !important;
+          animation: none !important;
+          transition: none !important;
         }
 
         .hero-value-detail.active {
-          display: block;
-          opacity: 1;
-          transform: translateY(0);
+          display: block !important;
+          opacity: 1 !important;
+          transform: translateY(0) !important;
+          animation: none !important;
+          transition: none !important;
+        }
+
+        .hero-value-detail h3,
+        .hero-value-detail > p,
+        .hero-value-detail .detail-line {
+          animation: none !important;
+          transition: none !important;
+          opacity: 1 !important;
+          transform: none !important;
         }
 
         .hero-value-detail .detail-line {
@@ -801,15 +818,30 @@
         }
 
         .client-detail {
-          display: none;
-          opacity: 0;
-          transform: translateY(10px);
+          display: none !important;
+          opacity: 0 !important;
+          transform: translateY(10px) !important;
+          animation: none !important;
+          transition: none !important;
         }
 
         .client-detail.active {
-          display: block;
-          opacity: 1;
-          transform: translateY(0);
+          display: block !important;
+          opacity: 1 !important;
+          transform: translateY(0) !important;
+          animation: none !important;
+          transition: none !important;
+        }
+
+        .client-detail h3,
+        .client-detail > p,
+        .client-detail .detail-line,
+        .client-detail .detail-list,
+        .client-detail .detail-list li {
+          animation: none !important;
+          transition: none !important;
+          opacity: 1 !important;
+          transform: none !important;
         }
 
         .client-detail .detail-line {
@@ -1159,18 +1191,41 @@
           background: var(--light-gray);
           padding: 60px;
           border-radius: 8px;
+          position: relative;
+          min-height: 150px;
         }
 
         .approach-detail {
-          display: none;
-          opacity: 0;
-          transform: translateY(10px);
+          display: none !important;
+          animation: none !important;
+          transition: none !important;
         }
 
         .approach-detail.active {
-          display: block;
-          opacity: 1;
-          transform: translateY(0);
+          display: block !important;
+          animation: none !important;
+          transition: none !important;
+        }
+
+        .approach-detail * {
+          animation: none !important;
+          transition: none !important;
+        }
+
+        .approach-detail.active * {
+          animation: none !important;
+          transition: none !important;
+        }
+
+        .approach-detail h3,
+        .approach-detail > p,
+        .approach-detail .detail-line,
+        .approach-detail .detail-list,
+        .approach-detail .detail-list li {
+          animation: none !important;
+          transition: none !important;
+          opacity: 1 !important;
+          transform: none !important;
         }
 
         .detail-line {
@@ -4183,20 +4238,30 @@ document.querySelectorAll('.hero-value-tab').forEach((tab, index) => {
   });
 });
 
-// Approach tabs interaction
-document.querySelectorAll('.approach-tab').forEach((tab, index) => {
+// Approach tabs interaction - INSTANT
+const approachTabs = document.querySelectorAll('.approach-tab');
+const approachContents = document.querySelectorAll('.approach-detail');
+
+approachTabs.forEach((tab, index) => {
+  // Activer le premier tab au chargement
   if (index === 0) {
     tab.classList.add('active');
     const tabId = tab.dataset.tab;
     if (tabId) {
-      document.getElementById(tabId).classList.add('active');
+      const detailElement = document.getElementById(tabId);
+      if (detailElement) {
+        detailElement.classList.add('active');
+      }
     }
   }
   
+  // Au clic - instantané
   tab.addEventListener('click', function() {
-    document.querySelectorAll('.approach-tab').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.approach-detail').forEach(d => d.classList.remove('active'));
+    // Enlever active partout
+    approachTabs.forEach(t => t.classList.remove('active'));
+    approachContents.forEach(c => c.classList.remove('active'));
     
+    // Ajouter active - INSTANT
     this.classList.add('active');
     const tabId = this.dataset.tab;
     if (tabId) {
