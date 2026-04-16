@@ -3692,7 +3692,7 @@ Entreprise de rénovation à Genève – bauV
 
 <!-- INTRO VIDEO -->
 <div id="intro">
-  <video id="introVideo" autoplay muted playsinline preload="auto">
+  <video id="introVideo" autoplay muted playsinline preload="auto" style="width: 100%; height: 100%; object-fit: cover;">
     <!-- MOBILE -->
     <source src="videos/intro-mobile.mp4" media="(max-width: 768px)">
     <!-- DESKTOP -->
@@ -4740,17 +4740,39 @@ function endIntro() {
   }, 500);
 }
 
-// Forcer la lecture au chargement
+// Fixer la source vidéo selon l'écran et forcer le play
 if (introVideo) {
-  // Pré-charger et lancer la vidéo
-  introVideo.oncanplay = () => {
-    introVideo.play().catch(err => console.log("Autoplay bloqué:", err));
+  // Déterminer et charger la bonne source
+  const isMobile = window.innerWidth <= 768;
+  const videoSrc = isMobile ? "videos/intro-mobile.mp4" : "videos/intro-desktop.mp4";
+  
+  // Vider les sources existantes
+  introVideo.innerHTML = '';
+  
+  // Ajouter la source correcte
+  const source = document.createElement('source');
+  source.src = videoSrc;
+  source.type = 'video/mp4';
+  introVideo.appendChild(source);
+  
+  // Load et play
+  introVideo.load();
+  
+  // Essayer de jouer dès que possible
+  const playAttempt = () => {
+    introVideo.play().then(() => {
+      // Play réussi
+      console.log("Vidéo lancée");
+    }).catch(err => {
+      // Si play échoue, réessayer au premier clic/touch
+      document.addEventListener('touchstart', playAttempt, { once: true });
+      document.addEventListener('click', playAttempt, { once: true });
+      console.log("Autoplay bloqué, en attente d'interaction");
+    });
   };
   
-  // Si la vidéo est déjà chargée
-  if (introVideo.readyState >= 2) {
-    introVideo.play().catch(err => console.log("Autoplay bloqué:", err));
-  }
+  // Attendre que la vidéo soit prête
+  introVideo.oncanplay = playAttempt;
   
   // Fin de la vidéo
   introVideo.onended = endIntro;
