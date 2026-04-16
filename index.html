@@ -3692,7 +3692,7 @@ Entreprise de rénovation à Genève – bauV
 
 <!-- INTRO VIDEO -->
 <div id="intro">
-  <video id="introVideo" autoplay muted playsinline>
+  <video id="introVideo" autoplay muted playsinline preload="auto">
     <!-- MOBILE -->
     <source src="videos/intro-mobile.mp4" media="(max-width: 768px)">
     <!-- DESKTOP -->
@@ -4740,8 +4740,19 @@ function endIntro() {
   }, 500);
 }
 
-// Fin de la vidéo
+// Forcer la lecture au chargement
 if (introVideo) {
+  // Pré-charger et lancer la vidéo
+  introVideo.oncanplay = () => {
+    introVideo.play().catch(err => console.log("Autoplay bloqué:", err));
+  };
+  
+  // Si la vidéo est déjà chargée
+  if (introVideo.readyState >= 2) {
+    introVideo.play().catch(err => console.log("Autoplay bloqué:", err));
+  }
+  
+  // Fin de la vidéo
   introVideo.onended = endIntro;
 }
 
