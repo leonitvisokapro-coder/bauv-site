@@ -2811,7 +2811,31 @@
           .contact-cta h2 { font-size: 36px; margin-bottom: 20px; }
           .contact-cta p { font-size: 16px; margin-bottom: 40px; }
           
-          footer { padding: 60px 20px; }
+          /* SECTIONS PRINCIPALES - PADDING RÉDUIT */
+          .mission,
+          .clients-section,
+          .services-grid-section,
+          .approach-section,
+          .carousel-section,
+          .contact-cta {
+            padding: 45px 20px !important;
+          }
+
+          .values-section {
+            padding: 40px 20px !important;
+          }
+
+          /* TEXTES JUSTIFIÉS */
+          .mission-text p,
+          .clients-content p,
+          .contact-cta p,
+          .hero-values-detail p,
+          .hero-value-detail p {
+            text-align: justify;
+            text-justify: auto;
+          }
+
+          footer { padding: 45px 20px; }
           .footer-top-section { padding: 40px 20px; }
           .footer-main { padding: 50px 20px; grid-template-columns: 1fr; gap: 40px; }
           .footer-bottom { padding: 30px 20px; }
