@@ -2444,9 +2444,95 @@
           .contact-cta { padding: 100px 40px; }
           .contact-cta h2 { font-size: 36px; }
           .contact-cta > p { font-size: 16px; }
+          
+          .blog-section { padding: 60px 40px; }
+          .blog-section-title { font-size: 32px; }
+          .blog-section > p { font-size: 16px; margin-bottom: 40px; }
+          .blog-card-black { padding: 30px 30px; gap: 18px; }
+          .blog-card-black p { font-size: 16px; }
         }
 
         /* FOOTER */
+        /* ========================= */
+        /* 📚 BLOG PROMOTION SECTION */
+        /* ========================= */
+        .blog-section {
+          padding: 80px 100px;
+          background: var(--white);
+          text-align: center;
+        }
+
+        .blog-section-title {
+          font-size: 42px;
+          font-weight: 800;
+          margin-bottom: 15px;
+          color: var(--dark-gray);
+          font-family: 'Poppins', sans-serif;
+          letter-spacing: -0.5px;
+        }
+
+        .blog-section-title .accent {
+          color: var(--green-dark);
+        }
+
+        .blog-section > p {
+          font-size: 18px;
+          color: var(--text-muted);
+          margin-bottom: 50px;
+          max-width: 800px;
+          margin-left: auto;
+          margin-right: auto;
+          line-height: 1.8;
+          font-weight: 300;
+        }
+
+        .blog-card-black {
+          background: var(--dark-gray);
+          color: var(--white);
+          padding: 35px 60px;
+          border-radius: 8px;
+          max-width: 800px;
+          margin: 0 auto;
+          animation: fadeInUp 0.8s ease;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+        }
+
+        .blog-card-black p {
+          font-size: 18px;
+          font-weight: 600;
+          margin: 0;
+          line-height: 2;
+          letter-spacing: 0.5px;
+        }
+
+        .blog-card-black span {
+          color: var(--white);
+        }
+
+        .blog-card-black .btn-primary {
+          background: var(--green-light);
+          color: var(--dark-gray);
+          padding: 16px 45px;
+          border-radius: 8px;
+          text-decoration: none;
+          display: inline-block;
+          transition: all 0.3s ease;
+          border: none;
+          font-weight: 700;
+          font-size: 14px;
+          text-transform: uppercase;
+          letter-spacing: 0.8px;
+          margin-top: 10px;
+        }
+
+        .blog-card-black .btn-primary:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 10px 30px rgba(130, 189, 65, 0.3);
+        }
+
         /* FOOTER SEPARATOR LINE */
         .footer-separator-line {
           height: 2px;
@@ -2819,6 +2905,13 @@
           .contact-cta { padding: 80px 20px; }
           .contact-cta h2 { font-size: 36px; margin-bottom: 20px; }
           .contact-cta p { font-size: 14px !important; margin-bottom: 40px; }
+          
+          .blog-section { padding: 50px 20px; }
+          .blog-section-title { font-size: 28px; }
+          .blog-section > p { font-size: 14px; margin-bottom: 30px; }
+          .blog-card-black { padding: 25px 20px; gap: 15px; }
+          .blog-card-black p { font-size: 14px; line-height: 1.8; }
+          
           .client-detail > p,
           .approach-detail > p,
           .hero-value-detail p {
@@ -3712,6 +3805,7 @@ Entreprise de rénovation à Genève – bauV
     <a onclick="document.querySelector('.services-grid-section').scrollIntoView({behavior:'smooth'}); return false;">Nos compétences</a>
     <a onclick="document.querySelector('.approach-section').scrollIntoView({behavior:'smooth'}); return false;">Notre approche</a>
     <a onclick="document.querySelector('.carousel-section').scrollIntoView({behavior:'smooth'}); return false;">Nos réalisations</a>
+    <a href="blog-main.html">Blog</a>
     <a onclick="document.querySelector('.contact-cta').scrollIntoView({behavior:'smooth'}); return false;">Contact</a>
   </nav>
   <div class="menu-toggle" onclick="toggleMenu()">☰</div>
@@ -3724,6 +3818,7 @@ Entreprise de rénovation à Genève – bauV
   <a onclick="document.querySelector('.services-grid-section').scrollIntoView({behavior:'smooth'}); toggleMenu(); return false;">Nos compétences</a>
   <a onclick="document.querySelector('.approach-section').scrollIntoView({behavior:'smooth'}); toggleMenu(); return false;">Notre approche</a>
   <a onclick="document.querySelector('.carousel-section').scrollIntoView({behavior:'smooth'}); toggleMenu(); return false;">Nos réalisations</a>
+  <a href="blog-main.html" onclick="toggleMenu();">Blog</a>
   <a onclick="document.querySelector('.contact-cta').scrollIntoView({behavior:'smooth'}); toggleMenu(); return false;">Contact</a>
 </div>
 
@@ -4306,6 +4401,17 @@ Entreprise de rénovation à Genève – bauV
     </div>
   </div>
 </div>
+
+<!-- BLOG PROMOTION SECTION -->
+<section class="blog-section">
+  <h2 class="blog-section-title">Découvrez notre <span class="accent">Blog</span></h2>
+  <p>Conseils d'experts, guides pratiques et dernières tendances en rénovation et construction à Genève et dans l'arc lémanique par bauV.</p>
+  
+  <div class="blog-card-black">
+    <p>Guides Complets — Conseils d'Experts — Tendances</p>
+    <a href="blog-main.html" class="btn btn-primary">Lire nos articles</a>
+  </div>
+</section>
 
 <section class="contact-cta">
   <div class="contact-container">
