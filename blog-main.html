@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog bauV - Conseils d'expert en rénovation, construction et gestion de projets à Genève.">
+    <meta name="keywords" content="rénovation Genève, conseils construction, rénovation cuisine, isolation thermique">
+    <meta name="author" content="bauV">
+    <meta name="robots" content="index, follow">
+    <title>Blog bauV | Rénovation, Construction, Gestion de Projet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+          --green-dark: #176131;
+          --green-light: #82bd41;
+          --white: #ffffff;
+          --light-gray: #f8f8f8;
+          --dark-gray: #2a2a2a;
+          --text-muted: #666666;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          background: var(--white);
+          color: var(--dark-gray);
+          line-height: 1.6;
+          overflow-x: hidden;
+          font-weight: 400;
+        }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(60px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideIn { from { opacity: 0; transform: translateX(-100px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes slideInRight { from { opacity: 0; transform: translateX(100px); } to { opacity: 1; transform: translateX(0); } }
+
+        /* HEADER - IDENTIQUE AU SITE */
+        header {
+          position: fixed;
+          top: 0; left: 0; right: 0;
+          height: 90px;
+          background: rgba(255, 255, 255, 0.98);
+          backdrop-filter: blur(20px);
+          border-bottom: 1px solid rgba(26, 92, 58, 0.1);
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 100px;
+          z-index: 1000;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+          position: relative;
+        }
+
+        .header-logo {
+          display: flex;
+          align-items: center;
+          animation: slideIn 0.8s ease;
+        }
+
+        .logo-img {
+          height: 70px;
+          width: auto;
+          max-width: 200px;
+        }
+
+        nav {
+          display: flex;
+          gap: 40px;
+          animation: slideInRight 0.8s ease;
+        }
+
+        nav a {
+          font-size: 12px;
+          color: var(--text-muted);
+          text-decoration: none;
+          cursor: pointer;
+          transition: all 0.3s;
+          text-transform: uppercase;
+          letter-spacing: 0.8px;
+          font-weight: 600;
+          position: relative;
+          padding-bottom: 8px;
+        }
+
+        nav a::after {
+          content: '';
+          position: absolute;
+          bottom: 0; left: 0;
+          width: 0;
+          height: 2.5px;
+          background: var(--green-dark);
+          transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        nav a:hover::after, nav a.active::after { width: 100%; }
+        nav a:hover, nav a.active { color: var(--green-dark); }
+
+        .menu-toggle {
+          display: none;
+          font-size: 24px;
+          cursor: pointer;
+          color: var(--dark-gray);
+        }
+
+        .mobile-menu {
+          display: none;
+        }
+
+        main { margin-top: 90px; }
+
+        /* HERO SECTION */
+        .blog-hero {
+          position: relative;
+          padding: 120px 100px;
+          text-align: left;
+          color: var(--white);
+          min-height: 500px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          background: linear-gradient(rgba(23, 97, 49, 0.7), rgba(23, 97, 49, 0.7)), 
+                      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%25" style="stop-color:%23176131;stop-opacity:1" /><stop offset="100%25" style="stop-color:%23234a3a;stop-opacity:1" /></linearGradient></defs><rect fill="url(%23g1)" width="1200" height="600"/><rect fill="%2382bd41" x="50" y="400" width="300" height="200" opacity="0.1"/><rect fill="%2382bd41" x="700" y="350" width="400" height="250" opacity="0.08"/><circle fill="%2382bd41" cx="1000" cy="150" r="120" opacity="0.1"/></svg>') center/cover;
+          animation: fadeInUp 0.8s ease;
+        }
+
+        .blog-hero-content {
+          max-width: 700px;
+          animation: fadeInUp 0.8s ease 0.2s backwards;
+        }
+
+        .blog-hero-label {
+          font-size: 14px;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          color: var(--green-light);
+          margin-bottom: 15px;
+        }
+
+        .blog-hero h1 {
+          font-size: 52px;
+          font-weight: 800;
+          margin-bottom: 30px;
+          letter-spacing: -0.5px;
+          line-height: 1.2;
+        }
+
+        .blog-hero-filters {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          margin-top: 20px;
+          animation: fadeInUp 0.8s ease 0.3s backwards;
+        }
+
+        .hero-filter-pill {
+          padding: 10px 20px;
+          background: rgba(255, 255, 255, 0.15);
+          border: 2px solid rgba(255, 255, 255, 0.3);
+          color: var(--white);
+          border-radius: 30px;
+          cursor: pointer;
+          font-weight: 600;
+          font-size: 13px;
+          text-transform: capitalize;
+          transition: all 0.3s ease;
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+        }
+
+        .hero-filter-pill::before {
+          content: '○';
+          font-size: 16px;
+        }
+
+        .hero-filter-pill:hover {
+          background: rgba(255, 255, 255, 0.25);
+          border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-filter-pill.active {
+          background: var(--green-light);
+          border-color: var(--green-light);
+          color: var(--dark-gray);
+        }
+
+        .hero-filter-pill.active::before {
+          content: '●';
+        }
+
+        /* BLOG GRID */
+        .blog-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 40px;
+          padding: 80px 100px;
+          max-width: 1400px;
+          margin: 0 auto;
+        }
+
+        .blog-card {
+          background: var(--white);
+          border-radius: 8px;
+          overflow: hidden;
+          box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+          transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+          animation: fadeInUp 0.6s ease backwards;
+          display: flex;
+          flex-direction: column;
+          border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .blog-card:nth-child(1) { animation-delay: 0.1s; }
+        .blog-card:nth-child(2) { animation-delay: 0.2s; }
+        .blog-card:nth-child(3) { animation-delay: 0.3s; }
+        .blog-card:nth-child(4) { animation-delay: 0.1s; }
+        .blog-card:nth-child(5) { animation-delay: 0.2s; }
+        .blog-card:nth-child(6) { animation-delay: 0.3s; }
+
+        .blog-card:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 15px 40px rgba(23, 97, 49, 0.15);
+        }
+
+        .blog-card-image {
+          width: 100%;
+          height: 250px;
+          background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-light) 100%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: rgba(255, 255, 255, 0.4);
+          font-size: 20px;
+          position: relative;
+          overflow: hidden;
+          font-weight: 600;
+        }
+
+        .blog-card-image::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(135deg, rgba(23, 97, 49, 0.9), rgba(130, 189, 65, 0.7));
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+
+        .blog-card:hover .blog-card-image::before { opacity: 1; }
+
+        .blog-card-content {
+          padding: 30px;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .blog-meta {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 15px;
+          font-size: 11px;
+          text-transform: uppercase;
+          letter-spacing: 0.8px;
+          font-weight: 700;
+          color: var(--text-muted);
+        }
+
+        .blog-category {
+          color: var(--green-dark);
+          background: rgba(23, 97, 49, 0.08);
+          padding: 6px 14px;
+          border-radius: 20px;
+          display: inline-block;
+        }
+
+        .blog-card h3 {
+          font-size: 19px;
+          font-weight: 700;
+          margin-bottom: 12px;
+          line-height: 1.4;
+          color: var(--dark-gray);
+        }
+
+        .blog-card p {
+          color: var(--text-muted);
+          font-size: 14px;
+          margin-bottom: 20px;
+          flex: 1;
+          line-height: 1.7;
+        }
+
+        .blog-card-footer {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-top: 15px;
+          border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .blog-read-more {
+          color: var(--green-dark);
+          font-weight: 700;
+          font-size: 11px;
+          text-transform: uppercase;
+          letter-spacing: 0.8px;
+          transition: all 0.3s ease;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          text-decoration: none;
+        }
+
+        .blog-card:hover .blog-read-more {
+          gap: 12px;
+          color: var(--green-light);
+        }
+
+        /* CTA SECTION */
+        .blog-cta {
+          background: linear-gradient(135deg, var(--green-dark) 0%, rgba(23, 97, 49, 0.85) 100%);
+          color: white;
+          padding: 60px 100px;
+          text-align: center;
+          margin: 80px 100px;
+          border-radius: 8px;
+        }
+
+        .blog-cta h2 {
+          font-size: 36px;
+          margin-bottom: 15px;
+          font-weight: 800;
+          letter-spacing: -0.5px;
+        }
+
+        .blog-cta p {
+          font-size: 16px;
+          margin-bottom: 25px;
+          opacity: 0.95;
+        }
+
+        .cta-buttons {
+          display: flex;
+          gap: 15px;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+
+        .btn-primary {
+          padding: 14px 32px;
+          background: var(--green-light);
+          color: var(--dark-gray);
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          font-weight: 700;
+          font-size: 12px;
+          text-transform: uppercase;
+          letter-spacing: 0.8px;
+          transition: all 0.3s ease;
+          text-decoration: none;
+          display: inline-block;
+        }
+
+        .btn-primary:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(130, 189, 65, 0.3);
+        }
+
+        /* FOOTER - IDENTIQUE AU SITE */
+        .footer-separator-line { height: 2px; background: var(--green-dark); width: 100%; }
+
+        footer {
+          background: #000000;
+          color: #ffffff;
+        }
+
+        .footer-wrapper { max-width: 1400px; margin: 0 auto; }
+
+        .footer-top-section {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 40px;
+          padding: 60px 100px;
+        }
+
+        .footer-info-card {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 12px;
+          text-align: center;
+        }
+
+        .info-icon {
+          width: 44px; height: 44px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(23, 97, 49, 0.1);
+          border: 2px solid var(--green-dark);
+          border-radius: 8px;
+          color: var(--green-dark);
+          transition: all 0.3s ease;
+        }
+
+        .footer-info-card:hover .info-icon {
+          background: var(--green-dark);
+          color: var(--white);
+        }
+
+        .footer-info-card h3 {
+          color: var(--white);
+          font-size: 16px;
+          font-weight: 700;
+          margin: 0;
+        }
+
+        .footer-info-card a, .footer-info-card p {
+          color: #999;
+          font-size: 14px;
+          text-decoration: none;
+          margin: 0;
+          line-height: 1.6;
+          transition: color 0.3s;
+        }
+
+        .footer-info-card a:hover { color: var(--green-light); }
+
+        .footer-main {
+          display: grid;
+          grid-template-columns: 1fr 1.5fr 1fr;
+          gap: 80px;
+          padding: 80px 100px;
+          align-items: flex-start;
+          border-top: 1px solid #333;
+        }
+
+        .footer-left {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .footer-logo {
+          margin-bottom: 25px;
+          height: 70px;
+          display: flex;
+          align-items: center;
+        }
+
+        .footer-logo img {
+          height: 100%;
+          width: auto;
+          object-fit: contain;
+        }
+
+        .footer-description {
+          color: var(--white);
+          font-size: 16px;
+          line-height: 1.8;
+          font-weight: 400;
+          margin: 0;
+        }
+
+        .footer-description .highlight {
+          color: var(--green-light);
+          font-weight: 800;
+        }
+
+        .footer-middle {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 100px;
+          text-align: center;
+        }
+
+        .footer-col h4 {
+          color: var(--white);
+          font-size: 15px;
+          font-weight: 800;
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+          margin-bottom: 35px;
+          margin-top: 0;
+        }
+
+        .footer-col ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .footer-col ul li { margin-bottom: 22px; }
+
+        .footer-col a {
+          color: #999;
+          font-size: 15px;
+          text-decoration: none;
+          transition: color 0.3s;
+          cursor: pointer;
+        }
+
+        .footer-col a:hover { color: var(--green-light); }
+
+        .footer-right {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .footer-right h3 {
+          color: var(--white);
+          font-size: 18px;
+          font-weight: 800;
+          margin-bottom: 15px;
+          margin-top: 0;
+        }
+
+        .footer-right p {
+          color: #999;
+          font-size: 14px;
+          line-height: 1.8;
+          margin-bottom: 30px;
+          margin-top: 0;
+        }
+
+        .footer-cta-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 12px;
+          padding: 14px 28px;
+          background: transparent;
+          border: 2px solid var(--green-dark);
+          color: var(--green-dark);
+          text-decoration: none;
+          border-radius: 30px;
+          font-weight: 700;
+          font-size: 14px;
+          transition: all 0.3s ease;
+          cursor: pointer;
+          width: fit-content;
+        }
+
+        .footer-cta-btn:hover {
+          background: var(--green-dark);
+          color: var(--white);
+        }
+
+        .footer-bottom {
+          text-align: center;
+          padding: 40px 100px;
+          border-top: 1px solid #333;
+          color: #999;
+          font-size: 13px;
+        }
+
+        .no-results {
+          grid-column: 1 / -1;
+          text-align: center;
+          padding: 60px 20px;
+          color: var(--text-muted);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+          header { padding: 0 50px; }
+          .blog-hero { padding: 80px 50px; }
+          .blog-grid { grid-template-columns: repeat(2, 1fr); padding: 60px 50px; gap: 30px; }
+          .blog-cta { margin: 60px 50px; }
+          .footer-top-section { padding: 60px 50px; }
+          .footer-main { padding: 60px 50px; gap: 50px; }
+          .footer-bottom { padding: 40px 50px; }
+        }
+
+        @media (max-width: 768px) {
+          header { padding: 0 20px; height: 70px; }
+          nav { gap: 15px; display: none; }
+          .menu-toggle { display: block; }
+          .mobile-menu { display: flex; flex-direction: column; gap: 10px; position: fixed; top: 70px; left: 0; right: 0; background: rgba(255, 255, 255, 0.98); padding: 20px; z-index: 999; }
+          main { margin-top: 70px; }
+          .blog-hero { padding: 60px 20px; }
+          .blog-hero h1 { font-size: 36px; }
+          .blog-grid { grid-template-columns: 1fr; padding: 40px 20px; }
+          .blog-cta { margin: 40px 20px; padding: 40px 20px; }
+          .footer-top-section { grid-template-columns: 1fr; padding: 40px 20px; }
+          .footer-main { grid-template-columns: 1fr; padding: 40px 20px; gap: 40px; }
+          .footer-bottom { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER EXACT DU SITE + LIEN BLOG -->
+    <header>
+      <div class="header-logo">
+        <img src="images/logo-noir.png" alt="bauV Logo" class="logo-img">
+      </div>
+      <nav>
+        <a onclick="document.querySelector('.mission').scrollIntoView({behavior:'smooth'}); return false;">Notre mission</a>
+        <a onclick="document.querySelector('.clients-section').scrollIntoView({behavior:'smooth'}); return false;">Nos clients</a>
+        <a onclick="document.querySelector('.services-grid-section').scrollIntoView({behavior:'smooth'}); return false;">Nos compétences</a>
+        <a onclick="document.querySelector('.approach-section').scrollIntoView({behavior:'smooth'}); return false;">Notre approche</a>
+        <a onclick="document.querySelector('.carousel-section').scrollIntoView({behavior:'smooth'}); return false;">Nos réalisations</a>
+        <a href="blog-main.html">Blog</a>
+        <a onclick="document.querySelector('.contact-cta').scrollIntoView({behavior:'smooth'}); return false;">Contact</a>
+      </nav>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </header>
+
+    <!-- Menu mobile déroulant -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a onclick="document.querySelector('.mission').scrollIntoView({behavior:'smooth'}); toggleMenu(); return false;">Notre mission</a>
+      <a onclick="document.querySelector('.clients-section').scrollIntoView({behavior:'smooth'}); toggleMenu(); return false;">Nos clients</a>
+      <a onclick="document.querySelector('.services-grid-section').scrollIntoView({behavior:'smooth'}); toggleMenu(); return false;">Nos compétences</a>
+      <a onclick="document.querySelector('.approach-section').scrollIntoView({behavior:'smooth'}); toggleMenu(); return false;">Notre approche</a>
+      <a onclick="document.querySelector('.carousel-section').scrollIntoView({behavior:'smooth'}); toggleMenu(); return false;">Nos réalisations</a>
+      <a href="blog-main.html">Blog</a>
+      <a onclick="document.querySelector('.contact-cta').scrollIntoView({behavior:'smooth'}); toggleMenu(); return false;">Contact</a>
+    </div>
+
+    <main>
+        <section class="blog-hero">
+            <div class="blog-hero-content">
+                <div class="blog-hero-label">Le blog de la rénovation</div>
+                <h1>Les actualités de la construction avec bauV</h1>
+                
+                <div class="blog-hero-filters">
+                    <a href="#" class="hero-filter-pill active" data-filter="all">Tous les articles</a>
+                    <a href="#" class="hero-filter-pill" data-filter="renovation">Rénovation</a>
+                    <a href="#" class="hero-filter-pill" data-filter="tendances">Tendances</a>
+                    <a href="#" class="hero-filter-pill" data-filter="conseils">Conseils</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="blog-grid" id="blog-grid"></section>
+
+        <section class="blog-cta">
+            <h2>Démarrez Votre Projet</h2>
+            <p>Nos experts répondent à toutes vos questions en 24h</p>
+            <div class="cta-buttons">
+                <a href="#" onclick="document.querySelector('.contact-cta').scrollIntoView({behavior:'smooth'}); return false;" class="btn-primary">Demander un Devis</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER EXACT DU SITE -->
+    <div class="footer-separator-line"></div>
+    <footer>
+      <div class="footer-wrapper">
+        <div class="footer-top-section">
+          <div class="footer-info-card">
+            <div class="info-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <h3>Appelez-nous</h3>
+            <a href="tel:+41782685442">+41 78 268 54 42</a>
+          </div>
+
+          <div class="footer-info-card">
+            <div class="info-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+            </div>
+            <h3>Une question ?</h3>
+            <a href="mailto:info@bauv.ch">info@bauv.ch</a>
+          </div>
+
+          <div class="footer-info-card">
+            <div class="info-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <h3>Nous trouver</h3>
+            <p>Avenue des Morgines 12<br>1213 Petit-Lancy</p>
+          </div>
+        </div>
+
+        <div class="footer-main">
+          <div class="footer-left">
+            <div class="footer-logo">
+              <img src="images/logo-blanc.png" alt="bauV Logo" class="logo-img">
+            </div>
+            <p class="footer-description">Les <span class="highlight">spécialistes</span> qui transforment chaque espace en atout.</p>
+          </div>
+
+          <div class="footer-middle">
+            <div class="footer-col">
+              <h4>Services</h4>
+              <ul>
+                <li><a href="#services-grid" onclick="document.querySelector('.services-grid-section').scrollIntoView({behavior:'smooth'}); return false;">Nos expertises</a></li>
+                <li><a href="#approche" onclick="document.querySelector('.approach-section').scrollIntoView({behavior:'smooth'}); return false;">Notre approche</a></li>
+                <li><a href="#realisations" onclick="document.querySelector('.carousel-section').scrollIntoView({behavior:'smooth'}); return false;">Nos réalisations</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h4>Entreprise</h4>
+              <ul>
+                <li><a href="#mission" onclick="document.querySelector('.mission').scrollIntoView({behavior:'smooth'}); return false;">Notre mission</a></li>
+                <li><a href="#clients" onclick="document.querySelector('.clients-section').scrollIntoView({behavior:'smooth'}); return false;">Qui on accompagne</a></li>
+                <li><a href="#contact" onclick="document.querySelector('.contact-cta').scrollIntoView({behavior:'smooth'}); return false;">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-right">
+            <h3>Besoin de nous contacter ?</h3>
+            <p>Nous répondons à toutes vos questions et vous mettons en relation avec la bonne personne.</p>
+            <a href="#" onclick="document.querySelector('.contact-cta').scrollIntoView({behavior:'smooth'}); return false;" class="footer-cta-btn">
+              Contactez-nous
+              <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2024 bauV - Tous droits réservés - Entreprise générale du batiment à Geneve et Vaud</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+          const menu = document.getElementById('mobileMenu');
+          menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        let currentFilter = 'all';
+
+        const articles = [
+            { id: 1, title: "Rénovation Cuisine : Guide Complet 2024", excerpt: "Transformez votre cuisine en espace moderne et fonctionnel.", category: "renovation", date: "18 Décembre 2024", readTime: "8 min", url: "blog-1.html" },
+            { id: 2, title: "Isolation Thermique : ROI et Économies", excerpt: "Réduisez vos factures énergétiques de 30-40%.", category: "conseils", date: "15 Décembre 2024", readTime: "10 min", url: "blog-2.html" },
+            { id: 3, title: "Rénovation Salle de Bain : Design & Tendances", excerpt: "Créez une salle de bain contemporaine.", category: "tendances", date: "12 Décembre 2024", readTime: "7 min", url: "blog-3.html" },
+            { id: 4, title: "Permis de Construction à Genève", excerpt: "Tout ce que vous devez savoir sur les démarches.", category: "conseils", date: "10 Décembre 2024", readTime: "9 min", url: "blog-4.html" },
+            { id: 5, title: "Gestion de Projet de Rénovation", excerpt: "Les secrets d'une rénovation réussie.", category: "renovation", date: "8 Décembre 2024", readTime: "11 min", url: "blog-5.html" },
+            { id: 6, title: "Tendances Rénovation 2024", excerpt: "Couleurs, matériaux et styles émergents.", category: "tendances", date: "5 Décembre 2024", readTime: "7 min", url: "blog-6.html" }
+        ];
+
+        function renderArticles() {
+            const grid = document.getElementById('blog-grid');
+            let filtered = articles.filter(article => currentFilter === 'all' || article.category === currentFilter);
+
+            grid.innerHTML = filtered.map(article => `
+                <article class="blog-card">
+                    <div class="blog-card-image">Rénovation<br>&Construction</div>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">${article.category}</span>
+                            <span>${article.date}</span>
+                        </div>
+                        <h3>${article.title}</h3>
+                        <p>${article.excerpt}</p>
+                        <div class="blog-card-footer">
+                            <a href="${article.url}" class="blog-read-more">Lire →</a>
+                            <span style="font-size: 11px; color: var(--text-muted);">${article.readTime}</span>
+                        </div>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            renderArticles();
+
+            document.querySelectorAll('.hero-filter-pill').forEach(pill => {
+                pill.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    currentFilter = this.dataset.filter;
+                    document.querySelectorAll('.hero-filter-pill').forEach(p => p.classList.remove('active'));
+                    this.classList.add('active');
+                    renderArticles();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
