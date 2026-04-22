@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guide complet de la rénovation d'appartement à Genève : budgets réalistes, délais, permis et processus étape par étape. Expert bauV.">
+    <meta name="keywords" content="rénovation appartement Genève, coûts rénovation, délais travaux, permis construction, rénovation complète">
+    <meta name="author" content="bauV">
+    <meta property="og:title" content="Rénovation d'Appartement à Genève : Guide Complet des Budgets et Délais">
+    <meta property="og:description" content="Tout ce que vous devez savoir pour rénover un appartement à Genève : budgets, délais, permis et processus.">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://bauv.ch/blog-1.html">
+    <title>Rénovation Appartement Genève | Guide Budgets & Délais | bauV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+          --green-dark: #176131;
+          --green-light: #82bd41;
+          --white: #ffffff;
+          --light-gray: #f8f8f8;
+          --dark-gray: #2a2a2a;
+          --text-muted: #666666;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+          background: var(--white);
+          color: var(--dark-gray);
+          line-height: 1.7;
+          font-weight: 400;
+        }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* HEADER */
+        header {
+          position: fixed;
+          top: 0; left: 0; right: 0;
+          height: 90px;
+          background: rgba(255, 255, 255, 0.98);
+          backdrop-filter: blur(20px);
+          border-bottom: 1px solid rgba(26, 92, 58, 0.1);
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 100px;
+          z-index: 1000;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-logo {
+          display: flex;
+          align-items: center;
+          text-decoration: none;
+        }
+
+        .logo-img { height: 70px; width: auto; max-width: 200px; }
+
+        nav {
+          display: flex;
+          gap: 40px;
+        }
+
+        nav a {
+          font-size: 12px;
+          color: var(--text-muted);
+          text-decoration: none;
+          cursor: pointer;
+          transition: all 0.3s;
+          text-transform: uppercase;
+          letter-spacing: 0.8px;
+          font-weight: 600;
+          position: relative;
+          padding-bottom: 8px;
+        }
+
+        nav a::after {
+          content: '';
+          position: absolute;
+          bottom: 0; left: 0;
+          width: 0;
+          height: 2.5px;
+          background: var(--green-dark);
+          transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        nav a:hover::after, nav a.active::after { width: 100%; }
+        nav a:hover, nav a.active { color: var(--green-dark); }
+
+        main { margin-top: 90px; }
+
+        /* ARTICLE CONTENT */
+        .article-container {
+          max-width: 900px;
+          margin: 0 auto;
+          padding: 60px 40px;
+        }
+
+        .breadcrumb {
+          font-size: 13px;
+          color: var(--text-muted);
+          margin-bottom: 30px;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          font-weight: 600;
+        }
+
+        .breadcrumb a {
+          color: var(--green-dark);
+          text-decoration: none;
+        }
+
+        .article-header {
+          margin-bottom: 50px;
+          animation: fadeInUp 0.8s ease;
+        }
+
+        .article-header h1 {
+          font-size: 48px;
+          font-weight: 800;
+          color: var(--dark-gray);
+          margin-bottom: 15px;
+          line-height: 1.2;
+          letter-spacing: -0.5px;
+        }
+
+        .article-header h1 span {
+          color: var(--green-dark);
+        }
+
+        .article-meta {
+          display: flex;
+          gap: 30px;
+          font-size: 14px;
+          color: var(--text-muted);
+          font-weight: 500;
+          margin-bottom: 20px;
+        }
+
+        .article-meta strong {
+          color: var(--dark-gray);
+        }
+
+        .article-intro {
+          font-size: 18px;
+          color: var(--text-muted);
+          line-height: 1.8;
+          margin-bottom: 40px;
+          font-weight: 300;
+          border-left: 4px solid var(--green-dark);
+          padding-left: 20px;
+        }
+
+        .article-body {
+          color: var(--dark-gray);
+          line-height: 1.9;
+        }
+
+        .article-body h2 {
+          font-size: 32px;
+          font-weight: 800;
+          color: var(--dark-gray);
+          margin-top: 50px;
+          margin-bottom: 20px;
+          letter-spacing: -0.5px;
+        }
+
+        .article-body h2::before {
+          content: '';
+          display: inline-block;
+          width: 4px;
+          height: 32px;
+          background: var(--green-dark);
+          margin-right: 15px;
+          vertical-align: middle;
+        }
+
+        .article-body h3 {
+          font-size: 22px;
+          font-weight: 700;
+          color: var(--dark-gray);
+          margin-top: 30px;
+          margin-bottom: 15px;
+        }
+
+        .article-body p {
+          margin-bottom: 18px;
+          text-align: justify;
+        }
+
+        .article-body ul, .article-body ol {
+          margin: 25px 0 25px 30px;
+          line-height: 1.9;
+        }
+
+        .article-body li {
+          margin-bottom: 12px;
+        }
+
+        .highlight-box {
+          background: var(--light-gray);
+          border-left: 4px solid var(--green-light);
+          padding: 25px;
+          border-radius: 6px;
+          margin: 30px 0;
+        }
+
+        .highlight-box strong {
+          color: var(--green-dark);
+        }
+
+        .budget-table {
+          width: 100%;
+          margin: 30px 0;
+          border-collapse: collapse;
+          font-size: 15px;
+        }
+
+        .budget-table th {
+          background: var(--dark-gray);
+          color: white;
+          padding: 15px;
+          text-align: left;
+          font-weight: 700;
+        }
+
+        .budget-table td {
+          padding: 12px 15px;
+          border-bottom: 1px solid #e0e0e0;
+        }
+
+        .budget-table tr:nth-child(even) {
+          background: var(--light-gray);
+        }
+
+        .cta-box {
+          background: linear-gradient(135deg, var(--green-dark) 0%, rgba(23, 97, 49, 0.85) 100%);
+          color: white;
+          padding: 40px;
+          border-radius: 8px;
+          text-align: center;
+          margin: 50px 0;
+          animation: fadeInUp 0.8s ease;
+        }
+
+        .cta-box h3 {
+          color: white;
+          font-size: 24px;
+          margin-bottom: 15px;
+        }
+
+        .cta-box p {
+          font-size: 16px;
+          margin-bottom: 25px;
+          opacity: 0.95;
+        }
+
+        .cta-box .btn {
+          background: var(--green-light);
+          color: var(--dark-gray);
+          padding: 14px 35px;
+          border: none;
+          border-radius: 6px;
+          font-weight: 700;
+          font-size: 14px;
+          text-transform: uppercase;
+          letter-spacing: 0.8px;
+          cursor: pointer;
+          text-decoration: none;
+          display: inline-block;
+          transition: all 0.3s ease;
+        }
+
+        .cta-box .btn:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .related-articles {
+          margin-top: 60px;
+          padding-top: 60px;
+          border-top: 2px solid var(--light-gray);
+        }
+
+        .related-articles h3 {
+          font-size: 24px;
+          font-weight: 800;
+          margin-bottom: 30px;
+          color: var(--dark-gray);
+        }
+
+        .related-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 25px;
+        }
+
+        .related-card {
+          border: 1px solid #e0e0e0;
+          border-radius: 6px;
+          padding: 20px;
+          transition: all 0.3s ease;
+        }
+
+        .related-card:hover {
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+          transform: translateY(-2px);
+        }
+
+        .related-card h4 {
+          font-size: 16px;
+          font-weight: 700;
+          color: var(--dark-gray);
+          margin-bottom: 10px;
+        }
+
+        .related-card p {
+          font-size: 14px;
+          color: var(--text-muted);
+          margin-bottom: 12px;
+        }
+
+        .related-card a {
+          color: var(--green-dark);
+          font-weight: 700;
+          text-decoration: none;
+          font-size: 13px;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+
+        /* FOOTER */
+        footer {
+          background: #000000;
+          color: #ffffff;
+          margin-top: 80px;
+        }
+
+        .footer-separator-line { height: 2px; background: var(--green-dark); width: 100%; }
+
+        .footer-wrapper { max-width: 1400px; margin: 0 auto; }
+
+        .footer-top-section {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 40px;
+          padding: 60px 100px;
+        }
+
+        .footer-info-card {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 12px;
+          text-align: center;
+        }
+
+        .info-icon {
+          width: 44px; height: 44px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(23, 97, 49, 0.1);
+          border: 2px solid var(--green-dark);
+          border-radius: 8px;
+          color: var(--green-dark);
+          transition: all 0.3s ease;
+        }
+
+        .footer-info-card:hover .info-icon {
+          background: var(--green-dark);
+          color: var(--white);
+        }
+
+        .footer-info-card h3 {
+          color: var(--white);
+          font-size: 16px;
+          font-weight: 700;
+          margin: 0;
+        }
+
+        .footer-info-card a, .footer-info-card p {
+          color: #999;
+          font-size: 14px;
+          text-decoration: none;
+          margin: 0;
+          line-height: 1.6;
+          transition: color 0.3s;
+        }
+
+        .footer-info-card a:hover { color: var(--green-light); }
+
+        .footer-main {
+          display: grid;
+          grid-template-columns: 1fr 1.5fr 1fr;
+          gap: 80px;
+          padding: 80px 100px;
+          align-items: flex-start;
+          border-top: 1px solid #333;
+        }
+
+        .footer-logo {
+          margin-bottom: 25px;
+          height: 70px;
+          display: flex;
+          align-items: center;
+        }
+
+        .footer-logo img {
+          height: 100%;
+          width: auto;
+          object-fit: contain;
+        }
+
+        .footer-description {
+          color: var(--white);
+          font-size: 16px;
+          line-height: 1.8;
+          font-weight: 400;
+          margin: 0;
+        }
+
+        .footer-description .highlight {
+          color: var(--green-light);
+          font-weight: 800;
+        }
+
+        .footer-bottom {
+          text-align: center;
+          padding: 40px 100px;
+          border-top: 1px solid #333;
+          color: #999;
+          font-size: 13px;
+        }
+
+        .menu-toggle { display: none; }
+
+        @media (max-width: 768px) {
+          header { padding: 0 20px; height: 70px; }
+          nav { display: none; }
+          .menu-toggle { display: block; font-size: 24px; cursor: pointer; color: var(--dark-gray); }
+          main { margin-top: 70px; }
+          .article-container { padding: 40px 20px; }
+          .article-header h1 { font-size: 32px; }
+          .article-body h2 { font-size: 24px; }
+          .related-grid { grid-template-columns: 1fr; }
+          .footer-top-section { grid-template-columns: 1fr; padding: 40px 20px; }
+          .footer-main { grid-template-columns: 1fr; padding: 40px 20px; gap: 40px; }
+          .footer-bottom { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+      <a href="index.html" class="header-logo">
+        <img src="images/logo-noir.png" alt="bauV Logo" class="logo-img">
+      </a>
+      <nav>
+        <a href="index.html">Notre mission</a>
+        <a href="index.html">Nos clients</a>
+        <a href="index.html">Nos compétences</a>
+        <a href="index.html">Notre approche</a>
+        <a href="index.html">Nos réalisations</a>
+        <a href="blog-main.html">Blog</a>
+        <a href="index.html">Contact</a>
+      </nav>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </header>
+
+    <main>
+        <article class="article-container">
+            <nav class="breadcrumb">
+                <a href="index.html">Accueil</a> / <a href="blog-main.html">Blog</a> / Rénovation Appartement Genève
+            </nav>
+
+            <header class="article-header">
+                <h1>Rénovation d'Appartement à <span>Genève</span> : Guide Complet des Budgets et Délais</h1>
+                <div class="article-meta">
+                    <span>📅 <strong>18 Décembre 2024</strong></span>
+                    <span>⏱ <strong>8 min de lecture</strong></span>
+                    <span>👤 <strong>bauV Experts</strong></span>
+                </div>
+            </header>
+
+            <div class="article-intro">
+                Vous envisagez de rénover votre appartement à Genève ? Ce guide complet vous accompagne à travers chaque étape du processus : de la planification initiale aux finitions, en passant par les budgets réalistes, les délais et les démarches administratives essentielles. Basé sur 30 ans d'expertise, découvrez comment transformer votre espace avec assurance.
+            </div>
+
+            <section class="article-body">
+                <h2>Comprendre le marché de la rénovation à Genève</h2>
+                
+                <p>La rénovation d'appartement à Genève répond à des réalités économiques et réglementaires spécifiques. Les appartements genevois, souvent situés en immeubles collectifs construits entre 1950 et 1990, présentent des défis particuliers : isolation thermique insuffisante, installations électriques vieillissantes, plomberie d'époque.</p>
+
+                <p>Le marché genevois se distingue par des <strong>coûts de main-d'œuvre élevés</strong> (en moyenne 20-30% plus chers qu'en Suisse romande) et une <strong>réglementation stricte</strong> en matière de permis, d'accessibilité et de normes énergétiques.</p>
+
+                <div class="highlight-box">
+                    <strong>📊 Chiffre clé :</strong> Le coût moyen d'une rénovation d'appartement à Genève varie de <strong>2'500 à 4'500 CHF/m²</strong> selon l'ampleur des travaux. Pour un appartement de 120 m², comptez entre 300'000 et 540'000 CHF pour une rénovation complète.
+                </div>
+
+                <h2>Les différents types de rénovation</h2>
+
+                <h3>1. Rénovation partielle ou cosmétique</h3>
+                <p>Ideale pour rafraîchir un appartement sans restructurer. Comprend : peinture, revêtements de sol, électricité superficielle, tuyauterie visible.</p>
+                <ul>
+                    <li><strong>Budget :</strong> 800-1'500 CHF/m²</li>
+                    <li><strong>Délai :</strong> 4-8 semaines</li>
+                    <li><strong>Permis :</strong> Généralement non requis</li>
+                </ul>
+
+                <h3>2. Rénovation intermédiaire</h3>
+                <p>Combinaison de rafraîchissement et d'amélioration fonctionnelle. Reprend les systèmes (électricité, plomberie) et les éléments de confort essentiels.</p>
+                <ul>
+                    <li><strong>Budget :</strong> 1'500-2'500 CHF/m²</li>
+                    <li><strong>Délai :</strong> 8-14 semaines</li>
+                    <li><strong>Permis :</strong> Souvent requis</li>
+                </ul>
+
+                <h3>3. Rénovation complète</h3>
+                <p>Transformation totale incluant restructuration, isolation thermique, nouvelles installations (électricité, plomberie, chauffage, ventilation), accessibilité.</p>
+                <ul>
+                    <li><strong>Budget :</strong> 2'500-4'500 CHF/m²</li>
+                    <li><strong>Délai :</strong> 12-24 semaines</li>
+                    <li><strong>Permis :</strong> Systématiquement requis</li>
+                </ul>
+
+                <h2>Budget détaillé par postes de travaux</h2>
+
+                <p>Voici une ventilation réaliste des coûts pour une rénovation complète d'un appartement genevois de 120 m² :</p>
+
+                <table class="budget-table">
+                    <thead>
+                        <tr>
+                            <th>Poste de travaux</th>
+                            <th>Budget estimé</th>
+                            <th>% du total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Gros œuvre & Restructuration</strong></td>
+                            <td>80'000 - 120'000 CHF</td>
+                            <td>25-30%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Isolation thermique & Fenêtres</strong></td>
+                            <td>60'000 - 90'000 CHF</td>
+                            <td>18-22%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Chauffage & Eau chaude</strong></td>
+                            <td>40'000 - 60'000 CHF</td>
+                            <td>12-15%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Électricité & Domotique</strong></td>
+                            <td>30'000 - 50'000 CHF</td>
+                            <td>10-12%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Plomberie & Sanitaires</strong></td>
+                            <td>35'000 - 55'000 CHF</td>
+                            <td>11-14%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Revêtements & Finitions</strong></td>
+                            <td>25'000 - 40'000 CHF</td>
+                            <td>8-10%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>TOTAL ESTIMÉ</strong></td>
+                            <td><strong>300'000 - 415'000 CHF</strong></td>
+                            <td><strong>100%</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box">
+                    <strong>💡 Conseil bauV :</strong> Ces budgets incluent la TVA à 8.1%. Prévoyez une marge de 10-15% supplémentaire pour les imprévus (découvertes lors des démolitions, modifications de structure, variations de prix des matériaux).
+                </div>
+
+                <h2>Les délais réalistes d'une rénovation</h2>
+
+                <p>Les délais dépendent fortement de l'ampleur des travaux et de la complexité administrative. Voici une timeline type pour une rénovation complète :</p>
+
+                <h3>Phase 1 : Préparation et démarches (2-4 semaines)</h3>
+                <ul>
+                    <li>Conception et plans (1-2 semaines)</li>
+                    <li>Demande de permis et démarches administratives (1-2 semaines)</li>
+                    <li>Sélection des entreprises et signature des marchés</li>
+                </ul>
+
+                <h3>Phase 2 : Gros œuvre (4-8 semaines)</h3>
+                <ul>
+                    <li>Évacuation et protection (1 semaine)</li>
+                    <li>Démolitions et préparation (1-2 semaines)</li>
+                    <li>Restructuration et installations (2-4 semaines)</li>
+                    <li>Contrôles et inspections</li>
+                </ul>
+
+                <h3>Phase 3 : Second œuvre (4-8 semaines)</h3>
+                <ul>
+                    <li>Pose d'isolation, fenêtres, portes (2 semaines)</li>
+                    <li>Chauffage, plomberie, électricité (2 semaines)</li>
+                    <li>Revêtements de sols et murs (1-2 semaines)</li>
+                </ul>
+
+                <h3>Phase 4 : Finitions (2-4 semaines)</h3>
+                <ul>
+                    <li>Peintures et vernis (1 semaine)</li>
+                    <li>Pose de portes, fenêtres intérieures, équipements (1 semaine)</li>
+                    <li>Nettoyage et réception (1 semaine)</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>⏱️ Timeline totale :</strong> Comptez <strong>12 à 24 semaines (3 à 6 mois)</strong> pour une rénovation complète d'un appartement genevois. Un délai réaliste est crucial pour planifier votre logement alternatif et éviter les surcoûts liés aux retards.
+                </div>
+
+                <h2>Les permis et démarches administratives à Genève</h2>
+
+                <h3>Quels travaux nécessitent un permis ?</h3>
+                <p>À Genève, la plupart des rénovations substantielles nécessitent une <strong>demande de permis de construire ou de transformer</strong> auprès de l'Office de l'urbanisme et de la construction (OUC). Cela inclut :</p>
+                <ul>
+                    <li>Modifications structurelles (suppression de murs, changement de destination)</li>
+                    <li>Modifications de façade ou d'accès</li>
+                    <li>Installation de panneaux solaires ou systèmes énergétiques</li>
+                    <li>Augmentation de la surface habitable de plus de 5%</li>
+                    <li>Rénovation thermique (si isolation > 25% de la surface)</li>
+                </ul>
+
+                <h3>Timeline des permis</h3>
+                <p>Le délai d'instruction à Genève varie selon le type de projet :</p>
+                <ul>
+                    <li><strong>Déclaration préalable :</strong> 10-15 jours (travaux mineurs)</li>
+                    <li><strong>Permis simple :</strong> 4-6 semaines (modifications mineures)</li>
+                    <li><strong>Permis complet :</strong> 8-12 semaines (rénovations importantes, soumises à consultation)</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>⚠️ Important :</strong> Commencer les travaux sans permis entraîne des pénalités et peut obliger à stopper le chantier. bauV accompagne l'ensemble de ces démarches administratives pour vous garantir la conformité.
+                </div>
+
+                <h2>L'expertise bauV : Rénovation d'appartement maîtrisée</h2>
+
+                <p>Avec 30 ans d'expérience dans la rénovation d'appartements genevois, bauV maîtrise chaque aspect du processus :</p>
+
+                <h3>Notre approche</h3>
+                <ul>
+                    <li><strong>Diagnostic initial :</strong> Évaluation complète (structure, isolation, installations, amiante, lead)</li>
+                    <li><strong>Planification détaillée :</strong> Conception 3D, calendrier réaliste, budget précis</li>
+                    <li><strong>Gestion administrative :</strong> Demande de permis, dossiers techniques, rapports de contrôle</li>
+                    <li><strong>Suivi et qualité :</strong> Direction de travaux quotidienne, inspections, respect des normes</li>
+                    <li><strong>Communication :</strong> Rapports hebdomadaires, disponibilité permanente</li>
+                </ul>
+
+                <h3>Nos spécialités</h3>
+                <ul>
+                    <li>Rénovations dans des immeubles protégés ou d'intérêt architectural</li>
+                    <li>Amélioration énergétique (RT 2020, label Minergie)</li>
+                    <li>Restructuration d'espaces (cuisine ouverte, suppression de cloisons)</li>
+                    <li>Adaptation pour accessibilité (PMR, maintien à domicile)</li>
+                </ul>
+
+                <div class="cta-box">
+                    <h3>Planifiez votre rénovation avec expertise</h3>
+                    <p>Obtenir une évaluation précise de votre projet d'appartement est le premier pas vers une rénovation réussie. Notre équipe d'experts analyse votre situation, propose un calendrier réaliste et un budget détaillé.</p>
+                    <a href="index.html" class="btn">Demander un Devis Gratuit</a>
+                </div>
+
+                <h2>Erreurs courantes à éviter</h2>
+
+                <ul>
+                    <li><strong>Sous-estimer le budget :</strong> Les imprévus sont inévitables. Ajoutez toujours 10-15% de marge.</li>
+                    <li><strong>Ignorer l'isolation thermique :</strong> C'est l'investissement le plus rentable à long terme (économies énergétiques, confort).</li>
+                    <li><strong>Commencer sans permis :</strong> Risques légaux et arrêt du chantier. bauV gère ces démarches.</li>
+                    <li><strong>Choisir le moins-disant :</strong> Une entreprise bon marché génère souvent des retards et malfaçons.</li>
+                    <li><strong>Négliger la communication :</strong> Une direction de travaux attentive évite les mauvaises surprises.</li>
+                </ul>
+
+                <h2>Financement et aides possibles</h2>
+
+                <p>Plusieurs possibilités de financement existent pour les rénovations à Genève :</p>
+
+                <ul>
+                    <li><strong>Subventions cantonales :</strong> Programme "Genève Rénove" offre jusqu'à 15% de subvention pour amélioration énergétique</li>
+                    <li><strong>Déductions fiscales :</strong> Jusqu'à 20'000 CHF de frais de travaux déductibles (certaines conditions)</li>
+                    <li><strong>Prêts hypothécaires :</strong> Refinancer ou augmenter un crédit hypothécaire à taux avantageux</li>
+                    <li><strong>Crédit à la consommation :</strong> Pour les petits projets (<100'000 CHF)</li>
+                </ul>
+
+                <h2>Conclusion</h2>
+
+                <p>Rénover un appartement à Genève est un investissement significatif nécessitant une planification minutieuse, un budget réaliste et une expertise confirmée. Entre les défis administratifs, les coûts spécifiques au marché genevois et la complexité technique, faire appel à un partenaire expérimenté évite les erreurs coûteuses.</p>
+
+                <p><strong>bauV</strong> accompagne depuis 30 ans les propriétaires genevois à travers chaque étape de leur rénovation, garantissant qualité, respect du budget et des délais. Nos experts transforment votre vision en réalité.</p>
+
+                <div style="text-align: center; margin-top: 40px; padding: 30px; background: var(--light-gray); border-radius: 6px;">
+                    <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 15px;">Prêt à démarrer votre projet ?</p>
+                    <a href="index.html" style="color: var(--green-dark); font-weight: 700; text-decoration: none; text-transform: uppercase; letter-spacing: 0.8px; font-size: 12px;">Contacter bauV →</a>
+                </div>
+            </section>
+
+            <section class="related-articles">
+                <h3>Articles connexes</h3>
+                <div class="related-grid">
+                    <div class="related-card">
+                        <h4>Erreurs à éviter en rénovation</h4>
+                        <p>Découvrez les 10 pièges courants qui peuvent coûter cher à votre budget et délais.</p>
+                        <a href="blog-5.html">Lire l'article →</a>
+                    </div>
+                    <div class="related-card">
+                        <h4>Extensions & agrandissements</h4>
+                        <p>Faisabilité réglementaire, permis et coûts pour agrandir votre espace à Genève.</p>
+                        <a href="blog-4.html">Lire l'article →</a>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <div class="footer-separator-line"></div>
+    <footer>
+      <div class="footer-wrapper">
+        <div class="footer-top-section">
+          <div class="footer-info-card">
+            <div class="info-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <h3>Appelez-nous</h3>
+            <a href="tel:+41782685442">+41 78 268 54 42</a>
+          </div>
+
+          <div class="footer-info-card">
+            <div class="info-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+            </div>
+            <h3>Une question ?</h3>
+            <a href="mailto:info@bauv.ch">info@bauv.ch</a>
+          </div>
+
+          <div class="footer-info-card">
+            <div class="info-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <h3>Nous trouver</h3>
+            <p>Avenue des Morgines 12<br>1213 Petit-Lancy</p>
+          </div>
+        </div>
+
+        <div class="footer-main">
+          <div class="footer-left">
+            <div class="footer-logo">
+              <img src="images/logo-blanc.png" alt="bauV Logo">
+            </div>
+            <p class="footer-description">Les <span class="highlight">spécialistes</span> qui transforment chaque espace en atout.</p>
+          </div>
+
+          <div class="footer-middle" style="display: grid; grid-template-columns: 1fr 1fr; gap: 100px; text-align: center;">
+            <div class="footer-col">
+              <h4>Services</h4>
+              <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; align-items: center; gap: 22px;">
+                <li><a href="index.html" style="color: #999; text-decoration: none; transition: color 0.3s;">Nos expertises</a></li>
+                <li><a href="index.html" style="color: #999; text-decoration: none; transition: color 0.3s;">Notre approche</a></li>
+                <li><a href="index.html" style="color: #999; text-decoration: none; transition: color 0.3s;">Nos réalisations</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h4>Entreprise</h4>
+              <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; align-items: center; gap: 22px;">
+                <li><a href="index.html" style="color: #999; text-decoration: none; transition: color 0.3s;">Notre mission</a></li>
+                <li><a href="index.html" style="color: #999; text-decoration: none; transition: color 0.3s;">Qui on accompagne</a></li>
+                <li><a href="index.html" style="color: #999; text-decoration: none; transition: color 0.3s;">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-right" style="text-align: center;">
+            <h3 style="color: white; font-size: 18px; font-weight: 800; margin-bottom: 15px; margin-top: 0;">Besoin de nous contacter ?</h3>
+            <p style="color: #999; font-size: 14px; line-height: 1.8; margin-bottom: 30px; margin-top: 0;">Nous répondons à toutes vos questions et vous mettons en relation avec la bonne personne.</p>
+            <a href="index.html" style="display: inline-flex; align-items: center; gap: 12px; padding: 14px 28px; background: transparent; border: 2px solid var(--green-dark); color: var(--green-dark); text-decoration: none; border-radius: 30px; font-weight: 700; font-size: 14px; transition: all 0.3s ease; cursor: pointer;">
+              Contactez-nous
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2024 bauV - Tous droits réservés - Entreprise générale du batiment à Geneve et Vaud</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+          const menu = document.getElementById('mobileMenu');
+          if (menu) menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Rénovation d'Appartement à Genève : Guide Complet des Budgets et Délais",
+      "description": "Guide complet de la rénovation d'appartement à Genève : budgets réalistes, délais, permis et processus étape par étape.",
+      "image": "https://bauv.ch/images/hero.jpg",
+      "datePublished": "2024-12-18",
+      "author": {
+        "@type": "Organization",
+        "@name": "bauV",
+        "url": "https://bauv.ch"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@name": "bauV",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://bauv.ch/images/logo-noir.png"
+        }
+      }
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cuisine ouverte ou fermée ? Analyser les solutions pour votre rénovation : avantages, inconvénients, matériaux et budget. Guide bauV.">
+    <meta name="keywords" content="cuisine ouverte, cuisine fermée, agencement cuisine, rénovation cuisine Genève, îlot central">
+    <meta name="author" content="bauV">
+    <title>Cuisine Ouverte vs Fermée | Solutions Rénovation | bauV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {--green-dark: #176131; --green-light: #82bd41; --white: #ffffff; --light-gray: #f8f8f8; --dark-gray: #2a2a2a; --text-muted: #666666;}
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        html {scroll-behavior: smooth;}
+        body {font-family: 'Poppins', sans-serif; background: var(--white); color: var(--dark-gray); line-height: 1.7; font-weight: 400;}
+        @keyframes fadeInUp {from {opacity: 0; transform: translateY(40px);} to {opacity: 1; transform: translateY(0);}}
+        header {position: fixed; top: 0; left: 0; right: 0; height: 90px; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(26, 92, 58, 0.1); display: flex; align-items: center; justify-content: space-between; padding: 0 100px; z-index: 1000; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);}
+        .header-logo {display: flex; align-items: center; text-decoration: none;}
+        .logo-img {height: 70px; width: auto; max-width: 200px;}
+        nav {display: flex; gap: 40px;}
+        nav a {font-size: 12px; color: var(--text-muted); text-decoration: none; cursor: pointer; transition: all 0.3s; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 600; position: relative; padding-bottom: 8px;}
+        nav a::after {content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2.5px; background: var(--green-dark); transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);}
+        nav a:hover::after, nav a.active::after {width: 100%;}
+        nav a:hover, nav a.active {color: var(--green-dark);}
+        main {margin-top: 90px;}
+        .article-container {max-width: 900px; margin: 0 auto; padding: 60px 40px;}
+        .breadcrumb {font-size: 13px; color: var(--text-muted); margin-bottom: 30px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;}
+        .breadcrumb a {color: var(--green-dark); text-decoration: none;}
+        .article-header {margin-bottom: 50px; animation: fadeInUp 0.8s ease;}
+        .article-header h1 {font-size: 48px; font-weight: 800; color: var(--dark-gray); margin-bottom: 15px; line-height: 1.2; letter-spacing: -0.5px;}
+        .article-header h1 span {color: var(--green-dark);}
+        .article-meta {display: flex; gap: 30px; font-size: 14px; color: var(--text-muted); font-weight: 500; margin-bottom: 20px;}
+        .article-meta strong {color: var(--dark-gray);}
+        .article-intro {font-size: 18px; color: var(--text-muted); line-height: 1.8; margin-bottom: 40px; font-weight: 300; border-left: 4px solid var(--green-dark); padding-left: 20px;}
+        .article-body {color: var(--dark-gray); line-height: 1.9;}
+        .article-body h2 {font-size: 32px; font-weight: 800; color: var(--dark-gray); margin-top: 50px; margin-bottom: 20px; letter-spacing: -0.5px;}
+        .article-body h2::before {content: ''; display: inline-block; width: 4px; height: 32px; background: var(--green-dark); margin-right: 15px; vertical-align: middle;}
+        .article-body h3 {font-size: 22px; font-weight: 700; color: var(--dark-gray); margin-top: 30px; margin-bottom: 15px;}
+        .article-body p {margin-bottom: 18px; text-align: justify;}
+        .article-body ul, .article-body ol {margin: 25px 0 25px 30px; line-height: 1.9;}
+        .article-body li {margin-bottom: 12px;}
+        .highlight-box {background: var(--light-gray); border-left: 4px solid var(--green-light); padding: 25px; border-radius: 6px; margin: 30px 0;}
+        .highlight-box strong {color: var(--green-dark);}
+        .comparison-table {width: 100%; margin: 30px 0; border-collapse: collapse; font-size: 14px;}
+        .comparison-table th {background: var(--dark-gray); color: white; padding: 15px; text-align: left; font-weight: 700;}
+        .comparison-table td {padding: 12px 15px; border-bottom: 1px solid #e0e0e0;}
+        .comparison-table tr:nth-child(even) {background: var(--light-gray);}
+        .cta-box {background: linear-gradient(135deg, var(--green-dark) 0%, rgba(23, 97, 49, 0.85) 100%); color: white; padding: 40px; border-radius: 8px; text-align: center; margin: 50px 0; animation: fadeInUp 0.8s ease;}
+        .cta-box h3 {color: white; font-size: 24px; margin-bottom: 15px;}
+        .cta-box p {font-size: 16px; margin-bottom: 25px; opacity: 0.95;}
+        .cta-box .btn {background: var(--green-light); color: var(--dark-gray); padding: 14px 35px; border: none; border-radius: 6px; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 0.8px; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s ease;}
+        .cta-box .btn:hover {transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);}
+        .related-articles {margin-top: 60px; padding-top: 60px; border-top: 2px solid var(--light-gray);}
+        .related-articles h3 {font-size: 24px; font-weight: 800; margin-bottom: 30px; color: var(--dark-gray);}
+        .related-grid {display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px;}
+        .related-card {border: 1px solid #e0e0e0; border-radius: 6px; padding: 20px; transition: all 0.3s ease;}
+        .related-card:hover {box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); transform: translateY(-2px);}
+        .related-card h4 {font-size: 16px; font-weight: 700; color: var(--dark-gray); margin-bottom: 10px;}
+        .related-card p {font-size: 14px; color: var(--text-muted); margin-bottom: 12px;}
+        .related-card a {color: var(--green-dark); font-weight: 700; text-decoration: none; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;}
+        footer {background: #000000; color: #ffffff; margin-top: 80px;}
+        .footer-separator-line {height: 2px; background: var(--green-dark); width: 100%;}
+        .footer-wrapper {max-width: 1400px; margin: 0 auto;}
+        .footer-top-section {display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; padding: 60px 100px;}
+        .footer-info-card {display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center;}
+        .info-icon {width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: rgba(23, 97, 49, 0.1); border: 2px solid var(--green-dark); border-radius: 8px; color: var(--green-dark); transition: all 0.3s ease;}
+        .footer-info-card:hover .info-icon {background: var(--green-dark); color: var(--white);}
+        .footer-info-card h3 {color: var(--white); font-size: 16px; font-weight: 700; margin: 0;}
+        .footer-info-card a, .footer-info-card p {color: #999; font-size: 14px; text-decoration: none; margin: 0; line-height: 1.6; transition: color 0.3s;}
+        .footer-info-card a:hover {color: var(--green-light);}
+        .footer-main {display: grid; grid-template-columns: 1fr 1.5fr 1fr; gap: 80px; padding: 80px 100px; align-items: flex-start; border-top: 1px solid #333;}
+        .footer-logo {margin-bottom: 25px; height: 70px; display: flex; align-items: center;}
+        .footer-logo img {height: 100%; width: auto; object-fit: contain;}
+        .footer-description {color: var(--white); font-size: 16px; line-height: 1.8; font-weight: 400; margin: 0;}
+        .footer-description .highlight {color: var(--green-light); font-weight: 800;}
+        .footer-bottom {text-align: center; padding: 40px 100px; border-top: 1px solid #333; color: #999; font-size: 13px;}
+        .menu-toggle {display: none;}
+        @media (max-width: 768px) {
+            header {padding: 0 20px; height: 70px;} nav {display: none;} .menu-toggle {display: block; font-size: 24px; cursor: pointer; color: var(--dark-gray);} main {margin-top: 70px;} .article-container {padding: 40px 20px;} .article-header h1 {font-size: 32px;} .article-body h2 {font-size: 24px;} .related-grid {grid-template-columns: 1fr;} .footer-top-section {grid-template-columns: 1fr; padding: 40px 20px;} .footer-main {grid-template-columns: 1fr; padding: 40px 20px; gap: 40px;} .footer-bottom {padding: 30px 20px;}
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="header-logo">
+            <img src="images/logo-noir.png" alt="bauV Logo" class="logo-img">
+        </a>
+        <nav>
+            <a href="index.html">Notre mission</a>
+            <a href="index.html">Nos clients</a>
+            <a href="index.html">Nos compétences</a>
+            <a href="index.html">Notre approche</a>
+            <a href="index.html">Nos réalisations</a>
+            <a href="blog-main.html">Blog</a>
+            <a href="index.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <article class="article-container">
+            <nav class="breadcrumb">
+                <a href="index.html">Accueil</a> / <a href="blog-main.html">Blog</a> / Cuisine Ouverte vs Fermée
+            </nav>
+
+            <header class="article-header">
+                <h1>Cuisine Ouverte vs <span>Fermée</span> : Quelles Solutions pour Votre Rénovation ?</h1>
+                <div class="article-meta">
+                    <span>📅 <strong>15 Décembre 2024</strong></span>
+                    <span>⏱ <strong>9 min de lecture</strong></span>
+                    <span>👤 <strong>bauV Experts</strong></span>
+                </div>
+            </header>
+
+            <div class="article-intro">
+                Le choix entre une cuisine ouverte et fermée est l'une des décisions majeures d'une rénovation. Au-delà de l'esthétique, cette option impacte la circulation, la ventilation, l'acoustique et le budget. Explorez les avantages et inconvénients de chaque configuration pour faire le choix adapté à votre mode de vie et votre logement.
+            </div>
+
+            <section class="article-body">
+                <h2>La cuisine ouverte : Tendance, convivialité et modernité</h2>
+
+                <h3>Définition et concepts</h3>
+                <p>Une cuisine ouverte supprime les cloisons entre la cuisine et l'espace de vie (séjour, salle à manger). Les variantes incluent :</p>
+                <ul>
+                    <li><strong>Cuisine complètement intégrée :</strong> Aucune séparation physique</li>
+                    <li><strong>Cuisine avec îlot :</strong> Plan de travail central délimitant l'espace</li>
+                    <li><strong>Cuisine semi-ouverte :</strong> Comptoir haut ou demi-cloison offrant une démarcation</li>
+                </ul>
+
+                <h3>Avantages de la cuisine ouverte</h3>
+                <ul>
+                    <li><strong>Gain d'espace :</strong> Suppression des murs crée une sensation de volume et d'ampleur, idéale pour les petits appartements.</li>
+                    <li><strong>Convivialité :</strong> Interaction permanente avec la famille ou les invités pendant la cuisson.</li>
+                    <li><strong>Clarté visuelle :</strong> Meilleure luminosité distribuée sur l'ensemble du séjour.</li>
+                    <li><strong>Modernité :</strong> Correspond aux attentes actuelles de mode de vie contemporain.</li>
+                    <li><strong>Flexibilité :</strong> Espace modulable pour accueillir îlot, bar ou étagères ouvertes.</li>
+                </ul>
+
+                <h3>Inconvénients et défis</h3>
+                <ul>
+                    <li><strong>Odeurs et vapeurs :</strong> Sans ventilation performante, les odeurs envahissent tout le séjour. Nécessite une hotte puissante (min. 600-800 m³/h).</li>
+                    <li><strong>Bruit :</strong> Tous les sons (ustensiles, lave-vaisselle, électroménager) sont audibles dans le séjour.</li>
+                    <li><strong>Visibilité du désordre :</strong> La cuisine doit être constamment rangée et propre.</li>
+                    <li><strong>Thermique :</strong> Chauffage moins efficace sur un grand espace ouvert; risque de différences de température.</li>
+                    <li><strong>Coût de rénovation :</strong> Suppression de murs, renforcement structural, système de ventilation sophistiqué = budget augmenté.</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>💡 Expertise bauV :</strong> Une cuisine ouverte réussie repose sur une <strong>ventilation performante</strong>. Les hottes à extraction extérieure (plutôt que recirculation) sont essentielles. Budget supplémentaire : 8'000-15'000 CHF pour une ventilation de qualité.
+                </div>
+
+                <h2>La cuisine fermée : Tradition, intimité et efficacité</h2>
+
+                <h3>Avantages d'une cuisine fermée</h3>
+                <ul>
+                    <li><strong>Isolation olfactive et sonore :</strong> Odeurs et bruits contenus dans la cuisine seule.</li>
+                    <li><strong>Confidentialité :</strong> Espace dédié pour cuisiner sans être observé; rangement des ustensiles moins strict.</li>
+                    <li><strong>Efficacité thermique :</strong> Pièce hermétique facile à chauffer; économies d'énergie.</li>
+                    <li><strong>Flexibilité d'agencement :</strong> Électroménager et rangements placés librement sur les murs.</li>
+                    <li><strong>Coût maîtrisé :</strong> Pas de travaux structurels majeurs; ventilation standard suffisante.</li>
+                </ul>
+
+                <h3>Inconvénients</h3>
+                <ul>
+                    <li><strong>Sensation d'enfermement :</strong> Pièce isolée, surtout sans fenêtre; peu de luminosité naturelle.</li>
+                    <li><strong>Perte d'espace :</strong> Murs réduisent l'impression de volume global du logement.</li>
+                    <li><strong>Convivialité limitée :</strong> Isolement des personnes qui cuisinent des visiteurs.</li>
+                    <li><strong>Coût d'exploitation :</strong> Électroménager séparé (petit lave-vaisselle, micro-ondes) multiplie les équipements.</li>
+                </ul>
+
+                <h2>Comparaison détaillée : Quelle configuration choisir ?</h2>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Critère</th>
+                            <th>Cuisine Ouverte</th>
+                            <th>Cuisine Fermée</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Sensation d'espace</strong></td>
+                            <td>Très grand volume apparent</td>
+                            <td>Pièces bien délimitées</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Convivialité</strong></td>
+                            <td>Excellente interaction</td>
+                            <td>Isolation / séparation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gestion des odeurs</strong></td>
+                            <td>Nécessite hotte performante</td>
+                            <td>Bien maîtrisée</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Acoustique</strong></td>
+                            <td>Bruits propagés</td>
+                            <td>Sons contenus</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Efficacité énergétique</strong></td>
+                            <td>Chauffage moins efficace</td>
+                            <td>Très efficace</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Budget rénovation</strong></td>
+                            <td>25'000-40'000 CHF (avec hottes)</td>
+                            <td>15'000-25'000 CHF</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Entretien</strong></td>
+                            <td>Vigilance constante requise</td>
+                            <td>Plus discret</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>Solutions intermédiaires : Le meilleur des deux mondes</h2>
+
+                <h3>La cuisine semi-ouverte avec comptoir</h3>
+                <p>Un comptoir ou bar haut sépare partiellement la cuisine du séjour. Avantages : convivialité + isolation acoustique/olfactive renforcée. Budget : 20'000-30'000 CHF.</p>
+
+                <h3>Cuisine ouverte avec cloison vitrée</h3>
+                <p>Portes coulissantes ou parois vitrées permettent une séparation modulable. Idéal pour contrôler odeurs/bruits sans perdre lumière. Budget : 22'000-35'000 CHF.</p>
+
+                <h3>Cuisine ouverte avec îlot ventilé</h3>
+                <p>L'îlot central crée une délimitation tout en maximisant l'espace. Une hotte puissante au-dessus absorbe vapeurs et odeurs efficacement. Budget : 28'000-45'000 CHF.</p>
+
+                <div class="highlight-box">
+                    <strong>✨ Tendance 2024 :</strong> Les cuisines semi-ouvertes avec îlot et ventilation performante deviennent la <strong>norme à Genève</strong>. Elles offrent un meilleur équilibre entre esthétique, fonctionnalité et bien-être.
+                </div>
+
+                <h2>Critères de décision pour votre situation</h2>
+
+                <h3>Optez pour une cuisine OUVERTE si :</h3>
+                <ul>
+                    <li>Vous avez un petit appartement (< 80 m²) et cherchez à l'agrandir visuellement</li>
+                    <li>Vous cuisinez peu (peu d'odeurs/bruits générés)</li>
+                    <li>Vous privilégiez la convivialité et la vie de famille</li>
+                    <li>Votre logement bénéficie d'une bonne luminosité naturelle</li>
+                    <li>Vous acceptez l'investissement dans une ventilation premium</li>
+                </ul>
+
+                <h3>Restez sur une cuisine FERMÉE si :</h3>
+                <ul>
+                    <li>Vous avez un grand logement avec suffi de pièces de vie</li>
+                    <li>Vous cuisinez beaucoup (risque d'odeurs important)</li>
+                    <li>Vous travaillez depuis domicile et avez besoin de calme</li>
+                    <li>L'efficacité énergétique est une priorité</li>
+                    <li>Vous privilégiez l'ordre et la discrétion</li>
+                </ul>
+
+                <h2>Aspects techniques et réglementaires</h2>
+
+                <h3>Ventilation pour cuisine ouverte</h3>
+                <p>Norme suisse : minimum 90 m³/h en continu. Pour cuisine ouverte efficace, il faut <strong>600-800 m³/h minimum</strong>. Deux options :</p>
+                <ul>
+                    <li><strong>Hotte extraction :</strong> Évacue vers l'extérieur (efficace, coûteux en installation)</li>
+                    <li><strong>Hotte recirculation :</strong> Filtre et rejette (moins efficace, plus discret)</li>
+                </ul>
+
+                <h3>Permis et structure</h3>
+                <p>Suppression d'une cloison peut nécessiter un <strong>permis de transformer</strong> si elle est porteuse. Évaluation structurelle obligatoire. Coût : 2'000-5'000 CHF.</p>
+
+                <div class="cta-box">
+                    <h3>Projet de rénovation cuisine ? Conseil gratuit</h3>
+                    <p>bauV vous accompagne dans cette décision majeure. Nos experts évaluent votre situation, proposent la configuration optimale et chiffrent le projet avec précision.</p>
+                    <a href="index.html" class="btn">Consultation Spécialiste Cuisine</a>
+                </div>
+
+                <h2>Conclusion</h2>
+
+                <p>Le choix entre cuisine ouverte et fermée dépend de votre logement, mode de vie et priorités. La tendance actuelle favorise les <strong>solutions intermédiaires</strong> (semi-ouverte, îlot, cloisons vitrées) qui réconcilientt convivialité et confort.</p>
+
+                <p><strong>bauV</strong> réalise depuis 30 ans des cuisines sur mesure à Genève. Nos experts diagnostiquent votre situation, proposent la meilleure configuration et gèrent chaque détail (ventilation, électricité, plomberie, agencement) avec expertise.</p>
+            </section>
+
+            <section class="related-articles">
+                <h3>Articles connexes</h3>
+                <div class="related-grid">
+                    <div class="related-card">
+                        <h4>Rénovation d'appartement Genève</h4>
+                        <p>Guide complet : budgets, délais, permis et processus d'une rénovation.</p>
+                        <a href="blog-1.html">Lire l'article →</a>
+                    </div>
+                    <div class="related-card">
+                        <h4>Salle de bain de luxe</h4>
+                        <p>Design, matériaux haut de gamme et budget réaliste pour une salle de bain premium.</p>
+                        <a href="blog-3.html">Lire l'article →</a>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <div class="footer-separator-line"></div>
+    <footer>
+        <div class="footer-wrapper">
+            <div class="footer-top-section">
+                <div class="footer-info-card">
+                    <div class="info-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                    </div>
+                    <h3>Appelez-nous</h3>
+                    <a href="tel:+41782685442">+41 78 268 54 42</a>
+                </div>
+                <div class="footer-info-card">
+                    <div class="info-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                        </svg>
+                    </div>
+                    <h3>Une question ?</h3>
+                    <a href="mailto:info@bauv.ch">info@bauv.ch</a>
+                </div>
+                <div class="footer-info-card">
+                    <div class="info-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h3>Nous trouver</h3>
+                    <p>Avenue des Morgines 12<br>1213 Petit-Lancy</p>
+                </div>
+            </div>
+            <div class="footer-main">
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <img src="images/logo-blanc.png" alt="bauV Logo">
+                    </div>
+                    <p class="footer-description">Les <span class="highlight">spécialistes</span> qui transforment chaque espace en atout.</p>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 100px; text-align: center;">
+                    <div class="footer-col">
+                        <h4 style="color: white; font-size: 15px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 35px;">Services</h4>
+                        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; align-items: center; gap: 22px;">
+                            <li><a href="index.html" style="color: #999; text-decoration: none;">Nos expertises</a></li>
+                            <li><a href="index.html" style="color: #999; text-decoration: none;">Notre approche</a></li>
+                            <li><a href="index.html" style="color: #999; text-decoration: none;">Nos réalisations</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4 style="color: white; font-size: 15px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 35px;">Entreprise</h4>
+                        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; align-items: center; gap: 22px;">
+                            <li><a href="index.html" style="color: #999; text-decoration: none;">Notre mission</a></li>
+                            <li><a href="index.html" style="color: #999; text-decoration: none;">Qui on accompagne</a></li>
+                            <li><a href="index.html" style="color: #999; text-decoration: none;">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <h3 style="color: white; font-size: 18px; font-weight: 800; margin-bottom: 15px;">Besoin de nous contacter ?</h3>
+                    <p style="color: #999; font-size: 14px; line-height: 1.8; margin-bottom: 30px;">Nous répondons à toutes vos questions et vous mettons en relation avec la bonne personne.</p>
+                    <a href="index.html" style="display: inline-flex; align-items: center; gap: 12px; padding: 14px 28px; background: transparent; border: 2px solid var(--green-dark); color: var(--green-dark); text-decoration: none; border-radius: 30px; font-weight: 700; font-size: 14px;">
+                        Contactez-nous →
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 bauV - Tous droits réservés - Entreprise générale du batiment à Geneve et Vaud</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Cuisine Ouverte vs Fermée : Quelles Solutions pour Votre Rénovation ?",
+      "description": "Comparaison complète cuisine ouverte/fermée : avantages, inconvénients, coûts, solutions intermédiaires.",
+      "datePublished": "2024-12-15",
+      "author": {"@type": "Organization", "@name": "bauV"},
+      "publisher": {"@type": "Organization", "@name": "bauV"}
+    }
+    </script>
+</body>
+</html>
