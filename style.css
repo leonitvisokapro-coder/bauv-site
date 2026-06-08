@@ -5035,15 +5035,21 @@ header nav a {
   }
   .hotspot-label em { font-size: 12px; margin-left: 3px; }
 
-  /* Pas d'animation de pulse sur mobile (économie batterie + le rond est déjà bien visible dans l'image) */
+  /* Sur mobile : pulse "radar" continu pour signaler que les points sont cliquables */
   .hotspot-ring {
-    width: 14px;
-    height: 14px;
+    width: 15px;
+    height: 15px;
     box-shadow:
       0 0 0 3px rgba(255, 255, 255, 0.95),
-      0 0 0 4px rgba(23, 97, 49, 0.15),
+      0 0 0 5px rgba(130, 189, 65, 0.55),
       0 2px 6px rgba(23, 97, 49, 0.35);
+    animation: hotspotPing 1.7s ease-out infinite, hotspotBeat 1.7s ease-in-out infinite;
   }
+  /* Décalage pour un effet organique (les points ne pulsent pas tous en même temps) */
+  .room-hotspot:nth-of-type(2) .hotspot-ring { animation-delay: 0.34s, 0.34s; }
+  .room-hotspot:nth-of-type(3) .hotspot-ring { animation-delay: 0.68s, 0.68s; }
+  .room-hotspot:nth-of-type(4) .hotspot-ring { animation-delay: 1.02s, 1.02s; }
+  .room-hotspot:nth-of-type(5) .hotspot-ring { animation-delay: 1.36s, 1.36s; }
   .room-hotspot:hover .hotspot-ring,
   .room-hotspot:focus-visible .hotspot-ring {
     animation: none;
@@ -5061,6 +5067,20 @@ header nav a {
     font-size: 9.5px !important;
     padding: 3px 8px;
   }
+}
+
+/* Pulse "radar" des hotspots (mobile) : halo vert qui se diffuse + léger battement du rond */
+@keyframes hotspotPing {
+  0%   { box-shadow: 0 0 0 3px rgba(255,255,255,0.95), 0 0 0 5px rgba(130,189,65,0.55), 0 2px 6px rgba(23,97,49,0.35); }
+  70%  { box-shadow: 0 0 0 3px rgba(255,255,255,0.95), 0 0 0 20px rgba(130,189,65,0), 0 2px 6px rgba(23,97,49,0.35); }
+  100% { box-shadow: 0 0 0 3px rgba(255,255,255,0.95), 0 0 0 20px rgba(130,189,65,0), 0 2px 6px rgba(23,97,49,0.35); }
+}
+@keyframes hotspotBeat {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.18); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hotspot-ring { animation: none !important; }
 }
 
 
@@ -6420,7 +6440,7 @@ header nav a {
 .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
 .nav-cta {
   font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500; color: #0c130e;
-  background: var(--green-light); padding: 11px 22px; border-radius: 6px; text-decoration: none; white-space: nowrap;
+  background: var(--green-light); padding: 15px 32px; border-radius: 8px; text-decoration: none; white-space: nowrap;
   transition: background 0.25s ease, transform 0.25s ease;
 }
 .nav-cta:hover { background: #fff; transform: translateY(-2px); }
@@ -6481,7 +6501,8 @@ body.nav-offset { padding-top: 74px; }
 .sf-col a { display: block; font-family: 'Poppins', sans-serif; font-size: 14.5px; color: rgba(255,255,255,0.72); text-decoration: none; padding: 6px 0; transition: color 0.2s ease, padding-left 0.2s ease; }
 .sf-col a:hover { color: #fff; padding-left: 4px; }
 .sf-cta-col p { color: rgba(255,255,255,0.6); font-size: 14px; line-height: 1.6; margin: 0 0 18px; }
-.sf-cta-col .nav-cta { display: inline-block; }
+.sf-cta-col .nav-cta { display: inline-block; padding: 15px 32px; color: #0c130e; }
+.sf-cta-col .nav-cta:hover { padding-left: 32px; color: #0c130e; }
 .sf-bottom {
   max-width: 1180px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.08);
   padding: 20px clamp(24px, 7vw, 60px);
@@ -6495,7 +6516,9 @@ body.nav-offset { padding-top: 74px; }
   .sf-cols { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 520px) {
-  .sf-cols { grid-template-columns: 1fr; gap: 24px; }
+  /* Rénovations | Entreprise côte à côte (gauche/droite), CTA en pleine largeur dessous */
+  .sf-cols { grid-template-columns: 1fr 1fr; gap: 26px 20px; }
+  .sf-cta-col { grid-column: 1 / -1; }
   .sf-bottom { flex-direction: column; align-items: flex-start; }
 }
 
