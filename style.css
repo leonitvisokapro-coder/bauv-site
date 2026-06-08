@@ -5117,7 +5117,7 @@ header nav a {
   z-index: 1;
   opacity: 0;
   clip-path: inset(0 0 100% 0);
-  animation: bpReveal 1.5s cubic-bezier(0.22, 1, 0.36, 1) 2.25s forwards;
+  animation: bpReveal 1.5s cubic-bezier(0.22, 1, 0.36, 1) 2.9s forwards;
 }
 .hero-bp-photo.no-img { background: linear-gradient(150deg, #16241a 0%, #1f3a29 100%); }
 .hero-bp-photo img {
@@ -5126,7 +5126,7 @@ header nav a {
   object-fit: cover;
   display: block;
   transform: scale(1.14);
-  animation: bpKenburns 9s ease-out 2.25s forwards;
+  animation: bpKenburns 9s ease-out 2.9s forwards;
 }
 /* Voile dégradé pour la lisibilité du texte (poids à gauche) */
 .hero-bp-photo-veil {
@@ -5145,7 +5145,7 @@ header nav a {
   width: 100%;
   height: 100%;
   opacity: 1;
-  animation: bpPlanFade 1.6s ease 2.35s forwards;   /* devient un filigrane une fois la photo révélée */
+  animation: bpPlanFade 1.6s ease 3.0s forwards;   /* devient un filigrane une fois la photo révélée */
   pointer-events: none;
 }
 .hero-bp-draw path,
@@ -5158,17 +5158,14 @@ header nav a {
   stroke-linejoin: round;
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
-  animation: bpStroke 1.2s ease forwards;
+  /* durée courte par trait : combinée au délai progressif (inline), donne l'effet "stylo qui dessine" */
+  animation: bpStroke 0.7s ease forwards;
 }
-.hero-bp-draw .bp-grid path        { stroke: rgba(255,255,255,0.09); stroke-width: 1; animation-duration: 1.6s; }
-.hero-bp-draw .bp-walls path       { stroke: rgba(255,255,255,0.85); stroke-width: 6;  animation-delay: 0.3s; animation-duration: 1.5s; }
-.hero-bp-draw .bp-doors path       { stroke: rgba(255,255,255,0.55); stroke-width: 1.6; animation-delay: 1.0s; }
-.hero-bp-draw .bp-furniture path   { stroke: rgba(255,255,255,0.42); stroke-width: 1.6; animation-delay: 1.2s; }
-.hero-bp-draw .bp-fixtures path,
-.hero-bp-draw .bp-fixtures circle,
-.hero-bp-draw .bp-fixtures ellipse { stroke: rgba(255,255,255,0.42); stroke-width: 1.6; animation-delay: 1.45s; }
-.hero-bp-draw .bp-north path       { stroke: rgba(255,255,255,0.6);  stroke-width: 1.6; animation-delay: 1.5s; }
-.hero-bp-draw .bp-dims path        { stroke: var(--green-light); stroke-width: 1.4; animation-delay: 1.7s; }
+/* Couleurs bauV (vert) — plan d'appartement complet */
+.hero-bp-draw .bp-floor path   { stroke: rgba(130,189,65,0.30); stroke-width: 1.1; }
+.hero-bp-draw .bp-walls path   { stroke: rgba(190,232,170,0.92); stroke-width: 2.2; }
+.hero-bp-draw .bp-windows path { stroke: var(--green-light); stroke-width: 1.5; }
+.hero-bp-draw .bp-furn path    { stroke: rgba(130,189,65,0.62); stroke-width: 1.4; }
 
 /* Textes du plan (étiquettes, cotes, nord) : pas de tracé → fondu */
 .hero-bp-draw text {
@@ -5190,7 +5187,7 @@ header nav a {
   z-index: 3;
   pointer-events: none;
   opacity: 0;
-  animation: bpFadeIn 0.9s ease 2.5s forwards;
+  animation: bpFadeIn 0.9s ease 3.1s forwards;
 }
 .bp-corner {
   position: absolute;
@@ -5233,7 +5230,7 @@ header nav a {
   color: var(--green-light);
   margin-bottom: 22px;
   opacity: 0;
-  animation: bpUpIn 0.8s cubic-bezier(0.22,1,0.36,1) 2.6s forwards;
+  animation: bpUpIn 0.8s cubic-bezier(0.22,1,0.36,1) 3.3s forwards;
 }
 .hero-bp-eyebrow::before {
   content: "";
@@ -5255,8 +5252,8 @@ header nav a {
   opacity: 0;
   transform: translateY(28px);
 }
-.hero-bp-title .l1 { animation: bpUpIn 0.9s cubic-bezier(0.22,1,0.36,1) 2.72s forwards; }
-.hero-bp-title .l2 { animation: bpUpIn 0.9s cubic-bezier(0.22,1,0.36,1) 2.86s forwards; }
+.hero-bp-title .l1 { animation: bpUpIn 0.9s cubic-bezier(0.22,1,0.36,1) 3.42s forwards; }
+.hero-bp-title .l2 { animation: bpUpIn 0.9s cubic-bezier(0.22,1,0.36,1) 3.55s forwards; }
 .hero-bp-title em {
   font-style: normal;
   color: var(--green-light);
@@ -5269,14 +5266,14 @@ header nav a {
   max-width: 520px;
   margin: 0 0 34px 0;
   opacity: 0;
-  animation: bpUpIn 0.9s cubic-bezier(0.22,1,0.36,1) 3.05s forwards;
+  animation: bpUpIn 0.9s cubic-bezier(0.22,1,0.36,1) 3.72s forwards;
 }
 .hero-bp-cta {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
   opacity: 0;
-  animation: bpUpIn 0.9s cubic-bezier(0.22,1,0.36,1) 3.25s forwards;
+  animation: bpUpIn 0.9s cubic-bezier(0.22,1,0.36,1) 3.9s forwards;
 }
 .hero-bp-btn {
   display: inline-flex;
@@ -5322,7 +5319,7 @@ header nav a {
   gap: 12px;
   text-decoration: none;
   opacity: 0;
-  animation: bpFadeIn 0.9s ease 3.5s forwards;
+  animation: bpFadeIn 0.9s ease 4.1s forwards;
 }
 .hero-bp-scroll-label {
   font-family: 'Poppins', sans-serif;
