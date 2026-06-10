@@ -14,7 +14,10 @@
   var path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
   var map = { '': 'index', 'index.html': 'index', 'services.html': 'services',
               'realisations.html': 'realisations', 'blog-main.html': 'blog', 'contact.html': 'contact' };
-  var key = map[path] || (path.indexOf('renovation-') === 0 ? 'services' : null);
+  var key = map[path]
+    || (path.indexOf('renovation-') === 0 ? 'services'
+    : (path.indexOf('realisation-') === 0 ? 'realisations'
+    : (path.indexOf('blog-') === 0 ? 'blog' : null)));
   if (key) {
     var link = document.querySelector('.nav-links a[data-nav="' + key + '"]');
     if (link) link.classList.add('active');
