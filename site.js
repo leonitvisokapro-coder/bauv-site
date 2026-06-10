@@ -11,9 +11,10 @@
   var solid = !document.body.classList.contains('dark-hero');
 
   /* --- Lien actif --- */
-  var path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-  var map = { '': 'index', 'index.html': 'index', 'services.html': 'services',
-              'realisations.html': 'realisations', 'blog-main.html': 'blog', 'contact.html': 'contact' };
+  /* fonctionne avec URLs propres (Vercel: /services) ET avec .html (test local) */
+  var path = (location.pathname.split('/').pop() || 'index').toLowerCase().replace(/\.html$/, '');
+  var map = { '': 'index', 'index': 'index', 'services': 'services',
+              'realisations': 'realisations', 'blog-main': 'blog', 'contact': 'contact' };
   var key = map[path]
     || (path.indexOf('renovation-') === 0 ? 'services'
     : (path.indexOf('realisation-') === 0 ? 'realisations'
