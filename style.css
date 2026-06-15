@@ -6998,3 +6998,98 @@ body.nav-offset { padding-top: 74px; }
 
 @media (max-width: 900px) { .protect2-wrap { grid-template-columns: 1fr; } }
 @media (max-width: 480px) { .protect-seal { flex-direction: row; } .seal-svg { width: 84px; height: 84px; } }
+
+/* ============================================================
+   À QUI S'ADRESSE BAUV — section audience (accueil + pages profil)
+   ============================================================ */
+.audience {
+  position: relative; overflow: hidden;
+  background: var(--light-gray);
+  padding: clamp(74px, 10vw, 134px) clamp(24px, 7vw, 90px);
+}
+.aud-head { text-align: center; max-width: 680px; margin: 0 auto clamp(46px, 6vw, 70px); }
+.aud-head .eg-index { display: block; margin-bottom: 14px; }
+.aud-head h2 {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: clamp(28px, 3.6vw, 44px) !important;
+  color: var(--dark-gray) !important;
+  letter-spacing: -0.02em !important;
+  margin: 0 0 14px;
+}
+.aud-head h2 .accent { color: var(--green-dark) !important; }
+.aud-head p { color: var(--text-muted); font-size: 16px; line-height: 1.65; }
+
+.aud-grid {
+  max-width: 1180px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.aud-card {
+  display: flex; flex-direction: column;
+  position: relative; overflow: hidden;
+  text-decoration: none;
+  background: #fff;
+  border: 1px solid #ececec;
+  border-radius: 20px;
+  padding: 36px 32px 30px;
+  transition: transform .45s cubic-bezier(.2,.7,.2,1), border-color .45s, box-shadow .45s;
+}
+.aud-card::before {
+  content: ""; position: absolute; top: 0; left: 0; height: 3px; width: 0;
+  background: linear-gradient(90deg, var(--green-dark), var(--green-light));
+  transition: width .5s ease;
+}
+.aud-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(130,189,65,0.5);
+  box-shadow: 0 30px 60px -30px rgba(23,97,49,0.35);
+}
+.aud-card:hover::before { width: 100%; }
+.aud-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 56px; height: 56px; border-radius: 15px;
+  background: rgba(130,189,65,0.12); color: var(--green-dark);
+  margin-bottom: 22px; transition: background .45s, color .45s;
+}
+.aud-icon svg { width: 27px; height: 27px; }
+.aud-card:hover .aud-icon { background: linear-gradient(150deg, var(--green-dark), var(--green-light)); color: #fff; }
+.aud-tag {
+  display: inline-block; align-self: flex-start;
+  font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 12px;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--green-dark); margin-bottom: 12px;
+}
+.aud-card h3 {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 21px !important;
+  color: var(--dark-gray) !important;
+  line-height: 1.25 !important;
+  margin: 0 0 12px !important;
+}
+.aud-card > p { color: var(--text-muted); font-size: 14.5px; line-height: 1.6; margin: 0 0 20px; }
+.aud-card ul { list-style: none; padding: 0; margin: 0 0 26px; display: grid; gap: 10px; }
+.aud-card ul li {
+  position: relative; padding-left: 24px;
+  color: var(--dark-gray); font-size: 14px; line-height: 1.45;
+}
+.aud-card ul li::before {
+  content: ""; position: absolute; left: 0; top: 4px;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: rgba(130,189,65,0.18);
+  box-shadow: inset 0 0 0 2px var(--green-light);
+}
+.aud-card ul li::after {
+  content: ""; position: absolute; left: 4.5px; top: 8px;
+  width: 5px; height: 3px; border-left: 1.5px solid var(--green-dark); border-bottom: 1.5px solid var(--green-dark);
+  transform: rotate(-45deg);
+}
+.aud-arrow {
+  margin-top: auto;
+  font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 14px;
+  color: var(--green-dark); display: inline-flex; align-items: center; gap: 7px;
+}
+.aud-arrow em { font-style: normal; transition: transform .35s ease; }
+.aud-card:hover .aud-arrow em { transform: translateX(5px); }
+
+@media (max-width: 900px) { .aud-grid { grid-template-columns: 1fr; max-width: 460px; } }
