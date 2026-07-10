@@ -7096,3 +7096,28 @@ body.nav-offset { padding-top: 74px; }
 .aud-card:hover .aud-arrow em { transform: translateX(5px); }
 
 @media (max-width: 900px) { .aud-grid { grid-template-columns: 1fr; max-width: 460px; } }
+
+/* ============================================================
+   PAGE MERCI (confirmation formulaire)
+   ============================================================ */
+.merci-hero { min-height: calc(100vh - 0px); display: flex; align-items: center; }
+.merci-inner { text-align: center; max-width: 640px; margin: 0 auto; }
+.merci-check {
+  display: flex; align-items: center; justify-content: center;
+  margin-left: auto; margin-right: auto;
+  width: 84px; height: 84px; border-radius: 50%;
+  background: linear-gradient(150deg, var(--green-dark), var(--green-light));
+  color: #fff; margin-bottom: 28px;
+  box-shadow: 0 20px 50px -18px rgba(130,189,65,0.65);
+}
+.merci-check svg {
+  width: 40px; height: 40px;
+  stroke-dasharray: 1; stroke-dashoffset: 1;
+  animation: bpStroke 0.7s ease 0.35s forwards;
+}
+.merci-inner .subhero-cta { justify-content: center; }
+.merci-urgent { margin-top: 34px; font-size: 14.5px; color: rgba(255,255,255,0.55); }
+.merci-urgent a { color: var(--green-light); text-decoration: none; font-weight: 600; }
+.merci-urgent a:hover { text-decoration: underline; }
+.merci-inner h1 { max-width: none; }
+.merci-inner .subhero-lead { margin-left: auto; margin-right: auto; }
