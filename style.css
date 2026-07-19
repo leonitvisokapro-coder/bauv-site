@@ -6556,12 +6556,13 @@ body.nav-offset { padding-top: 74px; }
 
 @media (max-width: 860px) {
   .sf-top { grid-template-columns: 1fr; }
+  /* Rénovations (colonne haute) à gauche · Pour qui + Entreprise empilés à droite · CTA pleine largeur */
   .sf-cols { grid-template-columns: 1fr 1fr; }
+  .sf-cols .sf-col:first-child { grid-row: span 2; }
+  .sf-cta-col { grid-column: 1 / -1; }
 }
 @media (max-width: 520px) {
-  /* Rénovations | Entreprise côte à côte (gauche/droite), CTA en pleine largeur dessous */
-  .sf-cols { grid-template-columns: 1fr 1fr; gap: 26px 20px; }
-  .sf-cta-col { grid-column: 1 / -1; }
+  .sf-cols { gap: 26px 20px; }
   .sf-bottom { flex-direction: column; align-items: flex-start; }
 }
 
